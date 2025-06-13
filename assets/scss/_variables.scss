@@ -1,0 +1,43 @@
+/* light colors */
+
+$light-colors: (
+    "primary": #f4f4f4,
+    "secondary": #111,
+    "accent": #3282b8,
+    "text": #041c32,
+    "bg": #f4f4f4
+);
+
+/* dark colors */
+
+$dark-colors: (
+    "primary": #041c32,
+    "secondary": #111,
+    "accent": #3282b8,
+    "text": #f4f4f4,
+    "bg": #041c32,
+    "green": #81d94d
+);
+
+$clr-primary: #041c32;
+$clr-secondary: #111;
+$clr-accent: #3282b8;
+
+$clr-blue: blue;
+$clr-white: white;
+/*
+--gradient-deg: 180deg;
+--gradient-width: 10deg;
+--bg-color: #f4f4f4;
+--animation-diration: 30s;
+--color-1: greenyellow;
+--color-2: greenyellow;
+*/
+/* bg-light color*/
+//--bg-color: #f4f4f4;
+/* bg-dark color*/
+//--bg-color: #041c32;
+
+/* font sizes */
+
+/* font weights */
