@@ -2,7 +2,7 @@
 @forward "variables.scss";
 @forward "root.scss";
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+//@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 
 body {
     margin: 0;
@@ -48,26 +48,6 @@ h6 {
     text-transform: uppercase;
 }
 
-.panel {
-    border-radius: 1rem;
-    position: relative;
-}
-
-.panel::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-
-    border-radius: inherit;
-    border: 1px solid transparent;
-    background: linear-gradient(60deg, var(--bg-color-800), var(--bg-color-900)) padding-box;
-    mask:
-        linear-gradient(black) border-box,
-        linear-gradient(black) padding-box;
-    mask-composite: substract;
-}
-
 @keyframes animatedGradient {
     from {
         background: linear-gradient(to right, var(--bg-color-800), var(--bg-color-900)) padding-box;
@@ -93,4 +73,17 @@ h6 {
 ::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.219);
     border-radius: 10px;
+}
+
+.sr-only {
+    //display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

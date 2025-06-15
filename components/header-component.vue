@@ -1,18 +1,19 @@
 <template>
     <panel>
-        <header>
+        <header class="header">
             <div class="header-content">
                 <p>Hello a nevem</p>
                 <h1>Németh László</h1>
                 <h2>Frontend fejlesztő vagyok.</h2>
-                <div class="flex">
-                    <social-links></social-links>
-                    <button class="secondary">CV letöltése</button>
-                </div>
+            </div>
+            <div class="header-social flex">
+                <social-links></social-links>
+                <button-component className="secondary">CV letöltése</button-component>
             </div>
             <div class="header-image">
                 <div class="image">
-                    <img src="/images/profile.jpg" alt="" />
+                    <NuxtImg src="/images/profile.jpg" format="webp" width="300" height="300"
+                        alt="Németh László profil kép"></NuxtImg>
                 </div>
             </div>
         </header>
@@ -20,79 +21,110 @@
 </template>
 
 <style lang="scss" scoped>
-.header-image {
-    width: 300px;
-    aspect-ratio: 1;
+.header {
     position: relative;
-    border-radius: 50%;
-    padding: 10px;
-    /* box-shadow: 5px 5px 10px rgba(172, 255, 47, 0.158); */
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
-    border-radius: inherit;
-    z-index: 10;
-
-    /* csak a középre igazításhoz */
-
+    z-index: 1;
     overflow: hidden;
-    border: 5px solid greenyellow;
-    box-shadow: 0 0 0px 5px var(--bg-color-800);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, autofit));
+    grid-template-rows: 1fr 1fr;
 
-    & img {
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        object-fit: cover;
-        filter: grayscale(0.5);
+    .header-content {
+        padding: 1rem;
+        grid-column: 1/2;
+        grid-row: 1/2;
 
+        margin-block-end: -1rem;
+
+        >* {
+            transform: translateY(30px);
+        }
+
+
+    }
+
+    .header-social {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        align-self: flex-end;
+        justify-self: center;
+        padding-bottom: 1.5rem;
+
+
+    }
+
+    .header-image {
+        width: 300px;
+        aspect-ratio: 1;
+        position: relative;
+        border-radius: 50%;
+        padding: 10px;
+        grid-column: 2/3;
+        grid-row: 1/3;
+        align-self: center;
+        justify-self: flex-end;
+
+        /* box-shadow: 5px 5px 10px rgba(172, 255, 47, 0.158); */
+        .image {
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            border-radius: inherit;
+            z-index: 10;
+
+            /* csak a középre igazításhoz */
+
+            overflow: hidden;
+            border: 5px solid greenyellow;
+            box-shadow: 0 0 0px 5px var(--bg-color-800);
+
+            & img {
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                filter: grayscale(0.5);
+
+            }
+        }
+
+        .image::before,
+        .image::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .image::before {
+            background: conic-gradient(from var(--gradient-deg) at 50% 50%,
+                    var(--color-1) var(--gradient-width),
+                    transparent var(--gradient-width));
+            animation: rotateConicGradient 10s linear infinite;
+        }
+
+        .image::after {
+            background: conic-gradient(from var(--gradient-deg) at 50% 50%,
+                    var(--color-2) var(--gradient-width),
+                    transparent var(--gradient-width));
+            animation: rotateConicGradient2 var(--animation-diration) linear infinite;
+        }
     }
 }
 
-.image::before,
-.image::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-}
-
-.image::before {
-    background: conic-gradient(from var(--gradient-deg) at 50% 50%,
-            var(--color-1) var(--gradient-width),
-            transparent var(--gradient-width));
-    animation: rotateConicGradient 10s linear infinite;
-}
-
-.image::after {
-    background: conic-gradient(from var(--gradient-deg) at 50% 50%,
-            var(--color-2) var(--gradient-width),
-            transparent var(--gradient-width));
-    animation: rotateConicGradient2 var(--animation-diration) linear infinite;
-}
 
 
 
-header {
-    position: relative;
-    z-index: 1;
-    display: flex;
 
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
 
-    flex-grow: 2;
-}
+
+
+
 
 @keyframes rotateConicGradient {
     from {
@@ -123,19 +155,72 @@ h1 {
 
 }
 
-.header-content {
 
-    inset: 0;
-    padding: 1rem;
-    flex: 1;
 
-}
+
+
 
 
 .flex {
     display: flex;
     align-items: center;
-    padding-block: 1rem;
     flex-wrap: wrap;
+    gap: 4rem;
+}
+
+
+@media screen and (max-width:730px) {
+
+    .flex {
+
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .header {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+
+
+        .header-content {
+            grid-column: 1/2;
+            grid-row: 1/2;
+            margin-bottom: 0;
+
+
+            >* {
+                transform: translateY(0px);
+            }
+        }
+
+        .header-social {
+            grid-column: 1/2;
+            grid-row: 3/4;
+            padding-bottom: 0.5rem;
+            padding-top: 1.5rem;
+
+        }
+
+        .header-image {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            justify-self: center;
+        }
+    }
+
+    .flex {
+        flex-wrap: nowrap;
+        flex-direction: row;
+
+
+    }
+
 }
 </style>

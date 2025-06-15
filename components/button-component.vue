@@ -1,13 +1,17 @@
 <template>
     <div>
-        <button>
+        <button :class="className">
             <slot />
         </button>
     </div>
 </template>
+<script setup>
+const props = defineProps({
+    className: String
+})
+</script>
 
-
-<style lang="scss">
+<style lang="scss" scoped>
 button {
     padding: 10px 20px;
     text-transform: uppercase;
@@ -33,7 +37,7 @@ button.secondary {
     //padding: 5px 10px;
     border: 0;
     outline: 2px solid yellowgreen;
-    margin-left: 5rem;
+
 
     &:hover {
         background-color: yellowgreen;

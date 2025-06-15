@@ -1,0 +1,25 @@
+    [
+        {
+            "title":"Result summary component",
+            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
+            "imgurl":"https://jrgenweb.github.io/assets/img/projects/frontend_mentor/result-summary-component.webp",
+            "github":"",
+            "liveurl":""
+        },
+         {
+            "title":"Frontend quiz app",
+            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
+            "imgurl":"https://github.com/jrgenweb/frontend-quiz-app/blob/master/preview.jpg?raw=true",
+            "github":"",
+            "liveurl":""
+        },
+         {
+            "title":"Hangman game",
+            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
+            "imgurl":"https://github.com/jrgenweb/hangman-game/blob/master/preview.jpg?raw=true",
+            "github":"",
+            "liveurl":""
+        }
+    ]
+    
+    

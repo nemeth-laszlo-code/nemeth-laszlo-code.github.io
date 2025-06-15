@@ -49,38 +49,38 @@
                 <h2>Tech stackem</h2>
                 <div class="techstack">
                     <div class="tech-item">
-                        <progressbar progress=85 title="HTML5"></progressbar>
+                        <progressbar :progress=85 title="HTML5"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=80 title="CSS3"></progressbar>
+                        <progressbar :progress="80" title="CSS3"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=60 title="BootStrap"></progressbar>
+                        <progressbar :progress=60 title="BootStrap"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=60 title="JavaScript"></progressbar>
+                        <progressbar :progress=60 title="JavaScript"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=50 title="TypeScript"></progressbar>
+                        <progressbar :progress=50 title="TypeScript"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=50 title="Angular"></progressbar>
+                        <progressbar :progress=50 title="Angular"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=60 title="VueJS"></progressbar>
+                        <progressbar :progress=60 title="VueJS"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=60 title="Nuxt"></progressbar>
+                        <progressbar :progress=60 title="Nuxt"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=70 title="Visual Studio Code"></progressbar>
+                        <progressbar :progress=70 title="Visual Studio Code"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar progress=40 title="Git"></progressbar>
+                        <progressbar :progress=40 title="Git"></progressbar>
                     </div>
 
                     <div class="tech-item">
-                        <progressbar progress=40 title="GitHub"></progressbar>
+                        <progressbar :progress=40 title="GitHub"></progressbar>
                     </div>
                 </div>
             </div>
@@ -170,10 +170,7 @@
 
             animation: spinImages 100s linear infinite reverse;
 
-            img {
-                //display: block;
 
-            }
         }
     }
 }
@@ -254,6 +251,8 @@ img {
     height: 350px;
     overflow: hidden;
 
+    max-height: 350px !important;
+
 
 
     .info {
@@ -266,8 +265,7 @@ img {
         top: calc(100% + 50px);
         height: fit-content;
         overflow-y: scroll;
-
-
+        transition: top 0.3s ease-in-out;
     }
 
     .info::befosre {
@@ -283,7 +281,7 @@ img {
     &:hover {
         .info {
             top: 0;
-            transition: top 0.3s ease-in-out;
+
         }
     }
 
