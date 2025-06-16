@@ -76,4 +76,13 @@ export default defineNuxtConfig({
 
     // ha cloudinary vagy más, akkor más beállítás kell
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/assets/scss/mixins.scss" as *;`,
+        },
+      },
+    },
+  },
 });

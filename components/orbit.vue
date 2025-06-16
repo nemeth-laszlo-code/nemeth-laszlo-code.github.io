@@ -130,10 +130,8 @@
     background-size: 400% 400%;
     animation: gradient 15s ease infinite; */
         p {
-            box-shadow:
-                -6px -6px 12px rgba(255, 255, 255, 0.05),
-                /* világos árnyék */
-                6px 6px 12px rgba(0, 0, 0, 0.6);
+
+            @include orbitBoxShadow;
             padding: 1rem;
             animation: spin 100s linear infinite reverse;
 
@@ -171,15 +169,12 @@
                 position: absolute;
                 transition: 0.3s all ease-in-out;
                 overflow: hidden;
-                border: 10px solid #07243f;
+                border: 10px solid var(--bg-color-800);
                 transform-origin: center center;
                 transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));
 
-                box-shadow:
-                    -6px -6px 12px rgba(255, 255, 255, 0.05),
-                    /* világos árnyék */
-                    6px 6px 12px rgba(0, 0, 0, 0.6);
-
+                //orbitBoxShadow
+                @include orbitBoxShadow;
                 animation: spinImages 100s linear infinite reverse;
 
 
