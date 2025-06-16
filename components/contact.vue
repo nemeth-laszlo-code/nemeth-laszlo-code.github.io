@@ -1,13 +1,20 @@
 <template>
     <div class="contact">
         <panel>
-            <h2>Kapcsolat</h2>
+            <h2>{{ $t('contact.h2') }}</h2>
+            <p>{{ $t('contact.p') }}</p>
             <form>
-                <input-component name="name" label="Név" type="text" ref="nameInputText"></input-component>
-                <input-component name="email" label="Email" type="email" ref="emailInputText"></input-component>
-                <input-component name="message" label="Üzenet" type="textarea" ref="messageInputText"></input-component>
+                <input-component name="name" :label="$t('contact.inputs.name')" type="text"
+                    ref="nameInputText"></input-component>
+                <input-component name="email" :label="$t('contact.inputs.email')" type="email"
+                    ref="emailInputText"></input-component>
+                <input-component name="message" :label="$t('contact.inputs.message')" type="textarea"
+                    ref="messageInputText"></input-component>
 
-                <button-component @click="emailSendEvent($event)">Üzenet küldése</button-component>
+                <div class="m-auto">
+                    <button-component @click="emailSendEvent($event)" class="sm-m-auto">{{ $t('contact.inputs.button')
+                        }}</button-component>
+                </div>
             </form>
         </panel>
     </div>
@@ -37,7 +44,20 @@ function emailSendEvent($event) {
 </script>
 <style lang="scss" scoped>
 /**flow */
-h2 {
+h2 {}
+
+p {
     margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+
+
+@media screen and (max-width:600px) {
+    .sm-m-auto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 </style>

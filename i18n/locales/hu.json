@@ -1,16 +1,16 @@
 {
   "navbar":{
     "home":"Home",
-    "about":"About",
+    "about":"Rólam",
     "skills":"Skills",
-    "projects":"Projects",
+    "projects":"Projektjeim",
     "contact":"Kapcsolat"
   },
   "header":{
-    "p":"Hi my name is",
-    "h1":"Laszlo Nemeth",
-    "h3":"I'm a Frontend Developer",
-    "cv":"Download CV"
+    "p":"Hello a nevem",
+    "h1":"Németh László",
+    "h3":"Frontend Fejlesztő vagyok.",
+    "cv":"CV letöltése"
   },
 
   "content":{
@@ -21,31 +21,13 @@
     
   },
   "projects":{
-    "text":{
-      "h2":"Projektjeim",
-      "p":"Az alábbiakban néhány projektet mutatok be, amelyeken dolgoztam. Ezek a projektek tükrözik a frontend fejlesztés iránti szenvedélyemet és kreativitásomat."
-    },
-    "projects":[
-      {
-      "title": "Result summary component",
-      "description": "Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
-      "image": "https://jrgenweb.github.io/assets/img/projects/frontend_mentor/result-summary-component.webp"
-    },
-    {
-      "title": "Frontend quiz app",
-      "description": "Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
-      "image": "https://github.com/jrgenweb/frontend-quiz-app/blob/master/preview.jpg?raw=true"
-    },
-    {
-      "title": "Hangman game",
-      "description": "Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
-      "image": "https://github.com/jrgenweb/hangman-game/blob/master/preview.jpg?raw=true"
-    }
-    ]
+    "h2":"Projektjeim",
+    "p":"Az alábbiakban néhány projektet mutatok be,amelyeken dolgoztam. Ezek a projektek tükrözik a frontend fejlesztés iránti szenvedélyemet és kreativitásomat."
   },
+  
   "contact":{
     "h2":"Kapcsolat",
-    "p":"asd",
+    "p":"Ha felkeltettem az érdeklődésedet, vagy bármmilyen kérdésed lenne írj üzenetet!",
     "inputs":{
       "name":"Név",
       "email":"Email",
@@ -54,9 +36,7 @@
     }
 
   },
-  "footer":"Németh László Frontend Fejlesztő",
-  "hello": "Hello",
-  "about": "About Us"
+  "footer":"Németh László Frontend Fejlesztő"  
 }
 
     

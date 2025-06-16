@@ -2,13 +2,14 @@
     <panel>
         <header class="header">
             <div class="header-content">
-                <p>Hello a nevem</p>
-                <h1>Németh László</h1>
-                <h2>Frontend fejlesztő vagyok.</h2>
+                <p>{{ $t('header.p') }}</p>
+                <h1>{{ $t('header.h1') }}</h1>
+                <h2>{{ $t('header.h3') }}</h2>
             </div>
             <div class="header-social flex">
                 <social-links></social-links>
-                <button-component className="secondary">CV letöltése</button-component>
+                <button-component className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
+                    }}</button-component>
             </div>
             <div class="header-image">
                 <div class="image">
@@ -19,7 +20,11 @@
         </header>
     </panel>
 </template>
+<script setup>
+const { locale } = useI18n();
+let cv_url = ref(locale.value === 'hu' ? '/CV/nemeth_laszlo_frontend_fejleszto_oneletrajz_hu_compressed.pdf' : '/CV/nemeth_laszlo_frontend_fejleszto_oneletrajz_en_compressed.pdf');
 
+</script>
 <style lang="scss" scoped>
 .header {
     position: relative;
@@ -68,14 +73,10 @@
         .image {
             width: 100%;
             height: 100%;
-            background-color: var(--bg-color);
             border-radius: inherit;
             z-index: 10;
-
-            /* csak a középre igazításhoz */
-
             overflow: hidden;
-            border: 5px solid greenyellow;
+            border: 5px solid var(--accent-color-1);
             box-shadow: 0 0 0px 5px var(--bg-color-800);
 
             & img {
@@ -103,14 +104,14 @@
 
         .image::before {
             background: conic-gradient(from var(--gradient-deg) at 50% 50%,
-                    var(--color-1) var(--gradient-width),
+                    var(--accent-color-1) var(--gradient-width),
                     transparent var(--gradient-width));
             animation: rotateConicGradient 10s linear infinite;
         }
 
         .image::after {
             background: conic-gradient(from var(--gradient-deg) at 50% 50%,
-                    var(--color-2) var(--gradient-width),
+                    var(--accent-color-1) var(--gradient-width),
                     transparent var(--gradient-width));
             animation: rotateConicGradient2 var(--animation-diration) linear infinite;
         }

@@ -8,7 +8,7 @@
 .panel {
     background-color: var(--bg-color-800);
 
-    padding: 1rem;
+    padding: 1.75rem;
     margin-block: 1rem;
     border-radius: 10px;
     position: relative;
@@ -31,5 +31,12 @@
         linear-gradient(black) border-box,
         linear-gradient(black) padding-box;
     mask-composite: substract;
+}
+
+
+@media screen and (max-width:768px) {
+    .panel {
+        padding: 1rem;
+    }
 }
 </style>

@@ -52,7 +52,7 @@ const props = defineProps({
 
 .progress-bar-fill {
     height: 100%;
-    background-color: var(--color-1);
+    background-color: var(--accent-color-1);
 
     transition: width 0.3s ease;
     border-radius: inherit;

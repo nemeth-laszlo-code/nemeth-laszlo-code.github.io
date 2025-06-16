@@ -1,46 +1,73 @@
 <template>
     <div>
-        <button :class="className">
+
+        <button :class="className" v-if="type !== 'link'">
             <slot />
         </button>
+        <a :class="className" v-if="type === 'link'" :href="href" :target="target">
+            <slot />
+        </a>
+
     </div>
 </template>
 <script setup>
 const props = defineProps({
-    className: String
+    className: String,
+    type: String,
+    target: String,
+    href: String
 })
 </script>
 
 <style lang="scss" scoped>
-button {
+button,
+a {
     padding: 10px 20px;
     text-transform: uppercase;
     background-color: #3282b8;
     border: 0;
-    border-bottom: 1px solid limegreen;
+    border-bottom: 1px solid var(--accent-color-4);
     outline: none;
     cursor: pointer;
-    color: white;
+    color: var(--text-color-1);
     border-radius: 5px;
     transition: 0.3s all;
+    text-wrap: nowrap;
 
     &:active {
         scale: 0.8;
     }
+
+
 }
 
-button.secondary {
+a {
+    text-decoration: none;
+    display: inline-block;
+}
 
-    background-color: yellowgreen;
+
+
+button.secondary,
+a.secondary {
+
+    background-color: var(--accent-color-2);
     background-color: transparent;
 
-    //padding: 5px 10px;
+
     border: 0;
-    outline: 2px solid yellowgreen;
+    outline: 2px solid var(--accent-color-2);
+
+
 
 
     &:hover {
-        background-color: yellowgreen;
+        background-color: var(--accent-color-2);
+    }
+
+    &.sm {
+        padding: 5px 10px;
+        font-size: 0.75rem;
     }
 
 }

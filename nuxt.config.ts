@@ -46,14 +46,23 @@ export default defineNuxtConfig({
       { code: "en", iso: "en-US", name: "English", file: "en.json" },
     ],
     defaultLocale: "hu",
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
+      alwaysRedirect: false,
+      fallbackLocale: "hu",
+    },
     langDir: "locales/", // fontos!
     strategy: "prefix_except_default",
+
+    // lazy: true, // <--- fontos!
     vueI18n: "./i18n.config.ts", // külső konfiguráció fájl!
   },
   runtimeConfig: {
     public: {
       axios: {
-        API_BASE: "http://localhost:3001/api/portfolio", // Itt add meg az API URL-t
+        //API_BASE: "http://localhost:3001/api/portfolio", // Itt add meg az API URL-t
+        API_BASE: "http://api.jrgen.hu/api/portfolio", // Itt add meg az API URL-t
       },
     },
   },

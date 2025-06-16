@@ -61,7 +61,7 @@ defineExpose({ getValue })
     label {
         position: absolute;
         margin-bottom: 0.5rem;
-        color: white;
+        color: var(--text-color-1);
         left: 10px;
         transition: all 0.3s ease-in-out;
         cursor: text;
@@ -86,7 +86,7 @@ defineExpose({ getValue })
     input,
     textarea {
         background-color: var(--bg-color-900);
-        color: white;
+        color: var(--text-color-1);
         padding: 10px;
         border-radius: 5px;
         border: 0px solid #ccc;
@@ -98,7 +98,7 @@ defineExpose({ getValue })
 
         &:focus {
             background-color: var(--bg-color-900);
-            outline: 1px solid limegreen;
+            outline: 1px solid var(--accent-color-4);
         }
 
 
@@ -129,7 +129,7 @@ select:-webkit-autofill {
     box-shadow: 0 0 0px 1000px white inset !important;
     -webkit-text-fill-color: #333 !important;
     transition: background-color 5000s ease-in-out 0s !important;
-    background-color: red;
+
 }
 
 input:-webkit-autofill {

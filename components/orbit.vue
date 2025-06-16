@@ -90,173 +90,138 @@
 </template>
 
 <style lang="scss" scoped>
-.orbit {
-    --count: 12;
-    --i: 0;
-    --orbit-item-size: 60px;
-    --radius: 130px;
-
-    width: 350px;
-    aspect-ratio: 1;
-
-    position: relative;
-
-    border-radius: 50%;
-    display: grid;
-    place-content: center;
-    transition: 0.3s ease-in-out;
-    overflow: hidden;
-    /*  box-shadow:
-        -6px -6px 12px rgba(255, 255, 255, 0.05),
-        /* világos árnyék 6px 6px 12px rgba(0, 0, 0, 0.6); */
-    padding: 1rem;
-
-    animation: spin 100s linear infinite;
-
-
-    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite; */
-    p {
-        box-shadow:
-            -6px -6px 12px rgba(255, 255, 255, 0.05),
-            /* világos árnyék */
-            6px 6px 12px rgba(0, 0, 0, 0.6);
-        padding: 1rem;
-        animation: spin 100s linear infinite reverse;
-
-        border-radius: 50%;
-        aspect-ratio: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-wrap: wrap;
-        font-weight: bold;
-        font-family: 'Space Grotesk', 'sans-serif';
-        text-transform: uppercase
-    }
-
-
-
-    .orbit-container {
-        border-radius: inherit;
-        position: relative;
-        top: -105px;
-        left: 45px;
-        width: 100%;
-        height: 100%;
-
-
-        .orbit-item {
-            width: var(--orbit-item-size);
-
-            aspect-ratio: 1;
-            padding: 0.25rem;
-            border-radius: 50%;
-            background-color: rgb(252, 252, 252);
-            display: grid;
-            place-content: center;
-            position: absolute;
-            transition: 0.3s all ease-in-out;
-            overflow: hidden;
-            border: 10px solid #07243f;
-            transform-origin: center center;
-            transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));
-
-            box-shadow:
-                -6px -6px 12px rgba(255, 255, 255, 0.05),
-                /* világos árnyék */
-                6px 6px 12px rgba(0, 0, 0, 0.6);
-
-            animation: spinImages 100s linear infinite reverse;
-
-
-        }
-    }
-}
-
-
-.orbit:hover {
-    padding: 1rem;
-    animation-play-state: paused;
-    cursor: pointer;
-
-
-
-    p {
-        animation-play-state: paused;
-
-    }
-
-    .orbit-container {
-
-        .orbit-item {
-            animation-play-state: paused;
-
-            scale: 1.08;
-            /*transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(200px) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));*/
-            cursor: pointer;
-
-
-
-            img {}
-        }
-    }
-}
-
-img {
-    width: 100%;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes spinImages {
-    0% {
-        transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));
-    }
-
-    100% {
-        transform:
-            rotate(calc(360deg / var(--count) * var(--i))) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 360deg));
-    }
-
-}
-
 .info-box {
     position: relative;
     width: 350px;
     height: 350px;
+
+
     overflow: hidden;
 
+    padding: 0;
     max-height: 350px !important;
 
+    .orbit {
+        --count: 12;
+        --i: 0;
+        --orbit-item-size: 60px;
+        --radius: 130px;
 
+        width: inherit;
+
+        aspect-ratio: 1;
+
+        position: relative;
+
+        border-radius: 50%;
+        display: grid;
+        place-content: center;
+        transition: 0.3s ease-in-out;
+        overflow: hidden;
+        /*  box-shadow:
+        -6px -6px 12px rgba(255, 255, 255, 0.05),
+        /* világos árnyék 6px 6px 12px rgba(0, 0, 0, 0.6); */
+        padding: 1rem;
+
+        animation: spin 100s linear infinite;
+
+
+        /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite; */
+        p {
+            box-shadow:
+                -6px -6px 12px rgba(255, 255, 255, 0.05),
+                /* világos árnyék */
+                6px 6px 12px rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            animation: spin 100s linear infinite reverse;
+
+            border-radius: 50%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-wrap: wrap;
+            font-weight: bold;
+            font-family: 'Space Grotesk', 'sans-serif';
+            text-transform: uppercase
+        }
+
+
+
+        .orbit-container {
+            border-radius: inherit;
+            position: relative;
+            top: -105px;
+            left: 45px;
+            width: 100%;
+            height: 100%;
+
+
+            .orbit-item {
+                width: var(--orbit-item-size);
+
+                aspect-ratio: 1;
+                padding: 0.25rem;
+                border-radius: 50%;
+                background-color: rgb(252, 252, 252);
+                display: grid;
+                place-content: center;
+                position: absolute;
+                transition: 0.3s all ease-in-out;
+                overflow: hidden;
+                border: 10px solid #07243f;
+                transform-origin: center center;
+                transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));
+
+                box-shadow:
+                    -6px -6px 12px rgba(255, 255, 255, 0.05),
+                    /* világos árnyék */
+                    6px 6px 12px rgba(0, 0, 0, 0.6);
+
+                animation: spinImages 100s linear infinite reverse;
+
+
+            }
+        }
+    }
+
+
+    .orbit:hover {
+        padding: 1rem;
+        animation-play-state: paused;
+        cursor: pointer;
+
+
+
+        p {
+            animation-play-state: paused;
+
+        }
+
+        .orbit-container {
+
+            .orbit-item {
+                animation-play-state: paused;
+
+                scale: 1.08;
+                /*transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(200px) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));*/
+                cursor: pointer;
+
+
+
+                img {}
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
 
     .info {
-        background-color: #07243f;
+        background-color: var(--bg-color-800);
         position: absolute;
         width: 100%;
         aspect-ratio: 1;
@@ -300,5 +265,78 @@ img {
 .info-box.active {
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+
+
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinImages {
+    0% {
+        transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));
+    }
+
+    100% {
+        transform:
+            rotate(calc(360deg / var(--count) * var(--i))) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 360deg));
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .info-box {
+        position: relative;
+
+        width: 305px;
+        height: 305px;
+
+        overflow: hidden;
+
+        padding: 0;
+
+        //max-height: 350px !important;
+
+        .orbit {
+
+            --orbit-item-size: 48px;
+            --radius: 115px;
+
+            p {
+                text-wrap: wrap;
+                padding: 0.75rem;
+            }
+
+            .orbit-container {
+                top: -95px;
+                left: 45px;
+            }
+        }
+    }
 }
 </style>

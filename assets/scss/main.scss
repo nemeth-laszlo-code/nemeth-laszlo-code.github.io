@@ -4,6 +4,10 @@
 
 //@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap");
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family:
@@ -12,7 +16,7 @@ body {
         sans-serif;
     background-color: var(--bg-color-900);
     min-height: 100vh;
-    color: white;
+    color: var(--text-color-1);
 }
 
 .content {
@@ -62,16 +66,16 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #040427;
+    background-color: var(--scrollbar-thumb-color);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #0e0d0d;
+    background-color: var(--scrollbar-thumb-hover-color);
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.219);
+    background: var(--scrollbar-track-color);
     border-radius: 10px;
 }
 

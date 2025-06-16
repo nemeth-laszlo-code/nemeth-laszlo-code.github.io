@@ -59,7 +59,7 @@ ul {
                 height: 30px;
 
                 path {
-                    fill: white !important;
+                    fill: var(--bg-color-100) !important;
                     transition: 0.3s all;
                     /*stroke: yellowgreen !important;
                     stroke-width: 1 !important;
@@ -72,7 +72,7 @@ ul {
             &:hover {
                 svg {
                     path {
-                        fill: yellowgreen !important;
+                        fill: var(--accent-color-2) !important;
                     }
                 }
             }

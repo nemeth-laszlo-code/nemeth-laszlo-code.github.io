@@ -1,6 +1,6 @@
 <template>
     <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" :checked="checked" @change="onChange" :disabled="disabled">
         <div>
             <span>
                 <slot name="option"></slot>
@@ -15,18 +15,29 @@
 
 <script setup>
 
+const props = defineProps({
+    checked: Boolean,
+    disabled: Boolean
+});
+const emit = defineEmits(['update:checked']);
+
+function onChange(event) {
+    console.log('changed', event.target.checked)
+    emit('update:checked', event.target.checked);
+}
 </script>
 <style lang="scss" scoped>
 .switch {
     padding: 0.2rem;
     width: calc(50px + 0.6rem);
-    height: 30px;
+    height: 32px;
     border-radius: 30px;
-    background-color: limegreen; // #3382b8;
-    color: black;
+    //background-color: limegreen; // #3382b8;
+    color: var(--text-color-1);
     font-weight: 400;
     display: block;
     position: relative;
+    // border: 1px solid rgb(79, 175, 143);
 
     cursor: pointer;
 
@@ -58,7 +69,7 @@
 
         position: absolute;
 
-        background-color: white;
+        background-color: var(--bg-color-100);
         z-index: 10;
 
         transition: 0.3s all;
@@ -91,5 +102,16 @@
             }
         }
     }
+
+    input[disabled] {
+        &~.slider {
+            background-color: gray;
+        }
+    }
+}
+
+.switch:has(input[disabled]) {
+    cursor: default;
+    color: lightgray;
 }
 </style>

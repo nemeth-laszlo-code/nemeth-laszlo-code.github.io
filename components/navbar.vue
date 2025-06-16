@@ -4,13 +4,15 @@
             <div class="logo">
                 &lt; /&gt; jrgenweb
             </div>
-            <a href="#" class="menu"><span class="sr-only">Mobile menu</span><span></span></a>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Rólam</a></li>
-                <li><a href="#">Skillek</a></li>
-                <li><a href="#">Projektjeim</a></li>
-                <li><a href="#">Kapcsolat</a></li>
+            <a href="#" class="menu" :class="isActive ? 'active' : ''" @click="isActive = !isActive"><span
+                    class="sr-only">Mobile
+                    menu</span><span></span></a>
+            <ul class="nav-links ">
+                <li><a href="#">{{ $t('navbar.home') }}</a></li>
+                <li><a href="#about">{{ $t('navbar.about') }}</a></li>
+                <li><a href="#skills">{{ $t('navbar.skills') }}</a></li>
+                <li><a href="#projects">{{ $t('navbar.projects') }}</a></li>
+                <li><a href="#contact">{{ $t('navbar.contact') }}</a></li>
             </ul>
         </div>
     </nav>
@@ -20,6 +22,7 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const isFixed = ref(false)
 const isAtTop = ref(true)
+const isActive = ref(false)
 let lastScroll = 0
 
 // Dinamikus osztály: fixed vagy absolute, vagy egyik sem
@@ -110,12 +113,15 @@ onUnmounted(() => {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
+
+        padding-inline: 20px;
     }
 
     ul {
         list-style: none;
         display: flex;
         gap: 20px;
+        margin-inline-end: -20px;
 
         & li {
 
@@ -123,7 +129,7 @@ onUnmounted(() => {
             a {
                 background-color: var(--bg-color);
 
-                color: white;
+                color: var(---text-color-1);
                 padding: 10px 20px;
                 text-decoration: none;
                 border-radius: 5px;
@@ -131,12 +137,12 @@ onUnmounted(() => {
 
                 & :active,
                 & :focus {
-                    border: 1px solid #3282b8;
+                    border: 1px solid var(--bg-color-500);
                 }
 
                 &:hover {
-                    background-color: #3282b8;
-                    color: white;
+                    background-color: var(--bg-color-500);
+                    color: var(---text-color-1);
                     box-shadow: 0 0 10px rgba(50, 130, 184, 0.5);
                 }
             }
@@ -152,11 +158,12 @@ onUnmounted(() => {
 
     padding-block: 0.5rem;
 
-    color: #81d94d;
+    color: var(--accent-color-3);
     font-weight: bold;
     font-size: 1.5rem;
     text-wrap: nowrap;
     cursor: default;
+
 
     & img {
         width: 100%;
@@ -182,7 +189,7 @@ onUnmounted(() => {
         height: 4px;
         border-radius: 3px;
         display: block;
-        background-color: white;
+        background-color: var(--bg-color-100);
         position: relative;
 
 
@@ -215,21 +222,63 @@ onUnmounted(() => {
     }
 
     .navbar {
-        ul {
-            display: none;
-        }
+        .wrapper {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto;
+            padding-inline: 0px;
 
-        ul.active {
-            background-color: red;
-            display: block;
-            position: absolute;
-            width: 50%;
-            top: 0;
-            left: 0;
-            padding: 2rem 1rem;
-            font-size: 1.5rem;
-            gap: 1rem;
+            .logo {
+                grid-column: 1/2;
+                grid-row: 1/2;
+
+            }
+
+            .menu {
+                grid-column: 2/3;
+                grid-row: 1/2;
+                justify-self: flex-end;
+
+                &.active {
+                    &+ul {
+                        display: flex;
+                        animation: sideFromAbove 0.5s forwards;
+                    }
+                }
+            }
+
+            ul {
+                grid-column: 1/3;
+                grid-row: 2/3;
+                flex-direction: column;
+                padding: 2rem 1rem;
+                padding-right: 5rem;
+                font-size: 1.5rem;
+                gap: 1.5rem;
+
+                display: none;
+
+            }
         }
+    }
+
+
+
+
+}
+
+
+
+@keyframes sideFromAbove {
+    from {
+        display: flex;
+        opacity: 0.6;
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 </style>

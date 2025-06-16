@@ -5,9 +5,40 @@
     --gradient-width: 10deg;
     --animation-diration: 30s;
 
-    --color-1: greenyellow;
-    --color-2: greenyellow;
+    --bg-color-100: #041c32;
+    --bg-color-500: #3382b8;
+    --bg-color-800: #fafafa;
+    --bg-color-900: white;
 
-    --bg-color-900: #041c32;
+    --accent-color-1: greenyellow;
+    --accent-color-2: yellowgreen;
+    --accent-color-3: #81d94d;
+    --accent-color-4: limegreen;
+    --text-color-1: #041c32;
+    --text-color-2: white;
+
+    --scrollbar-thumb-color: #040427;
+    --scrollbar-thumb-hover-color: #0e0d0d;
+    --scrollbar-track-color: rgba(255, 255, 255, 0.219);
+}
+/* Sötét mód */
+[data-theme="dark"] {
+    --gradient-deg: 180deg;
+    --gradient-width: 10deg;
+    --animation-diration: 30s;
+
+    --bg-color-100: white;
+    --bg-color-500: #3382b8;
     --bg-color-800: #07243f;
+    --bg-color-900: #041c32;
+
+    --accent-color-1: greenyellow;
+    --accent-color-2: yellowgreen;
+    --accent-color-3: #81d94d;
+    --text-color-1: white;
+    --text-color-2: black;
+
+    --scrollbar-thumb-color: #040427;
+    --scrollbar-thumb-hover-color: #0e0d0d;
+    --scrollbar-track-color: rgba(255, 255, 255, 0.219);
 }
