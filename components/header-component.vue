@@ -9,7 +9,7 @@
             <div class="header-social flex">
                 <social-links></social-links>
                 <button-component className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
-                    }}</button-component>
+                }}</button-component>
             </div>
             <div class="header-image">
                 <div class="image">
@@ -77,7 +77,8 @@ let cv_url = ref(locale.value === 'hu' ? '/CV/nemeth_laszlo_frontend_fejleszto_o
             z-index: 10;
             overflow: hidden;
             border: 5px solid var(--accent-color-1);
-            box-shadow: 0 0 0px 5px var(--bg-color-800);
+            box-shadow: 0 0 0px 5px var(--bg-color-900);
+
 
             & img {
                 width: 100%;

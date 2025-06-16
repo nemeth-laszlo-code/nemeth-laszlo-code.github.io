@@ -6,9 +6,9 @@
     --animation-diration: 30s;
 
     --bg-color-100: #041c32;
-    --bg-color-500: #3382b8;
+    --bg-color-500: #faa300;
     --bg-color-800: #fafafa;
-    --bg-color-900: white;
+    --bg-color-900: #f2f2f2;
 
     --accent-color-1: greenyellow;
     --accent-color-2: yellowgreen;
@@ -21,6 +21,7 @@
     --scrollbar-thumb-hover-color: #0e0d0d;
     --scrollbar-track-color: rgba(255, 255, 255, 0.219);
 }
+
 /* Sötét mód */
 [data-theme="dark"] {
     --gradient-deg: 180deg;

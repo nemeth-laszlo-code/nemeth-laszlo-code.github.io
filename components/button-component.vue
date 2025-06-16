@@ -24,7 +24,7 @@ button,
 a {
     padding: 10px 20px;
     text-transform: uppercase;
-    background-color: #3282b8;
+    background-color: var(--bg-color-500);
     border: 0;
     border-bottom: 1px solid var(--accent-color-4);
     outline: none;
