@@ -4,9 +4,25 @@
             <div class="logo">
                 &lt; /&gt; jrgenweb
             </div>
-            <a href="#" class="menu" :class="isActive ? 'active' : ''" @click="toggleMenu($event)"><span
-                    class="sr-only">Mobile
-                    menu</span><span></span></a>
+            <!--<a href="#" class="menu" :class="isActive ? 'active' : ''" @click="toggleMenu($event)">
+
+                <span class="sr-only">Mobile menu</span>
+                <div class="icon">
+                    <span></span>
+                </div>
+            </a>-->
+
+            <button class="menu" aria-controls="primary-navigation" :aria-expanded="isActive.toString()"
+                :class="isActive ? 'active' : ''" @click="toggleMenu($event)"><span class="sr-only">Mobile menu</span>
+                <svg fill="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="250">
+                    <rect class="line top" width="80" height="10" x="10" y="25" rx="5">
+                    </rect>
+                    <rect class="line middle" width="80" height="10" x="10" y="45" rx="5">
+                    </rect>
+                    <rect class="line bottom" width="80" height="10" x="10" y="65" rx="5">
+                    </rect>
+                </svg>
+            </button>
             <ul class="nav-links ">
                 <li><a href="#">{{ $t('navbar.home') }}</a></li>
                 <li><a href="#about">{{ $t('navbar.about') }}</a></li>
@@ -197,14 +213,18 @@ onUnmounted(() => {
             .menu {
                 grid-column: 2/3;
                 grid-row: 1/2;
-                display: flex;
-                padding-block: 0.5rem;
 
+                display: block;
 
                 &.active {
+
+
+
                     &+ul {
                         display: flex;
                         animation: sideFromAbove 0.5s forwards;
+                        max-width: 100%;
+                        left: 0;
                     }
 
                 }
@@ -215,7 +235,7 @@ onUnmounted(() => {
                 grid-row: 2/3;
                 flex-direction: column;
                 padding: 2rem 1rem;
-                padding-right: 5rem;
+                //padding-right: 5rem;
                 font-size: 1.5rem;
                 gap: 1.5rem;
 
@@ -231,57 +251,58 @@ onUnmounted(() => {
 }
 
 .menu {
+    --button-color: var(---text-color-1);
+    --delay: 0.1s;
+    --duration: 0.1s;
+    border: 0;
+    outline: 0;
+
+    width: 35px;
+    cursor: pointer;
     display: none;
-
+    -webkit-tap-highlight-color: transparent;
+    /* iOS és Android Chrome */
+    tap-highlight-color: transparent;
+    /* egyes böngészők */
 }
 
-.menu span:not(.sr-only) {
-    width: 30px;
-    height: 4px;
-    border-radius: 3px;
-    display: block;
-    background-color: var(--bg-color-100);
-    position: relative;
-    transition: background-color 0.3s ease;
+.menu .line {
+    transition: y var(--duration) ease-in var(--delay),
+        rotate var(--duration) ease-in, opacity 0ms var(--delay);
+    transform-origin: center;
+}
+
+.menu[aria-expanded="true"] .line {
+    transition:
+        y var(--duration) ease-in,
+        rotate var(--duration) ease-in var(--delay),
+        opacity 0ms var(--delay);
+}
+
+.menu[aria-expanded="true"] :is(.top, .bottom) {
+    y: 45;
+}
+
+.menu[aria-expanded="true"] .top {
+    rotate: 45deg;
+}
+
+.menu[aria-expanded="true"] .middle {
+    opacity: 0;
+}
+
+.menu[aria-expanded="true"] .bottom {
+    rotate: -45deg;
+}
 
 
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        width: inherit;
-        height: inherit;
-        border-radius: inherit;
-        background-color: var(--bg-color-100);
-        transition:
-            top 0.3s ease,
-            transform 0.3s ease,
-            opacity 0.3s ease;
+@keyframes translateToMiddle {
+    to {
+        top: 50%;
+        transform: translateY(-50%);
     }
-
-    &::before {
-        top: -10px;
-    }
-
-    &::after {
-        top: 10px;
-    }
 }
 
-/* === ACTIVE állapot - animált átalakulás X-é === */
-.menu.active span:not(.sr-only) {
-    background-color: transparent; // középső vonal eltűnik
-}
-
-.menu.active span:not(.sr-only)::before {
-    top: 0;
-    transform: rotate(45deg) scaleX(0.8);
-}
-
-.menu.active span:not(.sr-only)::after {
-    top: 0;
-    transform: rotate(-45deg) scaleX(0.8);
-}
 
 
 @keyframes sideFromAbove {
