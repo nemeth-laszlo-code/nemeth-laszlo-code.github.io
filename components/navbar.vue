@@ -251,44 +251,46 @@ onUnmounted(() => {
 }
 
 .menu {
-    --button-color: var(---text-color-1);
-    --delay: 0.1s;
-    --duration: 0.1s;
-    border: 0;
-    outline: 0;
-
-    width: 35px;
-    cursor: pointer;
     display: none;
-    -webkit-tap-highlight-color: transparent;
-    /* iOS és Android Chrome */
-    tap-highlight-color: transparent;
-    /* egyes böngészők */
+
 }
 
-.menu .line {
-    transition: y var(--duration) ease-in var(--delay),
-        rotate var(--duration) ease-in, opacity 0ms var(--delay);
-    transform-origin: center;
+.menu span:not(.sr-only) {
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    display: block;
+    background-color: var(--bg-color-100);
+    position: relative;
+    transition: background-color 0.3s ease;
+
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        background-color: var(--bg-color-100);
+        transition:
+            top 0.3s ease,
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    &::before {
+        top: -10px;
+    }
+
+    &::after {
+        top: 10px;
+    }
 }
 
-.menu[aria-expanded="true"] .line {
-    transition:
-        y var(--duration) ease-in,
-        rotate var(--duration) ease-in var(--delay),
-        opacity 0ms var(--delay);
-}
-
-.menu[aria-expanded="true"] :is(.top, .bottom) {
-    y: 45;
-}
-
-.menu[aria-expanded="true"] .top {
-    rotate: 45deg;
-}
-
-.menu[aria-expanded="true"] .middle {
-    opacity: 0;
+/* === ACTIVE állapot - animált átalakulás X-é === */
+.menu.active span:not(.sr-only) {
+    background-color: transparent; // középső vonal eltűnik
 }
 
 .menu[aria-expanded="true"] .bottom {
