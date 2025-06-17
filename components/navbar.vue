@@ -251,7 +251,7 @@ onUnmounted(() => {
 }
 
 .menu {
-    --button-color: var(---text-color-1);
+    --button-color: var(--text-color-1);
     --delay: 0.1s;
     --duration: 0.1s;
     border: 0;
@@ -260,6 +260,7 @@ onUnmounted(() => {
     width: 35px;
     cursor: pointer;
 
+    background-color: transparent;
     -webkit-tap-highlight-color: transparent;
     /* iOS és Android Chrome */
     tap-highlight-color: transparent;
