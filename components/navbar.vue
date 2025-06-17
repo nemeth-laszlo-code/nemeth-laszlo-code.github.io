@@ -4,7 +4,7 @@
             <div class="logo">
                 &lt; /&gt; jrgenweb
             </div>
-            <a href="#" class="menu" :class="isActive ? 'active' : ''" @click="isActive = !isActive"><span
+            <a href="#" class="menu" :class="isActive ? 'active' : ''" @click="toggleMenu($event)"><span
                     class="sr-only">Mobile
                     menu</span><span></span></a>
             <ul class="nav-links ">
@@ -41,13 +41,19 @@ const handleScroll = () => {
         // Felfelé görgetés és nem a tetején: legyen fixed
         isFixed.value = true
     } else {
-        // Lefelé görgetés vagy tetején vagyunk: ne legyen fixed
+        // Lefelé görgetés vagy tetején vagyunk: ne legyen fixed, false-re állítjuk 
         isFixed.value = false
+        isActive.value = false;
     }
 
     lastScroll = currentScroll
-}
 
+}
+function toggleMenu(event) {
+    event.preventDefault();
+
+    isActive.value = !isActive.value
+}
 onMounted(() => {
     window.addEventListener('scroll', handleScroll)
 })
@@ -173,53 +179,7 @@ onUnmounted(() => {
     }
 }
 
-//hamburger ,emu létrehozása css-el
-.menu {
-    display: none;
-    width: 30px;
-
-
-    justify-content: center;
-    align-items: center;
-    padding-block: 10px;
-
-
-    span:not(.sr-only) {
-        width: 30px;
-        height: 4px;
-        border-radius: 3px;
-        display: block;
-        background-color: var(--bg-color-100);
-        position: relative;
-
-
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            width: inherit;
-            height: inherit;
-            border-radius: inherit;
-            background-color: inherit;
-
-        }
-
-        &::before {
-            top: -10px;
-
-        }
-
-        &::after {
-            top: 10px;
-        }
-    }
-}
-
-
 @media screen and (max-width:760px) {
-    .menu {
-        display: flex;
-    }
 
     .navbar {
         .wrapper {
@@ -237,13 +197,16 @@ onUnmounted(() => {
             .menu {
                 grid-column: 2/3;
                 grid-row: 1/2;
-                justify-self: flex-end;
+                display: flex;
+                padding-block: 0.5rem;
+
 
                 &.active {
                     &+ul {
                         display: flex;
                         animation: sideFromAbove 0.5s forwards;
                     }
+
                 }
             }
 
@@ -267,6 +230,58 @@ onUnmounted(() => {
 
 }
 
+.menu {
+    display: none;
+
+}
+
+.menu span:not(.sr-only) {
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    display: block;
+    background-color: var(--bg-color-100);
+    position: relative;
+    transition: background-color 0.3s ease;
+
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        background-color: var(--bg-color-100);
+        transition:
+            top 0.3s ease,
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    &::before {
+        top: -10px;
+    }
+
+    &::after {
+        top: 10px;
+    }
+}
+
+/* === ACTIVE állapot - animált átalakulás X-é === */
+.menu.active span:not(.sr-only) {
+    background-color: transparent; // középső vonal eltűnik
+}
+
+.menu.active span:not(.sr-only)::before {
+    top: 0;
+    transform: rotate(45deg) scaleX(0.8);
+}
+
+.menu.active span:not(.sr-only)::after {
+    top: 0;
+    transform: rotate(-45deg) scaleX(0.8);
+}
 
 
 @keyframes sideFromAbove {
