@@ -5,11 +5,11 @@
             <p>{{ $t('contact.p') }}</p>
             <form>
                 <input-component name="name" :label="$t('contact.inputs.name')" type="text"
-                    ref="nameInputText"></input-component>
+                    v-model="nameInputText"></input-component>
                 <input-component name="email" :label="$t('contact.inputs.email')" type="email"
-                    ref="emailInputText"></input-component>
+                    v-model="emailInputText"></input-component>
                 <input-component name="message" :label="$t('contact.inputs.message')" type="textarea"
-                    ref="messageInputText"></input-component>
+                    v-model="messageInputText"></input-component>
 
                 <div class="m-auto">
                     <button-component @click="emailSendEvent($event)" class="sm-m-auto">{{ $t('contact.inputs.button')
@@ -24,15 +24,14 @@
 
 import { ref } from 'vue';
 
-const nameInputText = ref();
-const emailInputText = ref();
-const messageInputText = ref();
+const nameInputText = ref('');
+const emailInputText = ref('');
+const messageInputText = ref('');
 
 function emailSendEvent($event) {
     $event.preventDefault();
 
-    console.log(
-        nameInputText.value.getValue(), emailInputText.value.getValue(), messageInputText.value.getValue())
+    //console.log(nameInputText.value, emailInputText.value, messageInputText.value, 'ok')
 
 }
 

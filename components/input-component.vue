@@ -1,45 +1,60 @@
 <template>
 
 
-
-    <div class="form-group" v-if="type !== 'textarea'">
+    <div class="form-group" ref="formGroup">
         <label :for="name">{{ label }}:</label>
-        <input :type="type" :id="name" :name="name" :required="required" :placeholder="label" :value="localValue"
-            @input="onInput" />
+
+        <input v-if="type !== 'textarea'" :type="type" :id="name" :name="name" :required="required" :placeholder="label"
+            v-model="fieldValue" />
+
+        <textarea v-else :id="name" :name="name" rows="4" :required="required" :placeholder="label"
+            v-model="fieldValue"></textarea>
     </div>
-
-    <div class="form-group" v-else>
-        <label :for="name">{{ label }}:</label>
-        <textarea :id="name" :name="name" rows="4" :required="required" :placeholder="label" :value="localValue"
-            @input="onInput"></textarea>
-    </div>
-
-
 
 
 
 </template>
-<script setup>
-import { ref } from 'vue';
+<script setup>import { ref, watch, onMounted } from 'vue'
+
 const props = defineProps({
-    type: String,
+    type: { type: String, default: 'text' },
     label: String,
     name: String,
     required: Boolean,
-    value: String
+    modelValue: String,   // <-- modelValue prop
+})
 
+const emit = defineEmits(['update:modelValue'])  // <-- update:modelValue esemény
+
+const fieldValue = ref(props.modelValue || '')
+const formGroup = ref(null)
+
+watch(() => props.modelValue, (newVal) => {
+    fieldValue.value = newVal
 })
-const localValue = ref(props.value || '');
-watch(() => props.value, (newVal) => {
-    localValue.value = newVal
+
+watch(fieldValue, (newVal) => {
+    emit('update:modelValue', newVal)
 })
-function onInput(e) {
-    localValue.value = e.target.value
-}
-function getValue() {
-    return localValue.value;
-}
-defineExpose({ getValue })
+
+// lebegő label JS fallback
+onMounted(() => {
+    const group = formGroup.value
+    const input = group.querySelector('input, textarea')
+
+    const updateState = () => {
+        if (document.activeElement === input || fieldValue.value.trim() !== '') {
+            group.classList.add('active')
+        } else {
+            group.classList.remove('active')
+        }
+    }
+
+    input.addEventListener('focus', updateState)
+    input.addEventListener('blur', updateState)
+    watch(fieldValue, updateState)
+    updateState()
+})
 </script>
 
 
@@ -53,35 +68,26 @@ defineExpose({ getValue })
 
 <style lang="scss" scoped>
 .form-group {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
-    position: relative;
 
     label {
         position: absolute;
-        margin-bottom: 0.5rem;
-        color: var(--text-color-1);
         left: 10px;
+        color: var(--text-color-1);
         transition: all 0.3s ease-in-out;
-        cursor: text;
+        pointer-events: none;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
-    //ha nem textarea akkor
-    &:not(:has(textarea)) {
-        label {
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    textarea+label,
+    &.has-textarea label {
+        top: -30px;
+        transform: none;
     }
-
-    //ha textarea
-    &:has(textarea) {
-        label {
-            top: 10px;
-        }
-    }
-
 
     input,
     textarea {
@@ -89,7 +95,7 @@ defineExpose({ getValue })
         color: var(--text-color-1);
         padding: 10px;
         border-radius: 5px;
-        border: 0px solid #ccc;
+        border: none;
         transition: all 0.3s ease-in-out;
 
         &::placeholder {
@@ -97,45 +103,17 @@ defineExpose({ getValue })
         }
 
         &:focus {
-            background-color: var(--bg-color-900);
             outline: 1px solid var(--accent-color-4);
         }
-
-
     }
-}
 
-// sima inputokra vonatkozo
-label:has(+ input:focus),
-label:has(+ input:not(:placeholder-shown)) {
-    transform: translateY(-45px);
-    scale: 0.96;
-}
+    label:has(+textarea) {
+        top: 20px;
+    }
 
-
-
-//textarea-ra  vonatkozo 
-label:has(+ textarea:focus),
-label:has(+ textarea:not(:placeholder-shown)) {
-    transform: translateY(-35px) scale(0.96);
-
-}
-
-
-/* Autofill eltüntetése */
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-    box-shadow: 0 0 0px 1000px white inset !important;
-    -webkit-text-fill-color: #333 !important;
-    transition: background-color 5000s ease-in-out 0s !important;
-
-}
-
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px #f0f0f0 inset !important;
-    box-shadow: 0 0 0px 1000px #f0f0f0 inset !important;
-    -webkit-text-fill-color: #000 !important;
-    transition: background-color 5000s ease-in-out 0s !important;
+    &.active label {
+        transform: translateY(-45px) scale(0.96);
+        //color: var(--accent-color-4);
+    }
 }
 </style>

@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/image", "@nuxtjs/i18n"],
   css: ["~/assets/scss/main.scss"],
+
   app: {
     head: {
       title: "Németh László - Frontend Fejlesztő",
@@ -40,22 +41,25 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   i18n: {
     locales: [
       { code: "hu", iso: "hu-HU", name: "Magyar", file: "hu.json" },
       { code: "en", iso: "en-US", name: "English", file: "en.json" },
     ],
     defaultLocale: "hu",
+
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: "i18n_redirected",
       alwaysRedirect: false,
       fallbackLocale: "hu",
+      // redirectOn: "root",
     },
     langDir: "locales/", // fontos!
     strategy: "prefix_except_default",
-
-    // lazy: true, // <--- fontos!
+    // strategy: "prefix",
+    lazy: true, // <--- fontos!
     vueI18n: "./i18n.config.ts", // külső konfiguráció fájl!
   },
   runtimeConfig: {

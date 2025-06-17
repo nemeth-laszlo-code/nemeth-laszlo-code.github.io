@@ -52,8 +52,8 @@ svg {
     height: 24px;
     //  background-color: red;
 
-    /*path {
-        fill: white;
-    }*/
+    path {
+        fill: var(--text-color-1);
+    }
 }
 </style>

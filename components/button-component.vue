@@ -35,7 +35,7 @@ a {
     text-wrap: nowrap;
 
     &:active {
-        scale: 0.8;
+        scale: 0.9;
     }
 
 
@@ -68,6 +68,15 @@ a.secondary {
     &.sm {
         padding: 5px 10px;
         font-size: 0.75rem;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+
+    button,
+    a {
+        padding: 8px 16px;
     }
 
 }

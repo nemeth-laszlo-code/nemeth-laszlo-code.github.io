@@ -22,7 +22,7 @@ const props = defineProps({
 const emit = defineEmits(['update:checked']);
 
 function onChange(event) {
-    console.log('changed', event.target.checked)
+    //console.log('changed', event.target.checked)
     emit('update:checked', event.target.checked);
 }
 </script>
