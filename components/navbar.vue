@@ -264,6 +264,7 @@ onUnmounted(() => {
     /* iOS és Android Chrome */
     tap-highlight-color: transparent;
     /* egyes böngészők */
+    display: none;
 }
 
 .menu .line {
