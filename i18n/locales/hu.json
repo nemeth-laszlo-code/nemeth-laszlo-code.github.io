@@ -1,20 +1,20 @@
 {
   "navbar":{
-    "home":"Home",
+    "home":"Főoldal",
     "about":"Rólam",
-    "skills":"Skills",
+    "skills":"Készségek",
     "projects":"Projektjeim",
     "contact":"Kapcsolat"
   },
   "header":{
-    "p":"Hello a nevem",
+    "p":"Helló a nevem,",
     "h1":"Németh László",
     "h3":"Frontend Fejlesztő vagyok.",
     "cv":"CV letöltése"
   },
 
   "content":{
-    "h2":"Üdv az oldalamon",
+    "h2":"Üdv az oldalamon!",
     "p1":"Mindig is érdekelt a programozás és a digitális világ működése. Körülbelül két éve kezdtem el komolyabban foglalkozni a fejlesztéssel, azóta aktívan tanulok, gyakorlok és kisebb projekteket valósítok meg.",
     "p2":"Tudatosan a frontend fejlesztés mellett döntöttem, mert vonz a vizuális megjelenítés, a felhasználói élmény tervezése, és az, hogy amit készítek, az azonnal „kézzelfogható”. Jelenleg Angular-ral dolgozom, emellett folyamatosan mélyítem a tudásom JavaScript, HTML, CSS, és webalkalmazás-fejlesztés terén.",
     "p3":"Célom, hogy letisztult, reszponzív és jól működő felületeket hozzak létre, miközben folyamatosan fejlődöm a szakmában. Szívesen tanulok új technológiákat, és örömmel vállalok kihívásokat, akár csapatban, akár önállóan dolgozva."

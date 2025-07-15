@@ -2,10 +2,13 @@
     <div>
 
         <NuxtPage />
+
+
         <main class="container">
+            <scrolltotop></scrolltotop>
             <div class="nav-switch">
                 <lang-switch></lang-switch>
-                <theme-switch :disabled="true"></theme-switch>
+                <theme-switch :disabled="false"></theme-switch>
             </div>
             <navbar></navbar>
             <header-component></header-component>

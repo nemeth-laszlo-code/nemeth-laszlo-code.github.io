@@ -1,21 +1,26 @@
 <template>
-    <base-switch :disabled="disabled" :checked="lang === 'en'" @change="toggleLang">
+    <base-switch :disabled="disabled" :checked="locale === 'en'" @change="toggleLang">
         {{ locale.value }}
         <template #option2>HU</template>
         <template #option>EN</template>
     </base-switch>
 </template>
 <script setup>
-
+const { locale, setLocale } = useI18n();
 const props = defineProps({
-    disabled: Boolean
+    disabled: Boolean,
+    checked: Boolean
 })
 
 
-const { locale, setLocale } = useI18n();
 
 
-const lang = ref(locale.value);
+onMounted(() => {
+    props.checked = locale.value === 'en' ? true : false;
+    console.log(props.checked, locale.value)
+})
+
+
 
 function toggleLang(event) {
     setLocale(event.target.checked ? 'en' : 'hu');

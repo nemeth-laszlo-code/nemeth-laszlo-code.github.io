@@ -2,7 +2,7 @@
 
 
     <div class="form-group" ref="formGroup">
-        <label :for="name">{{ label }}:</label>
+        <label :for="name">{{ label }}</label>
 
         <input v-if="type !== 'textarea'" :type="type" :id="name" :name="name" :required="required" :placeholder="label"
             v-model="fieldValue" />
@@ -71,7 +71,8 @@ onMounted(() => {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+
 
     label {
         position: absolute;
@@ -108,11 +109,11 @@ onMounted(() => {
     }
 
     label:has(+textarea) {
-        top: 20px;
+        top: 22px;
     }
 
     &.active label {
-        transform: translateY(-45px) scale(0.96);
+        transform: translateY(-50px) scale(0.96);
         //color: var(--accent-color-4);
     }
 }

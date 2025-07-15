@@ -1,5 +1,5 @@
 <template>
-    <base-switch :checked="checked" @change="toggleTheme">
+    <base-switch :checked="isChecked" @change="toggleTheme" :disabled="disabled">
         <template #option2>
             <svg height="30" viewBox="0 0 550 550" width="30" xmlns="http://www.w3.org/2000/svg">
                 <title />
@@ -27,15 +27,21 @@ const props = defineProps({
     disabled: Boolean,
     checked: Boolean
 }
-
 )
+const isChecked = ref(props.checked || false);
 
+
+
+onMounted(() => {
+    const theme = localStorage.getItem('theme') || 'light';
+    isChecked.value = theme === 'dark';
+
+})
 function toggleTheme() {
+
     const current = document.documentElement.getAttribute('data-theme')
     const next = current === 'dark' ? 'light' : 'dark'
     document.documentElement.setAttribute('data-theme', next)
-
-
     localStorage.setItem('theme', next)
 }
 

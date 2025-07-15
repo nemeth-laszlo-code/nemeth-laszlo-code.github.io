@@ -9,11 +9,11 @@
             <div class="header-social flex">
                 <social-links></social-links>
                 <button-component className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
-                }}</button-component>
+                    }}</button-component>
             </div>
             <div class="header-image">
                 <div class="image">
-                    <NuxtImg src="/images/profile.jpg" format="webp" width="300" height="300"
+                    <NuxtImg src="/images/profile.jpg" format="webp" width="300" height="300" loading="eager"
                         alt="Németh László profil kép"></NuxtImg>
                 </div>
             </div>
@@ -52,7 +52,8 @@ let cv_url = ref(locale.value === 'hu' ? '/CV/nemeth_laszlo_frontend_fejleszto_o
         grid-column: 1/2;
         grid-row: 2/3;
         align-self: flex-end;
-        justify-self: center;
+        justify-self: flex-start;
+        padding-left: 1rem;
         padding-bottom: 1.5rem;
 
 
@@ -207,6 +208,9 @@ h1 {
             grid-row: 3/4;
             padding-bottom: 0.5rem;
             padding-top: 1.5rem;
+
+            justify-self: center;
+
 
         }
 

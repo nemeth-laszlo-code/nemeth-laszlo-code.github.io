@@ -5,7 +5,8 @@
             </NuxtImg>
         </div>
         <h3>{{ data.title }}</h3>
-        <p>{{ data.description }}</p>
+        <pre>
+        <p>{{ data.description }}</p></pre>
         <div class="card-tags">
             <span class="card-tag" v-for="tag in data.tags">
                 {{ tag }}
@@ -39,7 +40,7 @@ const props = defineProps<{ data: Project }>()
     display: flex;
     flex-direction: column;
 
-    cursor: pointer;
+    //    cursor: pointer;
 
     &-image {
 
@@ -65,6 +66,7 @@ const props = defineProps<{ data: Project }>()
         &:hover {
             img {
                 scale: 1.05;
+                cursor: pointer;
             }
 
             &::before {
@@ -73,7 +75,7 @@ const props = defineProps<{ data: Project }>()
             }
         }
 
-        &::before {
+        /*&::before {
             content: '';
             background-color: var(--accent-color-3);
             opacity: 0.3;
@@ -85,7 +87,7 @@ const props = defineProps<{ data: Project }>()
             transform: translateY(-50%);
             z-index: 100;
             transition: .5s ease;
-        }
+        }*/
     }
 
     &:hover {
@@ -107,12 +109,15 @@ const props = defineProps<{ data: Project }>()
         }
 
         &:hover {
-            color: var(--accent-color-1)
+            color: var(--accent-color-2)
         }
     }
 
     p {
-        text-align: justify;
+        text-align: left;
+        font-size: 1rem;
+        font-family: Inter;
+
     }
 
 
