@@ -77,6 +77,7 @@ export default defineNuxtConfig({
 
     // provider (pl. ipx)
     provider: "vercel",
+    dir: "public", // ez az alapértelmezett
     format: ["webp", "avif"],
     options: {
       baseURL: "/public/", // alapértelmezett
