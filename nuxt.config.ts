@@ -76,7 +76,7 @@ export default defineNuxtConfig({
     domains: ["jrgenweb.github.io", "placehold.co"],
 
     // provider (pl. ipx)
-    provider: "ipx",
+    provider: "static",
     format: ["webp", "avif"],
     options: {
       baseURL: "/public/", // alapértelmezett
