@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/image", "@nuxtjs/i18n"],
   css: ["~/assets/scss/main.scss"],
-  ssr: true,
+  ssr: false,
   app: {
     head: {
       title: "Németh László - Frontend Fejlesztő",
@@ -73,11 +73,14 @@ export default defineNuxtConfig({
   },
   image: {
     // Engedélyezett külső domain-ek
-    domains: ["jrgenweb.github.io", "example.com"],
+    domains: ["jrgenweb.github.io", "placehold.co"],
 
     // provider (pl. ipx)
     provider: "ipx",
     format: ["webp", "avif"],
+    options: {
+      baseURL: "/public/", // alapértelmezett
+    },
 
     // ha cloudinary vagy más, akkor más beállítás kell
   },
