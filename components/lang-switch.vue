@@ -17,7 +17,7 @@ const props = defineProps({
 
 onMounted(() => {
     props.checked = locale.value === 'en' ? true : false;
-    console.log(props.checked, locale.value)
+    //console.log(props.checked, locale.value)
 })
 
 

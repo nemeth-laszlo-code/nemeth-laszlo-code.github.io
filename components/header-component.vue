@@ -9,7 +9,7 @@
             <div class="header-social flex">
                 <social-links></social-links>
                 <button-component className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
-                    }}</button-component>
+                }}</button-component>
             </div>
             <div class="header-image">
                 <div class="image">
@@ -208,7 +208,7 @@ h1 {
             grid-row: 3/4;
             padding-bottom: 0.5rem;
             padding-top: 1.5rem;
-
+            padding-left: 0;
             justify-self: center;
 
 

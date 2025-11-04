@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/image", "@nuxtjs/i18n"],
   css: ["~/assets/scss/main.scss"],
-
+  ssr: true,
   app: {
     head: {
       title: "Németh László - Frontend Fejlesztő",
@@ -66,7 +66,8 @@ export default defineNuxtConfig({
     public: {
       axios: {
         //API_BASE: "http://localhost:3001/api/portfolio", // Itt add meg az API URL-t
-        API_BASE: "http://api.jrgen.hu/api/portfolio", // Itt add meg az API URL-t
+        //API_BASE: "http://api.jrgen.hu/api/portfolio", // Itt add meg az API URL-t
+        API_BASE: "https://api.github.com/users/",
       },
     },
   },

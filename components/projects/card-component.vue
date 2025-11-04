@@ -1,20 +1,21 @@
 <template>
     <div class="card">
         <div class="card-image">
-            <NuxtImg :src="data.img_url" :alt="data.title + 'Projekt képe'" format="webp" width="600" height="600">
+            <NuxtImg :src="data.previewUrl" :alt="data.name + 'Projekt képe'" format="webp" width="600" height="600">
             </NuxtImg>
         </div>
-        <h3>{{ data.title }}</h3>
+
+        <h3>{{ data.name }}</h3>
         <pre>
         <p>{{ data.description }}</p></pre>
         <div class="card-tags">
-            <span class="card-tag" v-for="tag in data.tags">
+            <span class="card-tag" v-for="tag in data.languages">
                 {{ tag }}
             </span>
 
         </div>
         <div class="card-links">
-            <button-component type="link" className="secondary sm" :href="data.github_url"
+            <button-component type="link" className="secondary sm" :href="data.html_url"
                 target="_blank">Github</button-component>
             <button-component type="link" className="secondary sm" :href="data.live_url"
                 target="_blank">live</button-component>
@@ -25,6 +26,7 @@
 <script setup lang="ts">
 import type { Project } from '@/types/project'
 const props = defineProps<{ data: Project }>()
+const { locale } = useI18n();
 </script>
 
 <style lang="scss" scoped>
