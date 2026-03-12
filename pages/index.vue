@@ -31,7 +31,7 @@
             </panel>
             <contact id="contact" </contact>
                 <footer>
-                    <p> 2025@jrgen.hu
+                    <p> {{ currentYear }}@jrgen.hu
                     </p>
                     <p>
                         {{ $t('footer') }}
@@ -43,11 +43,9 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 const { locale } = useI18n();
-
-
-
-
+const currentYear = ref(new Date().getFullYear());
 useHead({
     htmlAttrs: {
         lang: locale.value
@@ -58,6 +56,8 @@ onMounted(() => {
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
     const saved = localStorage.getItem('theme') || systemTheme
     document.documentElement.setAttribute('data-theme', saved)
+
+
 })
 </script>
 

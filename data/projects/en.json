@@ -2,7 +2,7 @@
   {
     "title": "Frontend Quiz App",
     "description": "Developed as part of the Frontend Mentor 'Frontend Quiz App' challenge. These challenges help refine front-end skills by building real-world, practical projects.",
-    "imgurl": "https://github.com/jrgenweb/frontend-quiz-app/blob/master/preview.jpg?raw=true",
+    "imgurl":"images/projects/quiz_app.jpg",
     "github": "https://github.com/jrgenweb/frontend-quiz-app",
     "liveurl": "https://frontend-quiz-app-ruddy.vercel.app/",
     "tags": ["Vue", "CSS"]
@@ -10,7 +10,7 @@
   {
     "title": "Hangman Game",
     "description": "A solution to the Frontend Mentor 'Hangman Game' challenge, built with Angular. The goal was to implement a modern, responsive interface for the classic hangman game.",
-    "imgurl": "https://github.com/jrgenweb/hangman-game/blob/master/preview.jpg?raw=true",
+    "imgurl":"images/projects/hangman.jpg",
     "github": "https://github.com/jrgenweb/hangman-game",
     "liveurl": "https://hangman-game-alpha-two.vercel.app",
     "tags": ["Angular", "SCSS", "TypeScript"]
@@ -18,7 +18,7 @@
   {
     "title": "Recipe App",
     "description": "A modern, responsive web application for browsing, filtering by categories, and viewing detailed recipes. The project's objective was to create a scalable system with a clean architecture.",
-    "imgurl": "https://github.com/jrgenweb/recipe-app-frontend/blob/master/screenshot.webp?raw=true",
+    "imgurl":"images/projects/recipe_app.webp",
     "github": "https://github.com/jrgenweb/recipe-app-frontend",
     "liveurl": "https://recipe-app-frontend-three-black.vercel.app",
     "tags": ["Angular", "Bootstrap", "NestJS", "PostgreSQL"]

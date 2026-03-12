@@ -6,12 +6,6 @@
             <div class="orbit">
                 <p>Tech stackem</p>
                 <ul class="orbit-container">
-                    <li class="orbit-item" style="--i: 0">
-                        <img src="/images/icons/html5.svg" alt="HTML" />
-                    </li>
-                    <li class="orbit-item" style="--i: 1">
-                        <img src="/images/icons/css3.svg" alt="CSS" />
-                    </li>
                     <li class="orbit-item" style="--i: 2">
                         <img src="/images/icons/sass.svg" alt="Sass" />
                     </li>
@@ -24,6 +18,9 @@
                     <li class="orbit-item" style="--i: 5">
                         <img src="/images/icons/typescript.svg" alt="TypeScript" />
                     </li>
+                    <li class="orbit-item" style="--i: 0">
+                        <img src="/images/icons/react.svg" alt="React" />
+                    </li>
                     <li class="orbit-item" style="--i: 6">
                         <img src="/images/icons/angular.svg" alt="Angular" />
                     </li>
@@ -32,6 +29,9 @@
                     </li>
                     <li class="orbit-item" style="--i: 8">
                         <img src="/images/icons/nuxt.svg" alt="Nuxt" />
+                    </li>
+                    <li class="orbit-item" style="--i: 1">
+                        <img src="/images/icons/nestjs.svg" alt="NestJS" />
                     </li>
                     <li class="orbit-item" style="--i: 9">
                         <img src="/images/icons/vscode.svg" alt="Visual Studio Code" />
@@ -48,12 +48,7 @@
             <div class="info">
                 <h2>Tech stackem</h2>
                 <div class="techstack">
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="HTML5"></progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="CSS3"></progressbar>
-                    </div>
+
                     <div class="tech-item">
                         <progressbar :progress=100 title="BootStrap"></progressbar>
                     </div>
@@ -64,6 +59,9 @@
                         <progressbar :progress=100 title="TypeScript"></progressbar>
                     </div>
                     <div class="tech-item">
+                        <progressbar :progress=100 title="React"></progressbar>
+                    </div>
+                    <div class="tech-item">
                         <progressbar :progress=100 title="Angular"></progressbar>
                     </div>
                     <div class="tech-item">
@@ -71,6 +69,10 @@
                     </div>
                     <div class="tech-item">
                         <progressbar :progress=100 title="Nuxt"></progressbar>
+                    </div>
+
+                    <div class="tech-item">
+                        <progressbar :progress=100 title="NestJS"></progressbar>
                     </div>
                     <div class="tech-item">
                         <progressbar :progress=100 title="Visual Studio Code"></progressbar>
