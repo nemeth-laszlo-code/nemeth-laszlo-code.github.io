@@ -1,16 +1,20 @@
 <template>
     <div class="projects">
-        <card-component v-for="project in projects" :key="project.title" :data="project" />
+        <card-component v-for="project in projects" :key="project.title" :data="project" @open="openProject" />
+
         <div v-if="projects.length === 0">
             Nincsenek elérhető projektek
         </div>
+
+        <project-modal :show="Boolean(selectedProject)" :project="selectedProject" @close="closeModal" />
     </div>
 </template>
 
 <script setup lang="ts">
-import CardComponent from '~/components/projects/card-component.vue'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from '#imports'
+import CardComponent from '~/components/projects/card-component.vue'
+import ProjectModal from '~/components/projects/project-modal.vue'
 import projectsHu from '~/data/projects/hu.json'
 import projectsEn from '~/data/projects/en.json'
 
@@ -20,6 +24,7 @@ interface PortfolioProject {
     imgurl: string
     github: string
     liveurl: string
+    tags: string[]
 }
 
 const { locale } = useI18n()
@@ -27,6 +32,16 @@ const { locale } = useI18n()
 const projects = computed<PortfolioProject[]>(() =>
     (locale.value === 'hu' ? projectsHu : projectsEn) as PortfolioProject[]
 )
+
+const selectedProject = ref<PortfolioProject | null>(null)
+
+const openProject = (project: PortfolioProject) => {
+    selectedProject.value = project
+}
+
+const closeModal = () => {
+    selectedProject.value = null
+}
 </script>
 
 <style lang="scss" scoped>

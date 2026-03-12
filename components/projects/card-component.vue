@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card" @click="open">
         <div class="card-image">
             <NuxtImg :src="data.imgurl" :alt="data.title + ' projekt képe'" format="webp" width="600" height="600" />
         </div>
@@ -7,16 +7,16 @@
         <h3>{{ data.title }}</h3>
 
         <div class="description-wrapper">
-            <p v-html="data.description" class="description"></p>
+            <p class="description">{{ shortDescription }}</p>
         </div>
 
         <div class="card-tags">
-            <span class="card-tag" v-for="tag in data.tags">
+            <span class="card-tag" v-for="tag in data.tags" :key="tag">
                 {{ tag }}
             </span>
 
         </div>
-        <div class="card-links">
+        <div class="card-links" @click.stop>
             <button-component v-if="data.github" type="link" className="secondary sm" :href="data.github"
                 target="_blank">
                 Github
@@ -30,6 +30,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed, defineEmits } from 'vue'
+
 interface PortfolioProject {
     title: string
     description: string
@@ -40,6 +42,16 @@ interface PortfolioProject {
 }
 
 const props = defineProps<{ data: PortfolioProject }>()
+const emit = defineEmits<{ (e: 'open', project: PortfolioProject): void }>()
+
+const open = () => emit('open', props.data)
+
+const shortDescription = computed(() => {
+    const text = props.data.description.replace(/<[^>]+>/g, '')
+    const max = 80
+    if (text.length <= max) return text
+    return text.slice(0, max).trimEnd() + '…'
+})
 </script>
 
 <style lang="scss" scoped>
@@ -104,6 +116,7 @@ const props = defineProps<{ data: PortfolioProject }>()
         text-align: left;
         font-size: 1rem;
         font-family: Inter;
+        max-width: 80ch;
     }
 
     &-tags {

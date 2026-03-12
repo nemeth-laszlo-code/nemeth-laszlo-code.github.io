@@ -17,7 +17,7 @@
   },
   {
     "title": "Recipe App",
-    "description": "A modern, responsive web application for browsing, filtering by categories, and viewing detailed recipes. The project's objective was to create a scalable system with a clean architecture.",
+    "description": "A modern, responsive web application for browsing, filtering by category, and viewing detailed recipe information. The project focuses on a scalable system with a clean architecture. <br /><b>Note:</b> Hosted on a free cloud tier, the initial load may take longer due to server wake-up (Cold Start).",
     "imgurl":"images/projects/recipe_app.webp",
     "github": "https://github.com/jrgenweb/recipe-app-frontend",
     "liveurl": "https://recipe-app-frontend-three-black.vercel.app",
