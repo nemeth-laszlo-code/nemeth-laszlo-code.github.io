@@ -1,10 +1,6 @@
 <template>
     <div class="projects">
-        <card-component
-            v-for="project in projects"
-            :key="project.title"
-            :data="project"
-        />
+        <card-component v-for="project in projects" :key="project.title" :data="project" />
         <div v-if="projects.length === 0">
             Nincsenek elérhető projektek
         </div>

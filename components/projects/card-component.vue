@@ -5,7 +5,10 @@
         </div>
 
         <h3>{{ data.title }}</h3>
-        <p>{{ data.description }}</p>
+
+        <div class="description-wrapper">
+            <p v-html="data.description" class="description"></p>
+        </div>
 
         <div class="card-tags">
             <span class="card-tag" v-for="tag in data.tags">
@@ -130,5 +133,7 @@ const props = defineProps<{ data: PortfolioProject }>()
         padding-top: 1rem;
         margin-top: auto;
     }
+
+
 }
 </style>

@@ -18,7 +18,7 @@
         },
          {
             "title":"Recipe App",
-            "description":"Ez egy modern, reszponzív webalkalmazás, amely lehetővé teszi receptek böngészését, kategóriák szerinti szűrését és részletes megtekintését. A projekt célja egy skálázható, tiszta architektúrájú rendszer megalkotása volt.",
+            "description":"Ez egy modern, reszponzív webalkalmazás, amely lehetővé teszi receptek böngészését, kategóriák szerinti szűrését és részletes megtekintését. A projekt célja egy skálázható, tiszta architektúrájú rendszer megalkotása volt. <br /><b>Megjegyzés:</b> A projekt ingyenes felhőalapú tárhelyen fut, így az első betöltés a szerver ébredése (Cold Start) miatt hosszabb időt vehet igénybe.",
             "imgurl":"images/projects/recipe_app.webp",
             "github":"https://github.com/jrgenweb/recipe-app-frontend",
             "liveurl":"https://recipe-app-frontend-three-black.vercel.app",
