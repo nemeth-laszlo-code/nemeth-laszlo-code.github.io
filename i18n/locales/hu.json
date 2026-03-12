@@ -15,9 +15,9 @@
 
   "content":{
     "h2":"Üdv az oldalamon!",
-    "p1":"Mindig is érdekelt a programozás és a digitális világ működése. Körülbelül két éve kezdtem el komolyabban foglalkozni a fejlesztéssel, azóta aktívan tanulok, gyakorlok és kisebb projekteket valósítok meg.",
-    "p2":"Tudatosan a frontend fejlesztés mellett döntöttem, mert vonz a vizuális megjelenítés, a felhasználói élmény tervezése, és az, hogy amit készítek, az azonnal „kézzelfogható”. Jelenleg Angular-ral dolgozom, emellett folyamatosan mélyítem a tudásom JavaScript, HTML, CSS, és webalkalmazás-fejlesztés terén.",
-    "p3":"Célom, hogy letisztult, reszponzív és jól működő felületeket hozzak létre, miközben folyamatosan fejlődöm a szakmában. Szívesen tanulok új technológiákat, és örömmel vállalok kihívásokat, akár csapatban, akár önállóan dolgozva."
+    "p1":"Szoftverfejlesztői alapjaimat C# környezetben fektettem le, majd érdeklődésem a modern frontend technológiák, elsősorban az Angular felé fordult. Vonz a vizuális megvalósítás és a felhasználói élmény tervezése, ahol az eredmény azonnal látható és mérhető. ",
+    "p2":"Jelenleg tudásomat React, valamint NestJS és .NET Core irányba bővítem, hogy Fullstack szemlélettel alkothassak letisztult és reszponzív felületeket.",
+    "p3":" Célom a folyamatos szakmai fejlődés és a hosszú távon fenntartható, tiszta kód írása, legyen szó csapatmunkáról vagy önálló projektekről."
     
   },
   "projects":{
@@ -27,7 +27,7 @@
   
   "contact":{
     "h2":"Kapcsolat",
-    "p":"Ha felkeltettem az érdeklődésedet, vagy bármmilyen kérdésed lenne írj üzenetet!",
+    "p":"Ha felkeltettem az érdeklődésedet, vagy bármilyen kérdésed lenne írj üzenetet!",
     "inputs":{
       "name":"Név",
       "email":"Email",

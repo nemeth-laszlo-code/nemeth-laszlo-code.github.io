@@ -1,52 +1,55 @@
 <template>
     <div class="card">
         <div class="card-image">
-            <NuxtImg :src="data.previewUrl" :alt="data.name + 'Projekt képe'" format="webp" width="600" height="600">
-            </NuxtImg>
+            <NuxtImg :src="data.imgurl" :alt="data.title + ' projekt képe'" format="webp" width="600" height="600" />
         </div>
 
-        <h3>{{ data.name }}</h3>
-        <pre>
-        <p>{{ data.description }}</p></pre>
+        <h3>{{ data.title }}</h3>
+        <p>{{ data.description }}</p>
+
         <div class="card-tags">
-            <span class="card-tag" v-for="tag in data.languages">
+            <span class="card-tag" v-for="tag in data.tags">
                 {{ tag }}
             </span>
 
         </div>
         <div class="card-links">
-            <button-component type="link" className="secondary sm" :href="data.html_url"
-                target="_blank">Github</button-component>
-            <button-component type="link" className="secondary sm" :href="data.live_url"
-                target="_blank">live</button-component>
-
+            <button-component v-if="data.github" type="link" className="secondary sm" :href="data.github"
+                target="_blank">
+                Github
+            </button-component>
+            <button-component v-if="data.liveurl" type="link" className="secondary sm" :href="data.liveurl"
+                target="_blank">
+                Live
+            </button-component>
         </div>
     </div>
 </template>
+
 <script setup lang="ts">
-import type { Project } from '@/types/project'
-const props = defineProps<{ data: Project }>()
-const { locale } = useI18n();
+interface PortfolioProject {
+    title: string
+    description: string
+    imgurl: string
+    github: string
+    liveurl: string,
+    tags: string[]
+}
+
+const props = defineProps<{ data: PortfolioProject }>()
 </script>
 
 <style lang="scss" scoped>
 .card {
     background-color: var(--bg-color-900);
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    border-radius: 10px;
-
-
     display: flex;
     flex-direction: column;
 
-    //    cursor: pointer;
-
     &-image {
-
-
         position: relative;
         border-radius: inherit;
         overflow: hidden;
@@ -57,7 +60,6 @@ const { locale } = useI18n();
             aspect-ratio: 16 / 9;
             object-fit: cover;
             object-position: center;
-            // filter: sepia(0.3);
             transition: 0.3s all ease-in-out;
 
             &:hover {
@@ -70,26 +72,7 @@ const { locale } = useI18n();
                 scale: 1.05;
                 cursor: pointer;
             }
-
-            &::before {
-                scale: 0;
-                opacity: 0.9;
-            }
         }
-
-        /*&::before {
-            content: '';
-            background-color: var(--accent-color-3);
-            opacity: 0.3;
-            position: absolute;
-            border-radius: 50%;
-            aspect-ratio: 1;
-            inset: -10%;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            transition: .5s ease;
-        }*/
     }
 
     &:hover {
@@ -97,7 +80,6 @@ const { locale } = useI18n();
     }
 
     h3 {
-        margin-top: 0;
         margin-block: 0.5rem;
         transition: 0.3s all ease-in-out;
 
@@ -111,7 +93,7 @@ const { locale } = useI18n();
         }
 
         &:hover {
-            color: var(--accent-color-2)
+            color: var(--accent-color-2);
         }
     }
 
@@ -119,10 +101,7 @@ const { locale } = useI18n();
         text-align: left;
         font-size: 1rem;
         font-family: Inter;
-
     }
-
-
 
     &-tags {
 
@@ -148,7 +127,8 @@ const { locale } = useI18n();
     &-links {
         display: flex;
         justify-content: space-between;
-        padding-top: 1rem
+        padding-top: 1rem;
+        margin-top: auto;
     }
 }
 </style>

@@ -1,25 +1,26 @@
-    [
-        {
-            "title":"Result summary component",
-            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
-            "imgurl":"https://jrgenweb.github.io/assets/img/projects/frontend_mentor/result-summary-component.webp",
-            "github":"",
-            "liveurl":""
-        },
-         {
-            "title":"Frontend quiz app",
-            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
-            "imgurl":"https://github.com/jrgenweb/frontend-quiz-app/blob/master/preview.jpg?raw=true",
-            "github":"",
-            "liveurl":""
-        },
-         {
-            "title":"Hangman game",
-            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
-            "imgurl":"https://github.com/jrgenweb/hangman-game/blob/master/preview.jpg?raw=true",
-            "github":"",
-            "liveurl":""
-        }
-    ]
-    
-    
+[
+  {
+    "title": "Frontend Quiz App",
+    "description": "Developed as part of the Frontend Mentor 'Frontend Quiz App' challenge. These challenges help refine front-end skills by building real-world, practical projects.",
+    "imgurl": "https://github.com/jrgenweb/frontend-quiz-app/blob/master/preview.jpg?raw=true",
+    "github": "https://github.com/jrgenweb/frontend-quiz-app",
+    "liveurl": "https://frontend-quiz-app-ruddy.vercel.app/",
+    "tags": ["Vue", "CSS"]
+  },
+  {
+    "title": "Hangman Game",
+    "description": "A solution to the Frontend Mentor 'Hangman Game' challenge, built with Angular. The goal was to implement a modern, responsive interface for the classic hangman game.",
+    "imgurl": "https://github.com/jrgenweb/hangman-game/blob/master/preview.jpg?raw=true",
+    "github": "https://github.com/jrgenweb/hangman-game",
+    "liveurl": "https://hangman-game-alpha-two.vercel.app",
+    "tags": ["Angular", "SCSS", "TypeScript"]
+  },
+  {
+    "title": "Recipe App",
+    "description": "A modern, responsive web application for browsing, filtering by categories, and viewing detailed recipes. The project's objective was to create a scalable system with a clean architecture.",
+    "imgurl": "https://github.com/jrgenweb/recipe-app-frontend/blob/master/screenshot.webp?raw=true",
+    "github": "https://github.com/jrgenweb/recipe-app-frontend",
+    "liveurl": "https://recipe-app-frontend-three-black.vercel.app",
+    "tags": ["Angular", "Bootstrap", "NestJS", "PostgreSQL"]
+  }
+]

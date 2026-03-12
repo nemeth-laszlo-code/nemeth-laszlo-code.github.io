@@ -12,12 +12,12 @@
     "h3": "I am a Frontend Developer.",
     "cv": "Download CV"
   },
-  "content": {
-    "h2": "Welcome to my website",
-    "p1": "I have always been interested in programming and the workings of the digital world. I started getting seriously involved in development about two years ago, and since then I have been actively learning, practicing, and creating smaller projects.",
-    "p2": "I consciously chose frontend development because I am drawn to visual design, user experience planning, and the fact that what I create becomes immediately 'tangible'. I currently work with Angular and am continuously deepening my knowledge in JavaScript, HTML, CSS, and web application development.",
-    "p3": "My goal is to create clean, responsive, and well-functioning interfaces while continuously growing in the profession. I enjoy learning new technologies and gladly take on challenges, whether working in a team or independently."
-  },
+  "content":{
+    "h2":"Welcome to my website!",
+    "p1":"I laid my software development foundations in a C# environment before my interest turned towards modern frontend technologies, primarily Angular. I am drawn to visual implementation and user experience design, where results are immediately visible and measurable.",
+    "p2":"I am currently expanding my knowledge in React, as well as NestJS and .NET Core, to create clean and responsive interfaces with a full-stack mindset.",
+    "p3":"My goal is continuous professional growth and writing long-term sustainable, clean code, whether it involves teamwork or independent projects."
+},
   "projects": {
     "h2": "My Projects",
     "p": "Below are some of the projects I have worked on. These projects reflect my passion and creativity for frontend development."

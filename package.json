@@ -10,10 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@nuxt/content": "^3.6.0",
     "@nuxtjs/i18n": "^9.5.5",
     "axios": "^1.10.0",
-    "better-sqlite3": "^11.10.0",
     "nuxt": "^3.17.5",
     "vue": "^3.5.16",
     "vue-router": "^4.5.1"

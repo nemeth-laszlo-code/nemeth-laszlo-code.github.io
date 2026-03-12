@@ -9,7 +9,7 @@
             <div class="header-social flex">
                 <social-links></social-links>
                 <button-component className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
-                    }}</button-component>
+                }}</button-component>
             </div>
             <div class="header-image">
                 <div class="image">
@@ -22,7 +22,7 @@
 </template>
 <script setup>
 const { locale } = useI18n();
-let cv_url = ref(locale.value === 'hu' ? '/CV/nemeth_laszlo_frontend_fejleszto_oneletrajz_hu_compressed.pdf' : '/CV/nemeth_laszlo_frontend_fejleszto_oneletrajz_en_compressed.pdf');
+let cv_url = ref(locale.value === 'hu' ? '/CV/nemeth_laszlo_frontend_fejleszto_cv.pdf' : '/CV/nemeth_laszlo_frontend_developer_cv.pdf');
 
 </script>
 <style lang="scss" scoped>

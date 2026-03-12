@@ -1,24 +1,28 @@
     [
-        {
-            "title":"Result summary component",
-            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
-            "imgurl":"https://jrgenweb.github.io/assets/img/projects/frontend_mentor/result-summary-component.webp",
-            "github":"",
-            "liveurl":""
-        },
+       
          {
             "title":"Frontend quiz app",
-            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
+          "description": "Ezt a projektet a Frontend Mentor „Frontend Quiz App” kihívásának részeként készítettem. A Frontend Mentor feladatai segítenek fejleszteni a front-end készségeket valós, gyakorlatias projektek megépítésével.",
             "imgurl":"https://github.com/jrgenweb/frontend-quiz-app/blob/master/preview.jpg?raw=true",
-            "github":"",
-            "liveurl":""
+            "github":"https://github.com/jrgenweb/frontend-quiz-app",
+            "liveurl":"https://frontend-quiz-app-ruddy.vercel.app/",
+            "tags": ["Vue", "CSS"]
         },
          {
             "title":"Hangman game",
-            "description":"Ez egy rövid leírás a projektről. Itt bemutathatod a projekt célját és technológiáit.",
+            "description":"A Frontend Mentor „Hangman Game” kihívásának megoldása, Angular-ban készítve. A cél a klasszikus akasztófa játék modern, reszponzív felületének megvalósítása volt.",
             "imgurl":"https://github.com/jrgenweb/hangman-game/blob/master/preview.jpg?raw=true",
-            "github":"",
-            "liveurl":""
+            "github":"https://github.com/jrgenweb/hangman-game",
+            "liveurl":"https://hangman-game-alpha-two.vercel.app",
+            "tags": ["Angular", "SCSS","TypeScript"]
+        },
+         {
+            "title":"Recipe App",
+            "description":"Ez egy modern, reszponzív webalkalmazás, amely lehetővé teszi receptek böngészését, kategóriák szerinti szűrését és részletes megtekintését. A projekt célja egy skálázható, tiszta architektúrájú rendszer megalkotása volt.",
+            "imgurl":"https://github.com/jrgenweb/recipe-app-frontend/blob/master/screenshot.webp?raw=true",
+            "github":"https://github.com/jrgenweb/recipe-app-frontend",
+            "liveurl":"https://recipe-app-frontend-three-black.vercel.app",
+            "tags": ["Angular", "BootStrap", "NestJS", "PostgreSQL"]
         }
     ]
     

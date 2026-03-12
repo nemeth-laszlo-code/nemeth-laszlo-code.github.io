@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+console.log("DEBUG - Service ID:", process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID);
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
@@ -64,6 +65,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      emailjsServiceId: process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID,
+      emailjsTemplateId: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      emailjsPublicKey: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+
       axios: {
         //API_BASE: "http://localhost:3001/api/portfolio", // Itt add meg az API URL-t
         //API_BASE: "http://api.jrgen.hu/api/portfolio", // Itt add meg az API URL-t
@@ -81,6 +86,13 @@ export default defineNuxtConfig({
     format: ["webp", "avif"],
     options: {
       baseURL: "/public/", // alapértelmezett
+    },
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
     },
 
     // ha cloudinary vagy más, akkor más beállítás kell

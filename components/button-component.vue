@@ -1,10 +1,11 @@
 <template>
     <div>
 
-        <button :class="className" v-if="type !== 'link'">
+        <button :class="[className, { 'disabled': disabled }]" :disabled="disabled" v-if="type !== 'link'">
             <slot />
         </button>
-        <a :class="className" v-if="type === 'link'" :href="href" :target="target">
+        <a :class="[className, { 'disabled': disabled }]" :disabled="disabled" v-if="type === 'link'" :href="href"
+            :target="target">
             <slot />
         </a>
 
@@ -15,7 +16,8 @@ const props = defineProps({
     className: String,
     type: String,
     target: String,
-    href: String
+    href: String,
+    disabled: Boolean
 })
 </script>
 
@@ -38,7 +40,15 @@ a {
         scale: 0.9;
     }
 
-
+    &:disabled,
+    &[disabled="true"] {
+        background-color: var(--bg-color-200); // Vagy egy szürkébb árnyalat
+        border-bottom-color: gray;
+        cursor: not-allowed; // Ez mutatja a felhasználónak, hogy tilos a kattintás
+        opacity: 0.6;
+        scale: 1 !important; // Ne ugorjon össze kattintáskor, ha le van tiltva
+        pointer-events: none; // Biztosítja, hogy az 'a' tag se reagáljon semmire
+    }
 }
 
 a {
@@ -68,6 +78,13 @@ a.secondary {
     &.sm {
         padding: 5px 10px;
         font-size: 0.75rem;
+    }
+
+    &:disabled,
+    &[disabled="true"] {
+        outline-color: gray;
+        color: gray;
+        background-color: transparent;
     }
 
 }
