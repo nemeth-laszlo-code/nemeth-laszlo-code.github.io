@@ -13,10 +13,12 @@
     "cv": "Download CV"
   },
   "content":{
-    "h2":"Welcome to my website!",
-    "p1":"I laid my software development foundations in a C# environment before my interest turned towards modern frontend technologies, primarily Angular. I am drawn to visual implementation and user experience design, where results are immediately visible and measurable.",
-    "p2":"I am currently expanding my knowledge in React, as well as NestJS and .NET Core, to create clean and responsive interfaces with a full-stack mindset.",
-    "p3":"My goal is continuous professional growth and writing long-term sustainable, clean code, whether it involves teamwork or independent projects."
+   
+    "h2": "Welcome to my site!",
+    "p1": "I laid my software development foundations in a C# environment, after which my interest turned towards modern frontend technologies, primarily Angular. I am drawn to visual implementation and user experience design, where results are immediately visible and measurable.",
+    "p2": "Currently, I am expanding my knowledge in the Angular and NestJS ecosystem, while I plan to explore .NET Core and React in the future. Furthermore, I am open to learning other innovative technologies to create clean and responsive interfaces with a Fullstack mindset.",
+    "p3": "My goal is continuous professional growth and writing long-term sustainable, clean code, whether in teamwork or independent projects."
+
 },
   "projects": {
     "h2": "My Projects",

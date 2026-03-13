@@ -14,12 +14,16 @@
   },
 
   "content":{
-    "h2":"Üdv az oldalamon!",
-    "p1":"Szoftverfejlesztői alapjaimat C# környezetben fektettem le, majd érdeklődésem a modern frontend technológiák, elsősorban az Angular felé fordult. Vonz a vizuális megvalósítás és a felhasználói élmény tervezése, ahol az eredmény azonnal látható és mérhető. ",
-    "p2":"Jelenleg tudásomat React, valamint NestJS és .NET Core irányba bővítem, hogy Fullstack szemlélettel alkothassak letisztult és reszponzív felületeket.",
-    "p3":" Célom a folyamatos szakmai fejlődés és a hosszú távon fenntartható, tiszta kód írása, legyen szó csapatmunkáról vagy önálló projektekről."
+
+    "h2": "Üdv az oldalamon!",
+    "p1": "Szoftverfejlesztői alapjaimat C# környezetben fektettem le, majd érdeklődésem a modern frontend technológiák, elsősorban az Angular felé fordult. Vonz a vizuális megvalósítás és a felhasználói élmény tervezése, ahol az eredmény azonnal látható és mérhető.",
+    "p2": "Jelenleg tudásomat az Angular és NestJS ökoszisztémában mélyítem el, miközben a jövőben a .NET Core és a React irányába is tervezek nyitni. Emellett nyitott vagyok más innovatív technológiák megismerésére is, hogy Fullstack szemlélettel alkothassak letisztult és reszponzív felületeket.",
+    "p3": "Célom a folyamatos szakmai fejlődés és a hosszú távon fenntartható, tiszta kód írása, legyen szó csapatmunkáról vagy önálló projektekről."
+
     
   },
+
+ 
   "projects":{
     "h2":"Projektjeim",
     "p":"Az alábbiakban néhány projektet mutatok be,amelyeken dolgoztam. Ezek a projektek tükrözik a frontend fejlesztés iránti szenvedélyemet és kreativitásomat."
