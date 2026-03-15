@@ -149,6 +149,15 @@ onBeforeUnmount(() => setBodyOverflow(''))
     margin-bottom: 1rem;
 }
 
+.modal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+
+}
+
 @media screen and (max-width: 600px) {
     .modal {
         align-items: flex-start;
