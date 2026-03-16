@@ -13,6 +13,7 @@
             </div>
             <div class="header-image">
                 <div class="image">
+                    
                     <NuxtImg src="/images/profile.jpg" format="webp" width="300" height="300" loading="eager"
                         alt="Németh László profil kép"></NuxtImg>
                 </div>
@@ -85,6 +86,7 @@ const cv_url = computed(() =>
             overflow: hidden;
             border: 5px solid var(--accent-color-1);
             box-shadow: 0 0 0px 5px var(--bg-color-900);
+            background: var(--bg-color-900);
 
 
 
