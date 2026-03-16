@@ -68,6 +68,7 @@ export default defineNuxtConfig({
       emailjsServiceId: process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID,
       emailjsTemplateId: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID,
       emailjsPublicKey: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+      GA_ID: process.env.NUXT_PUBLIC_GA_ID,
 
       axios: {
         //API_BASE: "http://localhost:3001/api/portfolio", // Itt add meg az API URL-t
