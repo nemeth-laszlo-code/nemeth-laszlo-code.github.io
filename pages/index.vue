@@ -1,9 +1,10 @@
 <template>
     <div>
-
+        <ClientOnly>
+    
+    <cookie-consent></cookie-consent>
+  </ClientOnly>
         <NuxtPage />
-
-
         <main class="container">
             <scrolltotop></scrolltotop>
             <div class="nav-switch">
@@ -29,7 +30,7 @@
                 <p>{{ $t('projects.p') }}</p>
                 <projects></projects>
             </panel>
-            <contact id="contact" </contact>
+            <contact id="contact"></contact>
                 <footer>
                     <p> {{ currentYear }}@jrgen.hu
                     </p>
@@ -38,7 +39,7 @@
                     </p>
                 </footer>
         </main>
-
+        
     </div>
 </template>
 
