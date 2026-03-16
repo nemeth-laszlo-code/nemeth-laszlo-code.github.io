@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-console.log("DEBUG - Service ID:", process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID);
+console.log("Nuxt config loaded", process.env.GA_TRACKING_ID); // Ellenőrzés a környezeti változó eléréséhez
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
@@ -68,7 +68,7 @@ export default defineNuxtConfig({
       emailjsServiceId: process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID,
       emailjsTemplateId: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID,
       emailjsPublicKey: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-      GA_ID: process.env.NUXT_PUBLIC_GA_ID,
+      GA_TRACKING_ID: process.env.GA_TRACKING_ID,
 
       axios: {
         //API_BASE: "http://localhost:3001/api/portfolio", // Itt add meg az API URL-t
@@ -107,4 +107,5 @@ export default defineNuxtConfig({
       },
     },
   },
+  plugins: ["~/plugins/ga.client.ts"],
 });
