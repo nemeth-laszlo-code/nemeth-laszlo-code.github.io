@@ -35,7 +35,7 @@ onMounted(() => {
     right: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
-    color: black;
+    color: var(--text-color);
     padding: 1rem;
     border-radius: 0.5rem;
     
