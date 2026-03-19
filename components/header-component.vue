@@ -134,6 +134,8 @@ const cv_url = computed(() =>
             animation: rotateConicGradient2 var(--animation-diration) linear infinite;
         }
     }
+
+
 }
 
 

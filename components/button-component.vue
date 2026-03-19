@@ -1,17 +1,21 @@
 <template>
-    <div>
+    <Transition name="fade" mode="out-in">
+        <div :key="$i18n.locale">
 
-        <button :class="[className, { 'disabled': disabled }]" :disabled="disabled" v-if="type !== 'link'">
-            <slot />
-        </button>
-        <a :class="[className, { 'disabled': disabled }]" :disabled="disabled" v-if="type === 'link'" :href="href"
-            :target="target">
-            <slot />
-        </a>
+            <button :class="[className, { 'disabled': disabled }]" :disabled="disabled" v-if="type !== 'link'">
+                <slot />
+            </button>
+            <a :class="[className, { 'disabled': disabled }]" :disabled="disabled" v-if="type === 'link'" :href="href"
+                :target="target">
+                <slot />
+            </a>
 
-    </div>
+        </div>
+    </Transition>
 </template>
 <script setup>
+import { Transition } from 'vue';
+
 const props = defineProps({
     className: String,
     type: String,
