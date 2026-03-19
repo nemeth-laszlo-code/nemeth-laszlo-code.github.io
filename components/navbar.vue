@@ -104,11 +104,19 @@ onUnmounted(() => {
     border-bottom: 1px solid rgba(255, 255, 255, 0.062);
 }
 
+.navbar-fixed,
+.navbar-absolute {
+    visibility: visible;
+    pointer-events: auto;
+}
+
 /* Lefelé görgetéskor – eltűnik felfelé */
 .navbar-hidden {
     transform: translateY(-100%);
     opacity: 0;
     position: fixed;
+    visibility: hidden;
+    pointer-events: none;
     top: 0;
     left: 0;
 }

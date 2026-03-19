@@ -1,6 +1,6 @@
 <template>
     <teleport to="body">
-        <div v-if="show" class="modal" @click.self="close">
+        <div :class="show ? 'show' : ''" @click.self="close" class="modal">
             <div class="modal-content" role="dialog" aria-modal="true" aria-label="Projekt részletei">
                 <button class="modal-close" type="button" @click="close" aria-label="Bezárás">×</button>
 
@@ -79,23 +79,48 @@ onBeforeUnmount(() => setBodyOverflow(''))
 .modal {
     position: fixed;
     inset: 0;
-    display: flex;
+
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.55);
     z-index: 9999;
+    display: none;
 }
+
+.modal.show {
+    display: flex;
+
+    .modal-content {
+
+        animation: fadeInScale 0.3s ease-out;
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 .modal-content {
     width: min(920px, 100%);
-    max-height: 90vh;
+    max-width: 95vw;
     overflow-y: auto;
     background: var(--bg-color-900);
-    border-radius: 1rem;
+    border-radius: 10px;
     padding: 1.5rem;
     position: relative;
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.06);
+    height: fit-content !important;
+    max-height: 90dvh;
 }
 
 .modal-close {
@@ -112,6 +137,10 @@ onBeforeUnmount(() => setBodyOverflow(''))
 .modal-header {
     margin-bottom: 1rem;
 }
+
+
+
+
 
 .project-description {
     margin: 1rem auto;
