@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar" :class="navbarClass">
-        <div class="wrapper">
+        <div class="wrapper" :class="{ open: isActive }">
             <div class="logo">
                 &lt; /&gt; jrgenweb
             </div>
@@ -203,14 +203,22 @@ onUnmounted(() => {
     }
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width:800px) {
 
     .navbar {
         .wrapper {
             display: grid;
             grid-template-columns: auto auto;
-            grid-template-rows: auto auto;
+            grid-template-rows: auto;
             padding-inline: 0px;
+            max-height: 54px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+
+            &.open {
+                grid-template-rows: auto auto;
+                max-height: max-content;
+            }
 
             .logo {
                 grid-column: 1/2;
@@ -229,8 +237,11 @@ onUnmounted(() => {
 
 
                     &+ul {
-                        display: flex;
-                        animation: sideFromAbove 0.5s forwards;
+
+                        max-height: max-content;
+                        opacity: 1;
+                        transform: translateY(0);
+                        visibility: visible;
                         max-width: 100%;
                         left: 0;
                     }
@@ -243,14 +254,28 @@ onUnmounted(() => {
                 grid-row: 2/3;
                 flex-direction: column;
                 padding: 2rem 1rem;
-                //padding-right: 5rem;
                 font-size: 1.5rem;
                 gap: 1.5rem;
 
-                display: none;
+                display: flex;
+                max-height: 0;
+                opacity: 0;
+                visibility: hidden;
+                overflow: hidden;
+
+                transform: translateY(-10px);
+                transition: max-height .35s ease, opacity .25s ease, transform .25s ease;
 
             }
         }
+    }
+
+    .navbar .wrapper .menu.active+ul {
+        max-height: 500px;
+        /* elegendő érték a tartalomhoz */
+
+        opacity: 1;
+        transform: translateY(0);
     }
 
 
