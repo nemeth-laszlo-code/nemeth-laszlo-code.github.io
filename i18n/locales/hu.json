@@ -40,7 +40,11 @@
     }
 
   },
-  "footer":"Németh László Frontend Fejlesztő"  
+  "footer":"Németh László Frontend Fejlesztő"  ,
+  "cookies": {
+    "message": "Ez az oldal sütiket használ a statisztikához.",
+    "button": "Elfogadom"
+  }
 }
 
     

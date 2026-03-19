@@ -34,5 +34,9 @@
       "button": "Send Message"
     }
   },
-  "footer": "László Németh Frontend Developer"
+  "footer": "László Németh Frontend Developer",
+  "cookies": {
+    "message": "This website uses cookies.",
+    "button": "Accept"
+  }
 }

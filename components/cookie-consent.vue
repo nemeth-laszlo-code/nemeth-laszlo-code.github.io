@@ -1,9 +1,9 @@
 <template>
 
   <div class="cookie-consent" v-show="show">
-    <span>Ez az oldal sütiket használ a statisztikához.</span>
+    <span>{{ $t('cookies.message') }}</span>
     <button-component @click="accept">
-      ✔ Elfogadom
+      ✔ {{ $t('cookies.button') }}
     </button-component>
 
 
