@@ -1,36 +1,41 @@
 <template>
     <div class="card" @click="open">
-        <div class="card-image">
-            <NuxtImg :src="data.imgurl" :alt="data.title + ' projekt képe'" format="webp" width="600" height="600" />
-        </div>
+        <Transition name="fade" mode="out-in">
+            <div :key="$i18n.locale">
+                <div class="card-image">
+                    <NuxtImg :src="data.imgurl" :alt="data.title + ' projekt képe'" format="webp" width="600"
+                        height="600" />
+                </div>
 
-        <h3>{{ data.title }}</h3>
+                <h3>{{ data.title }}</h3>
 
-        <div class="description-wrapper">
-            <p class="description">{{ shortDescription }}</p>
-        </div>
+                <div class="description-wrapper">
+                    <p class="description">{{ shortDescription }}</p>
+                </div>
 
-        <div class="card-tags">
-            <span class="card-tag" v-for="tag in data.tags" :key="tag">
-                {{ tag }}
-            </span>
+                <div class="card-tags">
+                    <span class="card-tag" v-for="tag in data.tags" :key="tag">
+                        {{ tag }}
+                    </span>
 
-        </div>
-        <div class="card-links" @click.stop>
-            <button-component v-if="data.github" type="link" className="secondary sm" :href="data.github"
-                target="_blank">
-                Github
-            </button-component>
-            <button-component v-if="data.liveurl" type="link" className="secondary sm" :href="data.liveurl"
-                target="_blank">
-                Live
-            </button-component>
-        </div>
+                </div>
+                <div class="card-links" @click.stop>
+                    <button-component v-if="data.github" type="link" className="secondary sm" :href="data.github"
+                        target="_blank">
+                        Github
+                    </button-component>
+                    <button-component v-if="data.liveurl" type="link" className="secondary sm" :href="data.liveurl"
+                        target="_blank">
+                        Live
+                    </button-component>
+                </div>
+            </div>
+        </Transition>
     </div>
 </template>
 
 <script setup lang="ts">
-import { computed, defineEmits } from 'vue'
+import { computed } from 'vue'
 
 interface PortfolioProject {
     title: string

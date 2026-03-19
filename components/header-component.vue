@@ -1,19 +1,23 @@
 <template>
     <panel>
         <header class="header">
-            <div class="header-content">
-                <p>{{ $t('header.p') }}</p>
-                <h1>{{ $t('header.h1') }}</h1>
-                <h2>{{ $t('header.h3') }}</h2>
+            <div class="header-text">
+                <Transition name="fade" mode="out-in">
+                    <div class="header-content" :key="$i18n.locale">
+                        <p>{{ $t('header.p') }}</p>
+                        <h1>{{ $t('header.h1') }}</h1>
+                        <h2>{{ $t('header.h3') }}</h2>
+                    </div>
+                </Transition>
             </div>
             <div class="header-social flex">
                 <social-links></social-links>
                 <button-component className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
-                    }}</button-component>
+                }}</button-component>
             </div>
             <div class="header-image">
                 <div class="image">
-                    
+
                     <NuxtImg src="/images/profile.jpg" format="webp" width="300" height="300" loading="eager"
                         alt="Németh László profil kép"></NuxtImg>
                 </div>

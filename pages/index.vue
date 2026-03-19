@@ -1,9 +1,9 @@
 <template>
     <div>
         <ClientOnly>
-    
-    <cookie-consent></cookie-consent>
-  </ClientOnly>
+
+            <cookie-consent></cookie-consent>
+        </ClientOnly>
         <NuxtPage />
         <main class="container">
             <scrolltotop></scrolltotop>
@@ -16,30 +16,39 @@
             <div class="flex">
 
                 <orbit id="skills"></orbit>
-                <panel id="about">
-                    <h2>{{ $t('content.h2') }}</h2>
-                    <p>{{ $t('content.p1') }}</p>
-                    <p>{{ $t('content.p2') }}</p>
-                    <p>{{ $t('content.p3') }}</p>
-                </panel>
+                <Transition name="fade" mode="out-in">
+                    <panel id="about" :key="$i18n.locale">
+                        <h2>{{ $t('content.h2') }}</h2>
+                        <p>{{ $t('content.p1') }}</p>
+                        <p>{{ $t('content.p2') }}</p>
+                        <p>{{ $t('content.p3') }}</p>
+                    </panel>
+                </Transition>
 
 
             </div>
             <panel id="projects">
-                <h2>{{ $t('projects.h2') }}</h2>
-                <p>{{ $t('projects.p') }}</p>
-                <projects></projects>
+                <Transition name="fade" mode="out-in">
+                    <div :key="$i18n.locale">
+                        <h2>{{ $t('projects.h2') }}</h2>
+                        <p>{{ $t('projects.p') }}</p>
+                        <projects></projects>
+                    </div>
+                </Transition>
             </panel>
             <contact id="contact"></contact>
-                <footer>
+            <Transition name="fade" mode="out-in">
+                <footer :key="$i18n.locale">
                     <p> {{ currentYear }}@jrgen.hu
                     </p>
                     <p>
                         {{ $t('footer') }}
                     </p>
                 </footer>
+            </Transition>
+
         </main>
-        
+
     </div>
 </template>
 

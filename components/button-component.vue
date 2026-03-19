@@ -36,6 +36,7 @@ a {
     transition: 0.3s all;
     text-wrap: nowrap;
 
+
     &:active {
         scale: 0.9;
     }

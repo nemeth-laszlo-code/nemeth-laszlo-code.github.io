@@ -23,13 +23,15 @@
                     </rect>
                 </svg>
             </button>
-            <ul class="nav-links ">
-                <li><a href="#">{{ $t('navbar.home') }}</a></li>
-                <li><a href="#about">{{ $t('navbar.about') }}</a></li>
-                <li><a href="#skills">{{ $t('navbar.skills') }}</a></li>
-                <li><a href="#projects">{{ $t('navbar.projects') }}</a></li>
-                <li><a href="#contact">{{ $t('navbar.contact') }}</a></li>
-            </ul>
+            <Transition name="fade" mode="out-in">
+                <ul class="nav-links " :key="$i18n.locale">
+                    <li><a href="#">{{ $t('navbar.home') }}</a></li>
+                    <li><a href="#about">{{ $t('navbar.about') }}</a></li>
+                    <li><a href="#skills">{{ $t('navbar.skills') }}</a></li>
+                    <li><a href="#projects">{{ $t('navbar.projects') }}</a></li>
+                    <li><a href="#contact">{{ $t('navbar.contact') }}</a></li>
+                </ul>
+            </Transition>
         </div>
     </nav>
 </template>
