@@ -38,8 +38,7 @@
     </teleport>
 </template>
 
-<script setup lang="ts">
-import { watch, onBeforeUnmount, ref } from 'vue'
+<script setup lang="ts">import { watch, onBeforeUnmount, onMounted, ref } from 'vue'
 
 interface PortfolioProject {
     title: string
@@ -59,7 +58,6 @@ const emit = defineEmits<{
     (e: 'close'): void
 }>()
 
-// Adatpufferelés: megőrizzük az utolsó projektet a bezárás animáció alatt
 const activeProject = ref<PortfolioProject | null>(props.project)
 
 watch(
@@ -72,7 +70,7 @@ watch(
     { immediate: true }
 )
 
-// Ne engedjük a body görgetését, amikor fent a modal
+// 🔒 body scroll lock
 const setBodyOverflow = (value: string) => {
     if (process.client) document.body.style.overflow = value
 }
@@ -82,6 +80,11 @@ watch(
     (show) => {
         if (show) {
             setBodyOverflow('hidden')
+
+            // 👉 push state amikor megnyílik
+            if (!history.state?.modal) {
+                history.pushState({ modal: true }, '')
+            }
         } else {
             setBodyOverflow('')
         }
@@ -89,7 +92,22 @@ watch(
     { immediate: true }
 )
 
-onBeforeUnmount(() => setBodyOverflow(''))
+
+// 🔥 BACK GOMB KEZELÉS
+const onPopState = () => {
+    if (props.show) {
+        emit('close')
+    }
+}
+
+onMounted(() => {
+    window.addEventListener('popstate', onPopState)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('popstate', onPopState)
+    setBodyOverflow('')
+})
 </script>
 
 <style scoped lang="scss">
