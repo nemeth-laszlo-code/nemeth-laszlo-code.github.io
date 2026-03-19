@@ -14,7 +14,11 @@ export default defineNuxtConfig({
           name: "description",
           content: "Németh László portfolió weboldala",
         },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          name: "viewport",
+          content:
+            "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+        },
         { charset: "utf-8" },
       ],
       link: [
@@ -107,5 +111,5 @@ export default defineNuxtConfig({
       },
     },
   },
-  plugins: ["~/plugins/ga.client.ts"],
+  plugins: ["~/plugins/ga.client.ts", "~/plugins/zoom.ts"],
 });

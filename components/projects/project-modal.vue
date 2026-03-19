@@ -1,43 +1,45 @@
 <template>
     <teleport to="body">
-        <div :class="show ? 'show' : ''" @click.self="close" class="modal">
-            <div class="modal-content" role="dialog" aria-modal="true" aria-label="Projekt részletei">
-                <button class="modal-close" type="button" @click="close" aria-label="Bezárás">×</button>
+        <Transition name="modal">
+            <div v-if="show" class="modal" @click.self="emit('close')">
+                <div class="modal-content" role="dialog" aria-modal="true" aria-label="Projekt részletei">
+                    <button class="modal-close" type="button" @click="emit('close')" aria-label="Bezárás">×</button>
 
-                <div class="modal-header">
-                    <h2>{{ project?.title }}</h2>
-                </div>
-
-                <div class="modal-body">
-                    <div class="modal-image">
-                        <NuxtImg v-if="project?.imgurl" :src="project.imgurl" :alt="project.title + ' projekt képe'"
-                            format="webp" width="800" height="450" />
-                    </div>
-                    <p v-html="project?.description" class="project-description"></p>
-
-                    <div v-if="project?.tags?.length" class="project-tags">
-                        <span class="tag" v-for="tag in project.tags" :key="tag">{{ tag }}</span>
+                    <div class="modal-header">
+                        <h2>{{ activeProject?.title }}</h2>
                     </div>
 
-                    <div class="project-actions">
-                        <button-component v-if="project?.github" type="link" className="secondary"
-                            :href="project.github" target="_blank">
-                            Github
-                        </button-component>
+                    <div class="modal-body">
+                        <div class="modal-image">
+                            <NuxtImg v-if="activeProject?.imgurl" :src="activeProject.imgurl"
+                                :alt="activeProject.title + ' projekt képe'" format="webp" width="800" height="450" />
+                        </div>
+                        <p v-html="activeProject?.description" class="project-description"></p>
 
-                        <button-component v-if="project?.liveurl" type="link" className="secondary"
-                            :href="project.liveurl" target="_blank">
-                            Live
-                        </button-component>
+                        <div v-if="activeProject?.tags?.length" class="project-tags">
+                            <span class="tag" v-for="tag in activeProject.tags" :key="tag">{{ tag }}</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <button-component v-if="activeProject?.github" type="link" className="secondary"
+                                :href="activeProject.github" target="_blank">
+                                Github
+                            </button-component>
+
+                            <button-component v-if="activeProject?.liveurl" type="link" className="secondary"
+                                :href="activeProject.liveurl" target="_blank">
+                                Live
+                            </button-component>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </Transition>
     </teleport>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, watch, onBeforeUnmount } from 'vue'
+import { watch, onBeforeUnmount, ref } from 'vue'
 
 interface PortfolioProject {
     title: string
@@ -57,7 +59,18 @@ const emit = defineEmits<{
     (e: 'close'): void
 }>()
 
-const close = () => emit('close')
+// Adatpufferelés: megőrizzük az utolsó projektet a bezárás animáció alatt
+const activeProject = ref<PortfolioProject | null>(props.project)
+
+watch(
+    () => props.project,
+    (newProject) => {
+        if (newProject) {
+            activeProject.value = newProject
+        }
+    },
+    { immediate: true }
+)
 
 // Ne engedjük a body görgetését, amikor fent a modal
 const setBodyOverflow = (value: string) => {
@@ -67,7 +80,11 @@ const setBodyOverflow = (value: string) => {
 watch(
     () => props.show,
     (show) => {
-        setBodyOverflow(show ? 'hidden' : '')
+        if (show) {
+            setBodyOverflow('hidden')
+        } else {
+            setBodyOverflow('')
+        }
     },
     { immediate: true }
 )
@@ -79,35 +96,12 @@ onBeforeUnmount(() => setBodyOverflow(''))
 .modal {
     position: fixed;
     inset: 0;
-
+    display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.55);
     z-index: 9999;
-    display: none;
 }
-
-.modal.show {
-    display: flex;
-
-    .modal-content {
-
-        animation: fadeInScale 0.3s ease-out;
-    }
-}
-
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 
 .modal-content {
     width: min(920px, 100%);
@@ -123,6 +117,26 @@ onBeforeUnmount(() => setBodyOverflow(''))
     max-height: 90dvh;
 }
 
+/* Vue Transition */
+.modal-enter-active,
+.modal-leave-active {
+    transition: opacity 0.3s ease;
+
+    .modal-content {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    }
+}
+
+.modal-enter-from,
+.modal-leave-to {
+    opacity: 0;
+
+    .modal-content {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+}
+
 .modal-close {
     position: absolute;
     right: 1rem;
@@ -132,15 +146,12 @@ onBeforeUnmount(() => setBodyOverflow(''))
     color: var(--text-color);
     font-size: 1.75rem;
     cursor: pointer;
+    z-index: 10;
 }
 
 .modal-header {
     margin-bottom: 1rem;
 }
-
-
-
-
 
 .project-description {
     margin: 1rem auto;
@@ -184,7 +195,6 @@ onBeforeUnmount(() => setBodyOverflow(''))
     display: block;
     object-fit: cover;
     aspect-ratio: 16 / 9;
-
 }
 
 @media screen and (max-width: 600px) {
@@ -197,7 +207,7 @@ onBeforeUnmount(() => setBodyOverflow(''))
         width: 100vw;
         height: calc(100vh - 3rem);
         max-height: calc(100vh - 3rem);
-        border-radius: 0;
+        border-radius: 5px;
         padding: 1rem;
         box-sizing: border-box;
     }
