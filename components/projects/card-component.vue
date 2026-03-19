@@ -1,12 +1,11 @@
 <template>
     <div class="card" @click="open">
+
+        <div class="card-image">
+            <NuxtImg :src="data.imgurl" :alt="data.title + ' projekt képe'" format="webp" width="600" height="600" />
+        </div>
         <Transition name="fade" mode="out-in">
             <div :key="$i18n.locale">
-                <div class="card-image">
-                    <NuxtImg :src="data.imgurl" :alt="data.title + ' projekt képe'" format="webp" width="600"
-                        height="600" />
-                </div>
-
                 <h3>{{ data.title }}</h3>
 
                 <div class="description-wrapper">

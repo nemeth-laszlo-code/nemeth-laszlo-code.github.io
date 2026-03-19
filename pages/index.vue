@@ -32,9 +32,9 @@
                     <div :key="$i18n.locale">
                         <h2>{{ $t('projects.h2') }}</h2>
                         <p>{{ $t('projects.p') }}</p>
-                        <projects></projects>
                     </div>
                 </Transition>
+                <projects></projects>
             </panel>
             <contact id="contact"></contact>
             <Transition name="fade" mode="out-in">
