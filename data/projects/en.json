@@ -1,26 +1,35 @@
 [
   {
-    "title": "Frontend Quiz App",
-    "description": "Developed as part of the Frontend Mentor 'Frontend Quiz App' challenge. These challenges help refine front-end skills by building real-world, practical projects.",
-    "imgurl":"images/projects/quiz_app.jpg",
-    "github": "https://github.com/jrgenweb/frontend-quiz-app",
-    "liveurl": "https://frontend-quiz-app-ruddy.vercel.app/",
-    "tags": ["Vue", "CSS"]
-  },
-  {
-    "title": "Hangman Game",
-    "description": "A solution to the Frontend Mentor 'Hangman Game' challenge, built with Angular. The goal was to implement a modern, responsive interface for the classic hangman game.",
-    "imgurl":"images/projects/hangman.jpg",
-    "github": "https://github.com/jrgenweb/hangman-game",
-    "liveurl": "https://hangman-game-alpha-two.vercel.app",
+    "title": "Product Feedback App",
+    "description": "Frontend Mentor challenge built with Angular. A product feedback UI with filtering, sorting, and comments.",
+    "imgurl": "images/projects/product_feedback_app.jpg",
+    "github": "https://github.com/nemeth-laszlo-code/product-feedback-app/",
+    "liveurl": "https://product-feedback-app-lemon.vercel.app/suggestions",
     "tags": ["Angular", "SCSS", "TypeScript"]
   },
   {
     "title": "Recipe App",
     "description": "A modern, responsive web application for browsing, filtering by category, and viewing detailed recipe information. The project focuses on a scalable system with a clean architecture. <br /><b>Note:</b> Hosted on a free cloud tier, the initial load may take longer due to server wake-up (Cold Start).",
-    "imgurl":"images/projects/recipe_app.webp",
-    "github": "https://github.com/jrgenweb/recipe-app-frontend",
+    "imgurl": "images/projects/recipe_app.webp",
+    "github": "https://github.com/nemeth-laszlo-code/recipe-app-frontend",
     "liveurl": "https://recipe-app-frontend-three-black.vercel.app",
     "tags": ["Angular", "Bootstrap", "NestJS", "PostgreSQL"]
+  },
+
+  {
+    "title": "Frontend Quiz App - Angular",
+    "description": "I refactored from an old Fronted Mentor „Frontend Quiz App” VueJs version to Angular + GSAP",
+    "imgurl": "images/projects/quiz_app.jpg",
+    "github": "https://github.com/nemeth-laszlo-code/frontend-quiz-app",
+    "liveurl": "https://github.com/nemeth-laszlo-code/frontend_quiz_app_angular",
+    "tags": ["Angular", "TailwindCSS", "GSAP"]
+  },
+  {
+    "title": "Hangman Game",
+    "description": "A solution to the Frontend Mentor 'Hangman Game' challenge, built with Angular. The goal was to implement a modern, responsive interface for the classic hangman game.",
+    "imgurl": "images/projects/hangman.jpg",
+    "github": "https://github.com/nemeth-laszlo-code/hangman-game",
+    "liveurl": "https://hangman-game-alpha-two.vercel.app",
+    "tags": ["Angular", "SCSS", "TypeScript"]
   }
 ]

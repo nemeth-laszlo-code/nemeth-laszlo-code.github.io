@@ -1,29 +1,34 @@
-    [
-       
-         {
-            "title":"Frontend quiz app",
-          "description": "Ezt a projektet a Frontend Mentor „Frontend Quiz App” kihívásának részeként készítettem. A Frontend Mentor feladatai segítenek fejleszteni a front-end készségeket valós, gyakorlatias projektek megépítésével.",
-            "imgurl":"images/projects/quiz_app.jpg",
-            "github":"https://github.com/jrgenweb/frontend-quiz-app",
-            "liveurl":"https://frontend-quiz-app-ruddy.vercel.app/",
-            "tags": ["Vue", "CSS"]
-        },
-         {
-            "title":"Hangman game",
-            "description":"A Frontend Mentor „Hangman Game” kihívásának megoldása, Angular-ban készítve. A cél a klasszikus akasztófa játék modern, reszponzív felületének megvalósítása volt.",
-            "imgurl":"images/projects/hangman.jpg",
-            "github":"https://github.com/jrgenweb/hangman-game",
-            "liveurl":"https://hangman-game-alpha-two.vercel.app",
-            "tags": ["Angular", "SCSS","TypeScript"]
-        },
-         {
-            "title":"Recipe App",
-            "description":"Ez egy modern, reszponzív webalkalmazás, amely lehetővé teszi receptek böngészését, kategóriák szerinti szűrését és részletes megtekintését. A projekt célja egy skálázható, tiszta architektúrájú rendszer megalkotása volt. <br /><b>Megjegyzés:</b> A projekt ingyenes felhőalapú tárhelyen fut, így az első betöltés a szerver ébredése (Cold Start) miatt hosszabb időt vehet igénybe.",
-            "imgurl":"images/projects/recipe_app.webp",
-            "github":"https://github.com/jrgenweb/recipe-app-frontend",
-            "liveurl":"https://recipe-app-frontend-three-black.vercel.app",
-            "tags": ["Angular", "BootStrap", "NestJS", "PostgreSQL"]
-        }
-    ]
-    
-    
+[
+  {
+    "title": "Product Feedback App",
+    "description": "Frontend Mentor kihívás Angularral. Termék visszajelző UI szűréssel, rendezéssel és kommentekkel.",
+    "imgurl": "images/projects/product_feedback_app.jpg",
+    "github": "https://github.com/nemeth-laszlo-code/product-feedback-app/",
+    "liveurl": "https://product-feedback-app-lemon.vercel.app/suggestions",
+    "tags": ["Angular", "SCSS", "TypeScript"]
+  },
+  {
+    "title": "Recipe App",
+    "description": "Ez egy modern, reszponzív webalkalmazás, amely lehetővé teszi receptek böngészését, kategóriák szerinti szűrését és részletes megtekintését. A projekt célja egy skálázható, tiszta architektúrájú rendszer megalkotása volt. <br /><b>Megjegyzés:</b> A projekt ingyenes felhőalapú tárhelyen fut, így az első betöltés a szerver ébredése (Cold Start) miatt hosszabb időt vehet igénybe.",
+    "imgurl": "images/projects/recipe_app.webp",
+    "github": "https://github.com/nemeth-laszlo-code/recipe-app-frontend",
+    "liveurl": "https://recipe-app-frontend-three-black.vercel.app",
+    "tags": ["Angular", "BootStrap", "NestJS", "PostgreSQL"]
+  },
+  {
+    "title": "Frontend Quiz App - Angular",
+    "description": "Ezt a projektet a régebbi Frontend Mentor „Frontend Quiz App” VueJS verziójából refactoráltam Angular-ra.",
+    "imgurl": "images/projects/quiz_app.jpg",
+    "github": "https://github.com/nemeth-laszlo-code/frontend-quiz-app",
+    "liveurl": "https://github.com/nemeth-laszlo-code/frontend_quiz_app_angular",
+    "tags": ["Angular", "TailwindCSS", "GSAP"]
+  },
+  {
+    "title": "Hangman game",
+    "description": "A Frontend Mentor „Hangman Game” kihívásának megoldása, Angular-ban készítve. A cél a klasszikus akasztófa játék modern, reszponzív felületének megvalósítása volt.",
+    "imgurl": "images/projects/hangman.jpg",
+    "github": "https://github.com/nemeth-laszlo-code/hangman-game",
+    "liveurl": "https://hangman-game-alpha-two.vercel.app",
+    "tags": ["Angular", "SCSS", "TypeScript"]
+  }
+]
