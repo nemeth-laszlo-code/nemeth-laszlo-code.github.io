@@ -113,6 +113,8 @@ const { locale } = useI18n();
     padding: 0;
     max-height: 350px !important;
 
+
+
     .orbit {
         --count: 12;
         --i: 0;
@@ -130,17 +132,13 @@ const { locale } = useI18n();
         place-content: center;
         transition: 0.3s ease-in-out;
         overflow: hidden;
-        /*  box-shadow:
-        -6px -6px 12px rgba(255, 255, 255, 0.05),
-        /* világos árnyék 6px 6px 12px rgba(0, 0, 0, 0.6); */
+
+
         padding: 1rem;
 
         animation: spin 100s linear infinite;
 
 
-        /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite; */
         p {
 
             @include orbitBoxShadow;
@@ -320,8 +318,8 @@ const { locale } = useI18n();
     .info-box {
         position: relative;
 
-        width: 305px;
-        height: 305px;
+        width: 290px;
+        height: 290px;
 
         overflow: hidden;
 
@@ -329,9 +327,11 @@ const { locale } = useI18n();
 
         //max-height: 350px !important;
 
+
         .orbit {
 
-            --orbit-item-size: 48px;
+
+            --orbit-item-size: 40px;
             --radius: 115px;
 
             p {
@@ -340,8 +340,8 @@ const { locale } = useI18n();
             }
 
             .orbit-container {
-                top: -95px;
-                left: 45px;
+                top: -93px;
+                left: 55px;
             }
         }
     }

@@ -62,6 +62,8 @@ const cv_url = computed(() =>
     .header-social {
         grid-column: 1/2;
         grid-row: 2/3;
+        display: flex;
+        flex-wrap: wrap;
         align-self: flex-end;
         justify-self: flex-start;
         padding-left: 1rem;
@@ -236,6 +238,8 @@ h1 {
             grid-column: 1/2;
             grid-row: 2/3;
             justify-self: center;
+            width: unset;
+            max-width: 300px;
         }
     }
 

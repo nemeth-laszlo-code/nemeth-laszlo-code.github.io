@@ -228,18 +228,16 @@ onUnmounted(() => {
 
             }
 
+
+
             .menu {
                 grid-column: 2/3;
                 grid-row: 1/2;
-
                 display: block;
+                justify-self: end;
 
                 &.active {
-
-
-
                     &+ul {
-
                         max-height: max-content;
                         opacity: 1;
                         transform: translateY(0);

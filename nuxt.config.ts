@@ -83,7 +83,7 @@ export default defineNuxtConfig({
   },
   image: {
     // Engedélyezett külső domain-ek
-    domains: ["jrgenweb.github.io", "placehold.co"],
+    domains: ["nemeth-laszlo-code.github.io", "placehold.co"],
 
     // provider (pl. ipx)
     provider: "vercel",
@@ -112,4 +112,5 @@ export default defineNuxtConfig({
     },
   },
   plugins: ["~/plugins/ga.client.ts", "~/plugins/zoom.ts"],
+  components: [{ path: "~/components", pathPrefix: false }],
 });
