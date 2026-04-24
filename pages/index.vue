@@ -17,17 +17,17 @@
 
                 <orbit id="skills"></orbit>
                 <Transition name="fade" mode="out-in">
-                    <panel id="about" :key="$i18n.locale">
+                    <app-panel id="about" :key="$i18n.locale">
                         <h2>{{ $t('content.h2') }}</h2>
                         <p>{{ $t('content.p1') }}</p>
                         <p>{{ $t('content.p2') }}</p>
                         <p>{{ $t('content.p3') }}</p>
-                    </panel>
+                    </app-panel>
                 </Transition>
 
 
             </div>
-            <panel id="projects">
+            <app-panel id="projects">
                 <Transition name="fade" mode="out-in">
                     <div :key="$i18n.locale">
                         <h2>{{ $t('projects.h2') }}</h2>
@@ -35,7 +35,7 @@
                     </div>
                 </Transition>
                 <projects></projects>
-            </panel>
+            </app-panel>
             <contact id="contact"></contact>
             <Transition name="fade" mode="out-in">
                 <footer :key="$i18n.locale">

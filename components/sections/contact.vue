@@ -1,27 +1,27 @@
 <template>
     <div class="contact">
-        <panel>
+        <app-panel>
             <Transition name="fade" mode="out-in">
                 <div v-if="!isSuccess" :key="$i18n.locale">
                     <h2>{{ $t('contact.h2') }}</h2>
                     <p>{{ $t('contact.p') }}</p>
                     <form @submit.prevent="sendEmail">
-                        <input-component name="name" :label="$t('contact.inputs.name')" type="text"
-                            v-model="formData.name" @blur="touch('name')" class="input" />
+                        <app-input name="name" :label="$t('contact.inputs.name')" type="text" v-model="formData.name"
+                            @blur="touch('name')" class="input" />
                         <span class="error-msg">{{ errors.name }}</span>
 
-                        <input-component name="email" :label="$t('contact.inputs.email')" type="email"
+                        <app-input name="email" :label="$t('contact.inputs.email')" type="email"
                             v-model="formData.email" @blur="touch('email')" class="input" />
                         <span class="error-msg">{{ errors.email }}</span>
 
-                        <input-component name="message" :label="$t('contact.inputs.message')" type="textarea"
-                            class="input" v-model="formData.message" @blur="touch('message')" />
+                        <app-input name="message" :label="$t('contact.inputs.message')" type="textarea" class="input"
+                            v-model="formData.message" @blur="touch('message')" />
                         <span class="error-msg">{{ errors.message }}</span>
 
                         <div class="m-auto">
-                            <button-component type="submit" :disabled="isSending || !isFormValid" class="sm-m-auto">
+                            <app-button type="submit" :disabled="isSending || !isFormValid" class="sm-m-auto">
                                 {{ isSending ? '...' : $t('contact.inputs.button') }}
-                            </button-component>
+                            </app-button>
 
                         </div>
                     </form>
@@ -49,12 +49,12 @@
 
                 <div v-else key="success" class="success-msg">
                     <h2 style="text-align: center; margin-bottom: 2rem">Üzenet sikeresen elküldve!</h2>
-                    <button-component @click="reset" style="margin-inline: auto; display: block; width: fit-content">
+                    <app-button @click="reset" style="margin-inline: auto; display: block; width: fit-content">
                         {{ $t('contact.inputs.newMessage') ?? 'Új üzenet' }}
-                    </button-component>
+                    </app-button>
                 </div>
             </Transition>
-        </panel>
+        </app-panel>
     </div>
 </template>
 

@@ -21,15 +21,15 @@
                         </div>
 
                         <div class="project-actions">
-                            <button-component v-if="activeProject?.github" type="link" className="secondary"
+                            <app-button v-if="activeProject?.github" type="link" className="secondary"
                                 :href="activeProject.github" target="_blank">
                                 Github
-                            </button-component>
+                            </app-button>
 
-                            <button-component v-if="activeProject?.liveurl" type="link" className="secondary"
+                            <app-button v-if="activeProject?.liveurl" type="link" className="secondary"
                                 :href="activeProject.liveurl" target="_blank">
                                 Live
-                            </button-component>
+                            </app-button>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 <template>
-    <panel>
+    <app-panel>
         <header class="header">
             <div class="header-text">
                 <Transition name="fade" mode="out-in">
@@ -12,8 +12,8 @@
             </div>
             <div class="header-social flex">
                 <social-links></social-links>
-                <button-component className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
-                }}</button-component>
+                <app-button className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
+                }}</app-button>
             </div>
             <div class="header-image">
                 <div class="image">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </header>
-    </panel>
+    </app-panel>
 </template>
 <script setup>
 const { locale } = useI18n();

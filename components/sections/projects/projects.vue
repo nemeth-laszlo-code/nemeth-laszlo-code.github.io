@@ -13,8 +13,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useI18n } from '#imports'
-import CardComponent from '~/components/projects/card-component.vue'
-import ProjectModal from '~/components/projects/project-modal.vue'
+import CardComponent from './card-component.vue'
+import ProjectModal from '~/components/sections/projects/project-modal.vue'
 import projectsHu from '~/data/projects/hu.json'
 import projectsEn from '~/data/projects/en.json'
 

@@ -1,5 +1,5 @@
 <template>
-    <panel>
+    <app-panel>
 
         <div class="info-box">
 
@@ -64,39 +64,39 @@
                 <div class="techstack">
 
                     <div class="tech-item">
-                        <progressbar :progress=100 title="JavaScript / TypeScript"></progressbar>
+                        <app-progressbar :progress=100 title="JavaScript / TypeScript"></app-progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar :progress=100 title="Angular"></progressbar>
-                    </div>
-
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="TailwindCSS"></progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="Material UI"></progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="PrimeNg"></progressbar>
+                        <app-progressbar :progress=100 title="Angular"></app-progressbar>
                     </div>
 
-
-
                     <div class="tech-item">
-                        <progressbar :progress=100 title="NestJS"></progressbar>
+                        <app-progressbar :progress=100 title="TailwindCSS"></app-progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar :progress=100 title="Visual Studio Code"></progressbar>
+                        <app-progressbar :progress=100 title="Material UI"></app-progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar :progress=100 title="Git / GitHub"></progressbar>
+                        <app-progressbar :progress=100 title="PrimeNg"></app-progressbar>
+                    </div>
+
+
+
+                    <div class="tech-item">
+                        <app-progressbar :progress=100 title="NestJS"></app-progressbar>
+                    </div>
+                    <div class="tech-item">
+                        <app-progressbar :progress=100 title="Visual Studio Code"></app-progressbar>
+                    </div>
+                    <div class="tech-item">
+                        <app-progressbar :progress=100 title="Git / GitHub"></app-progressbar>
                     </div>
 
                 </div>
             </div>
 
         </div>
-    </panel>
+    </app-panel>
 </template>
 <script setup>
 const { locale } = useI18n();

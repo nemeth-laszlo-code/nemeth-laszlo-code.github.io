@@ -1,9 +1,9 @@
 <template>
-    <base-switch :disabled="disabled" :checked="locale === 'en'" @change="toggleLang">
+    <app-switch :disabled="disabled" :checked="locale === 'en'" @change="toggleLang">
         {{ locale.value }}
         <template #option2>HU</template>
         <template #option>EN</template>
-    </base-switch>
+    </app-switch>
 </template>
 <script setup>
 const { locale, setLocale } = useI18n();

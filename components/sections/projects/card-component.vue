@@ -19,14 +19,14 @@
 
                 </div>
                 <div class="card-links" @click.stop>
-                    <button-component v-if="data.github" type="link" className="secondary sm" :href="data.github"
+                    <app-button v-if="data.github" type="link" className="secondary sm" :href="data.github"
                         target="_blank">
                         Github
-                    </button-component>
-                    <button-component v-if="data.liveurl" type="link" className="secondary sm" :href="data.liveurl"
+                    </app-button>
+                    <app-button v-if="data.liveurl" type="link" className="secondary sm" :href="data.liveurl"
                         target="_blank">
                         Live
-                    </button-component>
+                    </app-button>
                 </div>
             </div>
         </Transition>

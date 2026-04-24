@@ -1,5 +1,5 @@
 <template>
-    <base-switch :checked="isChecked" @change="toggleTheme" :disabled="disabled">
+    <app-switch :checked="isChecked" @change="toggleTheme" :disabled="disabled">
         <template #option2>
             <svg height="30" viewBox="0 0 550 550" width="30" xmlns="http://www.w3.org/2000/svg">
                 <title />
@@ -20,7 +20,7 @@
                 </g>
             </svg>
         </template>
-    </base-switch>
+    </app-switch>
 </template>
 <script setup>
 const props = defineProps({
