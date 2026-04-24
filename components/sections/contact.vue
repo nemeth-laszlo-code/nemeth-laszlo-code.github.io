@@ -16,7 +16,7 @@
                         <div class="m-auto">
                             <button-component type="submit" :disabled="isSending || isFormInvalid" class="sm-m-auto">{{
                                 $t('contact.inputs.button')
-                            }}</button-component>
+                                }}</button-component>
                         </div>
                     </form>
 
@@ -64,9 +64,6 @@ const isFormInvalid = computed(() => {
 // 4. Függvények
 const sendEmail = async () => {
     if (isFormInvalid.value) return;
-    // Ellenőrizzük, hogy a kulcsok betöltődtek-e (segít a hibakeresésben)
-    console.log("DEBUG - Config:", config.public.emailjsServiceId, config.public.emailjsTemplateId, config.public.emailjsPublicKey);
-
 
     isSending.value = true;
 

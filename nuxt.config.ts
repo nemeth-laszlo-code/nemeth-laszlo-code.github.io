@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-console.log("Nuxt config loaded", process.env.GA_TRACKING_ID); // Ellenőrzés a környezeti változó eléréséhez
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   css: ["~/assets/scss/main.scss"],
   ssr: false,
   app: {
+    baseURL: "/",
+    cdnURL: "/",
+    buildAssetsDir: "_nuxt/",
     head: {
       title: "Németh László - Frontend Fejlesztő",
       meta: [
@@ -64,7 +67,7 @@ export default defineNuxtConfig({
     langDir: "locales/", // fontos!
     strategy: "prefix_except_default",
     // strategy: "prefix",
-    lazy: true, // <--- fontos!
+    lazy: false, // <--- fontos!
     vueI18n: "./i18n.config.ts", // külső konfiguráció fájl!
   },
   runtimeConfig: {
@@ -86,12 +89,10 @@ export default defineNuxtConfig({
     domains: ["nemeth-laszlo-code.github.io", "placehold.co"],
 
     // provider (pl. ipx)
-    provider: "vercel",
+    provider: "none",
     dir: "public", // ez az alapértelmezett
     format: ["webp", "avif"],
-    options: {
-      baseURL: "/public/", // alapértelmezett
-    },
+
     screens: {
       xs: 320,
       sm: 640,
@@ -101,6 +102,11 @@ export default defineNuxtConfig({
     },
 
     // ha cloudinary vagy más, akkor más beállítás kell
+  },
+  nitro: {
+    output: {
+      publicDir: ".output/public",
+    },
   },
   vite: {
     css: {
