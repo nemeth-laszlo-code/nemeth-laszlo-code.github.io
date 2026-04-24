@@ -2,7 +2,7 @@
     <nav class="navbar" :class="navbarClass">
         <div class="wrapper" :class="{ open: isActive }">
             <div class="logo">
-                &lt; /&gt; jrgenweb
+                &lt;NL /&gt;
             </div>
             <!--<a href="#" class="menu" :class="isActive ? 'active' : ''" @click="toggleMenu($event)">
 

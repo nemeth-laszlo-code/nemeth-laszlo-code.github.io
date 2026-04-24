@@ -4,43 +4,57 @@
         <div class="info-box">
 
             <div class="orbit">
-                <p>Tech stackem</p>
+                <p style="width:150px">
+                    <Transition name="fade" mode="out-in">
+                        <span :key="$i18n.locale">
+                            {{ $t('orbit.h2') }}</span>
+                    </Transition>
+                </p>
+
                 <ul class="orbit-container">
+
+                    <li class="orbit-item" style="--i: 1">
+                        <img src="/images/icons/js.svg" alt="JavaScript" />
+                    </li>
                     <li class="orbit-item" style="--i: 2">
-                        <img src="/images/icons/sass.svg" alt="Sass" />
-                    </li>
-                    <li class="orbit-item" style="--i: 3">
-                        <img src="/images/icons/bootstrap.svg" alt="Bootstrap" />
-                    </li>
-                    <li class="orbit-item" style="--i: 4">
-                        <img src="/images/icons/js.svg" alt="javascript" />
-                    </li>
-                    <li class="orbit-item" style="--i: 5">
                         <img src="/images/icons/typescript.svg" alt="TypeScript" />
                     </li>
-                    <li class="orbit-item" style="--i: 0">
-                        <img src="/images/icons/react.svg" alt="React" />
-                    </li>
-                    <li class="orbit-item" style="--i: 6">
+                    <li class="orbit-item" style="--i: 3">
                         <img src="/images/icons/angular.svg" alt="Angular" />
                     </li>
-                    <li class="orbit-item" style="--i: 7">
-                        <img src="/images/icons/vuejs.svg" alt="VueJS" />
+
+                    <li class="orbit-item" style="--i: 5">
+                        <img src="/images/icons/primeng.svg" alt="PrimeNG" />
                     </li>
+                    <li class="orbit-item" style="--i: 6">
+                        <img src="/images/icons/materialui.svg" alt="MaterialUI" />
+                    </li>
+                    <li class="orbit-item" style="--i: 4">
+                        <img src="/images/icons/tailwind.svg" alt="TailwindCSS" />
+                    </li>
+
                     <li class="orbit-item" style="--i: 8">
-                        <img src="/images/icons/nuxt.svg" alt="Nuxt" />
+                        <img src="/images/icons/bootstrap.svg" alt="Bootstrap" />
                     </li>
-                    <li class="orbit-item" style="--i: 1">
+
+                    <li class="orbit-item" style="--i: 7">
+                        <img src="/images/icons/sass.svg" alt="Sass" />
+                    </li>
+
+
+
+                    <li class="orbit-item" style="--i: 9">
                         <img src="/images/icons/nestjs.svg" alt="NestJS" />
                     </li>
-                    <li class="orbit-item" style="--i: 9">
-                        <img src="/images/icons/vscode.svg" alt="Visual Studio Code" />
-                    </li>
+
                     <li class="orbit-item" style="--i: 10">
                         <img src="/images/icons/git.svg" alt="Git Version Control" />
                     </li>
                     <li class="orbit-item" style="--i: 11">
                         <img src="/images/icons/github_logo.svg" alt="Github" />
+                    </li>
+                    <li class="orbit-item" style="--i: 12">
+                        <img src="/images/icons/vscode.svg" alt="Visual Studio Code" />
                     </li>
                 </ul>
             </div>
@@ -50,26 +64,23 @@
                 <div class="techstack">
 
                     <div class="tech-item">
-                        <progressbar :progress=100 title="BootStrap"></progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="JavaScript"></progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="TypeScript"></progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="React"></progressbar>
+                        <progressbar :progress=100 title="JavaScript / TypeScript"></progressbar>
                     </div>
                     <div class="tech-item">
                         <progressbar :progress=100 title="Angular"></progressbar>
                     </div>
+
                     <div class="tech-item">
-                        <progressbar :progress=100 title="VueJS"></progressbar>
+                        <progressbar :progress=100 title="TailwindCSS"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar :progress=100 title="Nuxt"></progressbar>
+                        <progressbar :progress=100 title="Material UI"></progressbar>
                     </div>
+                    <div class="tech-item">
+                        <progressbar :progress=100 title="PrimeNg"></progressbar>
+                    </div>
+
+
 
                     <div class="tech-item">
                         <progressbar :progress=100 title="NestJS"></progressbar>
@@ -78,19 +89,18 @@
                         <progressbar :progress=100 title="Visual Studio Code"></progressbar>
                     </div>
                     <div class="tech-item">
-                        <progressbar :progress=100 title="Git"></progressbar>
+                        <progressbar :progress=100 title="Git / GitHub"></progressbar>
                     </div>
 
-                    <div class="tech-item">
-                        <progressbar :progress=100 title="GitHub"></progressbar>
-                    </div>
                 </div>
             </div>
 
         </div>
     </panel>
 </template>
-
+<script setup>
+const { locale } = useI18n();
+</script>
 <style lang="scss" scoped>
 .info-box {
     position: relative;

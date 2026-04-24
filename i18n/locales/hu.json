@@ -1,50 +1,47 @@
 {
-  "navbar":{
-    "home":"Főoldal",
-    "about":"Rólam",
-    "skills":"Készségek",
-    "projects":"Projektjeim",
-    "contact":"Kapcsolat"
+  "navbar": {
+    "home": "Főoldal",
+    "about": "Rólam",
+    "skills": "Készségek",
+    "projects": "Projektjeim",
+    "contact": "Kapcsolat"
   },
-  "header":{
-    "p":"Helló a nevem,",
-    "h1":"Németh László",
-    "h3":"Frontend Fejlesztő vagyok.",
-    "cv":"CV letöltése"
+  "header": {
+    "p": "Helló a nevem,",
+    "h1": "Németh László",
+    "h3": "Frontend Fejlesztő vagyok.",
+    "cv": "CV letöltése"
   },
-
-  "content":{
-
+  "orbit": {
+    "h2": "Technológiáim"
+  },
+  "content": {
     "h2": "Üdv az oldalamon!",
-    "p1": "Szoftverfejlesztői alapjaimat C# környezetben fektettem le, majd érdeklődésem a modern frontend technológiák, elsősorban az Angular felé fordult. Vonz a vizuális megvalósítás és a felhasználói élmény tervezése, ahol az eredmény azonnal látható és mérhető.",
-    "p2": "Jelenleg tudásomat az Angular és NestJS ökoszisztémában mélyítem el, miközben a jövőben a .NET Core és a React irányába is tervezek nyitni. Emellett nyitott vagyok más innovatív technológiák megismerésére is, hogy Fullstack szemlélettel alkothassak letisztult és reszponzív felületeket.",
-    "p3": "Célom a folyamatos szakmai fejlődés és a hosszú távon fenntartható, tiszta kód írása, legyen szó csapatmunkáról vagy önálló projektekről."
+    "p1": "Frontend fejlesztőként Angular alapú webalkalmazások készítésére fókuszálok. Fő érdeklődési területem a jól felépített komponensstruktúra, az újrahasznosítható UI elemek és az átlátható state kezelés megvalósítása.",
+    "p2": "Dolgoztam már reszponzív felületeken, formokkal, valamint interaktív UI megoldások fejlesztésével (szűrés, rendezés, kommentelés). Alapszintű tapasztalatom van a PrimeNG és az Angular Material használatában. Emellett alap backend (NestJS) ismeretekkel is rendelkezem, ami segít jobban átlátni az alkalmazások működését.",
 
-    
+    "p3": "Jelenleg az Angular ökoszisztémában fejlődöm tovább, különös figyelmet fordítva a modernebb megoldásokra (Signals, standalone komponensek).",
+    "p4": "Célom, hogy folyamatosan fejlődjek, és stabil, jól karbantartható frontend alkalmazásokat építsek."
   },
 
- 
-  "projects":{
-    "h2":"Projektjeim",
-    "p":"Az alábbiakban néhány projektet mutatok be,amelyeken dolgoztam. Ezek a projektek tükrözik a frontend fejlesztés iránti szenvedélyemet és kreativitásomat."
+  "projects": {
+    "h2": "Projektjeim",
+    "p": "Válogatás az általam készített frontend projektekből."
   },
-  
-  "contact":{
-    "h2":"Kapcsolat",
-    "p":"Ha felkeltettem az érdeklődésedet, vagy bármilyen kérdésed lenne írj üzenetet!",
-    "inputs":{
-      "name":"Név",
-      "email":"Email",
-      "message":"Üzenet",
-      "button":"Üzenet küldése"
+
+  "contact": {
+    "h2": "Kapcsolat",
+    "p": "Ha felkeltettem az érdeklődésedet, vagy bármilyen kérdésed lenne írj üzenetet!",
+    "inputs": {
+      "name": "Név",
+      "email": "Email",
+      "message": "Üzenet",
+      "button": "Üzenet küldése"
     }
-
   },
-  "footer":"Németh László Frontend Fejlesztő"  ,
+  "footer": "Németh László Frontend Fejlesztő",
   "cookies": {
     "message": "Ez az oldal sütiket használ a statisztikához.",
     "button": "Elfogadom"
   }
 }
-
-    

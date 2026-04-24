@@ -39,7 +39,7 @@
             <contact id="contact"></contact>
             <Transition name="fade" mode="out-in">
                 <footer :key="$i18n.locale">
-                    <p> {{ currentYear }}@jrgen.hu
+                    <p> {{ currentYear }}@nemeth-laszlo-code.github.io
                     </p>
                     <p>
                         {{ $t('footer') }}

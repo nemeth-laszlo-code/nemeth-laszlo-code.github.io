@@ -17,7 +17,7 @@
                     </svg>
 
                 </a></li>
-            <li><a href="https://github.com/jrgenweb" target="_blank">
+            <li><a href="https://github.com/nemeth-laszlo-code" target="_blank">
                     <span class="sr-only">Github link</span>
                     <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -26,7 +26,7 @@
                     </svg>
 
                 </a></li>
-            <li><a href="https://x.com/jrgen_webdev" target="_blank">
+            <li><a href="https://x.com/nlaszlo_code" target="_blank">
                     <span class="sr-only">Linkedin link</span>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px"
                         height="30px" viewBox="0 0 30 30" version="1.1">

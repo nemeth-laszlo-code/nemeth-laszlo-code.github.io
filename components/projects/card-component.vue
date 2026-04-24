@@ -5,7 +5,7 @@
             <NuxtImg :src="data.imgurl" :alt="data.title + ' projekt képe'" format="webp" width="600" height="600" />
         </div>
         <Transition name="fade" mode="out-in">
-            <div :key="$i18n.locale">
+            <div :key="$i18n.locale" class="card-body">
                 <h3>{{ data.title }}</h3>
 
                 <div class="description-wrapper">
@@ -127,8 +127,9 @@ const shortDescription = computed(() => {
 
         padding-block: 0.5rem;
         display: flex;
-        flex-wrap: wrap;
-
+        flex-wrap: nowrap;
+        overflow-y: hidden;
+        overflow-x: scroll;
         gap: 0.5rem;
         margin-top: auto;
 
@@ -142,6 +143,8 @@ const shortDescription = computed(() => {
         border-radius: 5px;
         padding: 0.2rem 0.5rem;
 
+
+
     }
 
     &-links {
@@ -149,6 +152,13 @@ const shortDescription = computed(() => {
         justify-content: space-between;
         padding-top: 1rem;
         margin-top: auto;
+    }
+
+    &-body {
+
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
     }
 
 
