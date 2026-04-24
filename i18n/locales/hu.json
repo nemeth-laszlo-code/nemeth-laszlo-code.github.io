@@ -36,7 +36,8 @@
       "name": "Név",
       "email": "Email",
       "message": "Üzenet",
-      "button": "Üzenet küldése"
+      "button": "Üzenet küldése",
+      "newMessage": "Új üzenet"
     }
   },
   "footer": "Németh László Frontend Fejlesztő",

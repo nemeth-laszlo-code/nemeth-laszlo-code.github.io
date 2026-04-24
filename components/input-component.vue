@@ -1,18 +1,13 @@
 <template>
-
-
     <div class="form-group" ref="formGroup">
         <label :for="name">{{ label }}</label>
 
         <input v-if="type !== 'textarea'" :type="type" :id="name" :name="name" :required="required" :placeholder="label"
-            v-model="fieldValue" />
+            @blur="emit('blur')" v-model="fieldValue" />
 
-        <textarea v-else :id="name" :name="name" rows="4" :required="required" :placeholder="label"
+        <textarea v-else :id="name" :name="name" rows="4" :required="required" :placeholder="label" @blur="emit('blur')"
             v-model="fieldValue"></textarea>
     </div>
-
-
-
 </template>
 <script setup>import { ref, watch, onMounted } from 'vue'
 
@@ -24,10 +19,11 @@ const props = defineProps({
     modelValue: String,   // <-- modelValue prop
 })
 
-const emit = defineEmits(['update:modelValue'])  // <-- update:modelValue esemény
+const emit = defineEmits(['update:modelValue', 'blur'])  // <-- update:modelValue,blur esemény
 
 const fieldValue = ref(props.modelValue || '')
 const formGroup = ref(null)
+
 
 watch(() => props.modelValue, (newVal) => {
     fieldValue.value = newVal
@@ -71,7 +67,7 @@ onMounted(() => {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+
 
 
     label {

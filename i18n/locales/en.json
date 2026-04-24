@@ -33,7 +33,8 @@
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "button": "Send Message"
+      "button": "Send Message",
+      "newMessage": "New message"
     }
   },
   "footer": "László Németh Frontend Developer",
