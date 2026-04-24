@@ -101,6 +101,7 @@ const shortDescription = computed(() => {
     h3 {
         margin-block: 0.5rem;
         transition: 0.3s all ease-in-out;
+        cursor: pointer;
 
         &::before {
             content: "";
@@ -142,6 +143,7 @@ const shortDescription = computed(() => {
         color: var(--text-color-2);
         border-radius: 5px;
         padding: 0.2rem 0.5rem;
+        text-wrap: nowrap;
 
 
 
