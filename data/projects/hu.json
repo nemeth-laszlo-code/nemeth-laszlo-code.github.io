@@ -4,8 +4,16 @@
     "description": "Frontend Mentor kihívás Angularral. Termék visszajelző UI szűréssel, rendezéssel és kommentekkel.",
     "imgurl": "images/projects/product_feedback_app.jpg",
     "github": "https://github.com/nemeth-laszlo-code/product-feedback-app/",
-    "liveurl": "https://product-feedback-app-lemon.vercel.app/suggestions",
-    "tags": ["Angular", "SCSS", "TypeScript"]
+    "liveurl": "https://product-feedback-app-lemon.vercel.app",
+    "tags": ["Angular", "TailwindCSS", "TypeScript", "State Management"]
+  },
+  {
+    "title": "Kanban Task Management Web App",
+    "description": "Kanban alapú feladatkezelő alkalmazás Angularral. Táblák és feladatok kezelése, reszponzív felület, téma váltás.",
+    "imgurl": "images/projects/kanban_task_management.jpg",
+    "github": "https://github.com/nemeth-laszlo-code/kanban-task-management-web-app",
+    "liveurl": "https://kanban-task-management-web-app-rosy.vercel.app/",
+    "tags": ["Angular", "TailwindCSS", "TypeScript", "State Management"]
   },
   {
     "title": "Recipe App",
