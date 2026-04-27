@@ -12,87 +12,19 @@
                 </p>
 
                 <ul class="orbit-container">
-
-                    <li class="orbit-item" style="--i: 1">
-                        <img src="/images/icons/js.svg" alt="JavaScript" />
-                    </li>
-                    <li class="orbit-item" style="--i: 2">
-                        <img src="/images/icons/typescript.svg" alt="TypeScript" />
-                    </li>
-                    <li class="orbit-item" style="--i: 3">
-                        <img src="/images/icons/angular.svg" alt="Angular" />
-                    </li>
-
-                    <li class="orbit-item" style="--i: 5">
-                        <img src="/images/icons/primeng.svg" alt="PrimeNG" />
-                    </li>
-                    <li class="orbit-item" style="--i: 6">
-                        <img src="/images/icons/materialui.svg" alt="MaterialUI" />
-                    </li>
-                    <li class="orbit-item" style="--i: 4">
-                        <img src="/images/icons/tailwind.svg" alt="TailwindCSS" />
-                    </li>
-
-                    <li class="orbit-item" style="--i: 8">
-                        <img src="/images/icons/bootstrap.svg" alt="Bootstrap" />
-                    </li>
-
-                    <li class="orbit-item" style="--i: 7">
-                        <img src="/images/icons/sass.svg" alt="Sass" />
-                    </li>
-
-
-
-                    <li class="orbit-item" style="--i: 9">
-                        <img src="/images/icons/nestjs.svg" alt="NestJS" />
-                    </li>
-
-                    <li class="orbit-item" style="--i: 10">
-                        <img src="/images/icons/git.svg" alt="Git Version Control" />
-                    </li>
-                    <li class="orbit-item" style="--i: 11">
-                        <img src="/images/icons/github_logo.svg" alt="Github" />
-                    </li>
-                    <li class="orbit-item" style="--i: 12">
-                        <img src="/images/icons/vscode.svg" alt="Visual Studio Code" />
-                    </li>
+                    <li class="orbit-item" :style="'--i:'+orbitItem.order" v-for="orbitItem in orbitData" :key="orbitItem.order">
+                        <img :src="orbitItem.src" :alt="orbitItem.alt" :title="orbitItem.title" />
+                    </li>                   
                 </ul>
             </div>
 
-            <div class="info">
-                 <h2 class="text-h3 uppercase mb-2">
+            <div class="info pl-2">
+                 <h2 class="text-h3 uppercase my-2">
                             {{ $t('orbit.h2') }}</h2>
                 <div class="techstack">
-
-                    <div class="tech-item">
-                        <app-progressbar :progress=100 title="JavaScript / TypeScript"></app-progressbar>
+                    <div class="tech-item" v-for="techItem in techStackData">
+                        <app-progressbar :progress=100 :title="techItem"></app-progressbar>
                     </div>
-                    <div class="tech-item">
-                        <app-progressbar :progress=100 title="Angular"></app-progressbar>
-                    </div>
-
-                    <div class="tech-item">
-                        <app-progressbar :progress=100 title="TailwindCSS"></app-progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <app-progressbar :progress=100 title="Material UI"></app-progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <app-progressbar :progress=100 title="PrimeNg"></app-progressbar>
-                    </div>
-
-
-
-                    <div class="tech-item">
-                        <app-progressbar :progress=100 title="NestJS"></app-progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <app-progressbar :progress=100 title="Visual Studio Code"></app-progressbar>
-                    </div>
-                    <div class="tech-item">
-                        <app-progressbar :progress=100 title="Git / GitHub"></app-progressbar>
-                    </div>
-
                 </div>
             </div>
 
@@ -100,7 +32,11 @@
     </app-panel>
 </template>
 <script setup>
-const { locale } = useI18n();
+import { ORBIT_DATA, ORBIT_TECH_STACK_DATA } from '~/data/orbit';
+
+
+const orbitData = ORBIT_DATA;
+const techStackData = ORBIT_TECH_STACK_DATA;
 </script>
 <style scoped>
 @reference "@/assets/css/main.css";
@@ -134,7 +70,7 @@ const { locale } = useI18n();
             @apply rounded-[inherit] relative -top-[105px] left-[45px] w-full h-full;
 
             .orbit-item {
-                @apply w-[var(--orbit-item-size)] aspect-square p-2 rounded-full bg-transparent! grid place-content-center absolute transition-all duration-300 ease-in-out overflow-hidden border-[3px] border-bg-800 origin-center;
+                @apply w-[var(--orbit-item-size)] aspect-square p-2 rounded-full grid place-content-center absolute transition-all duration-300 ease-in-out overflow-hidden border-[0px] border-bg-800 origin-center;
                 transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));
                 box-shadow: -4px -4px 8px var(--orbit-box-shadow-color-1), 5px 5px 8px var(--orbit-box-shadow-color-2);
                 animation: spinImages 100s linear infinite reverse;
