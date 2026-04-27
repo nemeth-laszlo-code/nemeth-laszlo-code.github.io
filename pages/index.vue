@@ -1,6 +1,6 @@
 <template>
             
-    <main class="container max-w-[1200px] mx-auto mt-[60px] p-2 md:p-4 xl:p-0 overflow-hidden ">
+    <main class="container max-w-[1200px] mx-auto mt-[60px] p-2 md:p-4 xl:px-0 overflow-hidden ">
             <navbar></navbar>
             <div class="nav-switch flex items-center justify-end gap-8">
                 <app-switch :checked="isEn" @change="toggleLang">
@@ -19,7 +19,7 @@
 
             </div>
 
-            <header-component class="mt-4 xl:mt-16"></header-component>
+            <header-component class="mt-4 lg:mt-8 "></header-component>
 
             <!-- orbit and intrudaction section -->
             <section class="flex flex-wrap md:flex-nowrap items-center md:flex-row gap-4 xl:gap-8 mt-4 xl:mt-8 justify-center">
