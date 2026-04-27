@@ -28,7 +28,7 @@ const { variant, mode } = toRefs(props)
 
 .badge {
   @apply inline-flex items-center justify-center
-         px-2 py-0.5 lg:px-4 lg:py-1 rounded-md text-[10px] lg:text-xs 
+         px-2 py-0.5 lg:px-4 lg:py-1 rounded-sm text-[10px] lg:text-xs 
          gap-2 font-medium transition-all duration-200 text-nowrap
          border border-transparent outline-0 ;
 
