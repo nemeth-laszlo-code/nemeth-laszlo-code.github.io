@@ -10,13 +10,21 @@
                     <p class="description">{{ shortDescription }}</p>
                 </div>
                 <div class="card-tags">                    
-                    <app-badge v-for="tag in data.tags" :key="tag">{{ tag }}</app-badge>                    
+                    <app-badge v-for="tag in data.tags" :key="tag.id" variant="default" mode="outline">
+                        
+                        <img :src="'/'+ICON_PATH+'/'+tag.icon" class="w-5 aspect-square block">
+
+                        <span>
+                            {{ tag.title }}
+                        </span>
+                        </app-badge>                    
                 </div>
                 <div class="card-links" @click.stop>
-                    <app-button v-if="data.github" type="link" className="secondary sm" :href="data.github" target="_blank">
+                    <app-button v-if="data.github" type="link" 
+                    variant="outline" size="sm"   :href="data.github" target="_blank">
                         Github
                     </app-button>
-                    <app-button v-if="data.liveurl" type="link" className="secondary sm" :href="data.liveurl" target="_blank">
+                    <app-button v-if="data.liveurl" type="link" size="sm" variant="secondary" :href="data.liveurl" target="_blank">
                         Live
                     </app-button>
                 </div>
@@ -27,15 +35,10 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import type { PortfolioProject } from '~/types/project';
+const config = useRuntimeConfig();
+const ICON_PATH = config.public.ICON_PATH;
 
-interface PortfolioProject {
-    title: string
-    description: string
-    imgurl: string
-    github: string
-    liveurl: string
-    tags: string[]
-}
 
 const props = defineProps<{ data: PortfolioProject }>()
 const emit = defineEmits<{ (e: 'open', project: PortfolioProject): void }>()

@@ -45,7 +45,7 @@
 
             <div v-if="activeProject?.tags?.length" class="flex flex-wrap gap-2">
                 <app-badge v-for="tag in activeProject.tags" 
-                :key="tag" >{{ tag }}</app-badge>             
+                :key="tag.id" >{{ tag }}</app-badge>             
             </div>
 
             <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
@@ -80,15 +80,9 @@
 
 
 <script setup lang="ts">import { watch, onBeforeUnmount, onMounted, ref } from 'vue'
+import type { PortfolioProject } from '~/types/project';
 
-interface PortfolioProject {
-    title: string
-    description: string
-    imgurl: string
-    github?: string
-    liveurl?: string
-    tags?: string[]
-}
+
 
 const props = defineProps<{
     show: boolean

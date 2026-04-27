@@ -91,6 +91,7 @@ export default defineNuxtConfig({
       emailjsServiceId: process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID,
       emailjsTemplateId: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID,
       emailjsPublicKey: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+      ICON_PATH:process.env.ICON_PATH,
       GA_TRACKING_ID: process.env.GA_TRACKING_ID,
 
       axios: {
