@@ -152,10 +152,8 @@ const techStackData = ORBIT_TECH_STACK_DATA;
             }
             .orbit-item{
 
-                @apply bg-red-500! p-0.5!; 
-                img{
-                    
-                }
+                @apply  p-0.5!; 
+                
             }
         }
     }
