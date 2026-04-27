@@ -45,7 +45,10 @@
 
             <div v-if="activeProject?.tags?.length" class="flex flex-wrap gap-2">
                 <app-badge v-for="tag in activeProject.tags" 
-                :key="tag.id" >{{ tag }}</app-badge>             
+                :key="tag.id" >
+                <img src="" alt="" srcset="">
+                {{ tag.title }}
+            </app-badge>             
             </div>
 
             <div class="mt-6 flex flex-wrap items-center justify-between gap-4">
