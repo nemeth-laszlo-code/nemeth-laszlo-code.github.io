@@ -12,7 +12,7 @@
             </div>
             <div class="header-social">
                 <social-links class=""></social-links>
-                <app-button className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
+                <app-button variant="outline"   type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
                 }}</app-button>
             </div>
             <div class="header-image">
