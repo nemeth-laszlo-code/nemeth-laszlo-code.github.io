@@ -5,7 +5,12 @@
     "imgurl": "images/projects/product_feedback_app.jpg",
     "github": "https://github.com/nemeth-laszlo-code/product-feedback-app/",
     "liveurl": "https://product-feedback-app-lemon.vercel.app",
-    "tags": ["Angular", "TailwindCSS", "TypeScript", "State Management"]
+    "tags": [
+      1,
+      2,
+      6,
+      18
+    ]
   },
   {
     "title": "Kanban Task Management Web App",
@@ -13,7 +18,12 @@
     "imgurl": "images/projects/kanban_task_management.jpg",
     "github": "https://github.com/nemeth-laszlo-code/kanban-task-management-web-app",
     "liveurl": "https://kanban-task-management-web-app-rosy.vercel.app/",
-    "tags": ["Angular", "TailwindCSS", "TypeScript", "State Management"]
+    "tags": [
+      1,
+      2,
+      6,
+      18
+    ]
   },
   {
     "title": "Recipe App",
@@ -21,7 +31,12 @@
     "imgurl": "images/projects/recipe_app.webp",
     "github": "https://github.com/nemeth-laszlo-code/recipe-app-frontend",
     "liveurl": "https://recipe-app-frontend-three-black.vercel.app",
-    "tags": ["Angular", "BootStrap", "NestJS", "PostgreSQL"]
+    "tags": [
+      1,
+      11,
+      17,
+      20
+    ]
   },
   {
     "title": "Frontend Quiz App - Angular",
@@ -29,7 +44,11 @@
     "imgurl": "images/projects/quiz_app.jpg",
     "github": "https://github.com/nemeth-laszlo-code/frontend-quiz-app",
     "liveurl": "https://github.com/nemeth-laszlo-code/frontend_quiz_app_angular",
-    "tags": ["Angular", "TailwindCSS", "GSAP"]
+    "tags": [
+      1,
+      2,
+      19
+    ]
   },
   {
     "title": "Hangman game",
@@ -37,6 +56,10 @@
     "imgurl": "images/projects/hangman.jpg",
     "github": "https://github.com/nemeth-laszlo-code/hangman-game",
     "liveurl": "https://hangman-game-alpha-two.vercel.app",
-    "tags": ["Angular", "SCSS", "TypeScript"]
+    "tags": [
+      1,
+      10,
+      6
+    ]
   }
 ]
