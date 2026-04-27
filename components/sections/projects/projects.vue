@@ -40,6 +40,8 @@ const { locale } = useI18n()
 
 const selectedProject = ref<PortfolioProject | null>(null)
     
+const config = useRuntimeConfig();
+const ICON_PATH = config.public.ICON_PATH;
 const projects = computed<PortfolioProject[]>(() => {
     const rawData = (locale.value === 'hu' ? projectsHu : projectsEn) as RawPortfolioProject[];
 
@@ -48,7 +50,10 @@ const projects = computed<PortfolioProject[]>(() => {
         // Itt történik a csere: number[] -> ProjectType[]
         tags: project.tags.map(tagId => 
             PROJECT_TYPES.find(t => t.id === tagId)
-        ).filter((t): t is ProjectType => !!t)
+        ).filter((t): t is ProjectType => !!t).map(t => ({
+                ...t,
+                icon: `${ICON_PATH}${t.icon}`
+            }))
     }));
 })
 
