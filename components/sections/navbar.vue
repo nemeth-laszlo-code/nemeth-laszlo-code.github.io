@@ -1,20 +1,12 @@
 <template>
     <nav class="navbar" :class="navbarClass">
         <div class="wrapper" :class="{ open: isActive }">
-            <div class="logo">
+            <a href="#" class="logo">
                 &lt;NL /&gt;
-            </div>
-            <!--<a href="#" class="menu" :class="isActive ? 'active' : ''" @click="toggleMenu($event)">
-
-                <span class="sr-only">Mobile menu</span>
-                <div class="icon">
-                    <span></span>
-                </div>
-            </a>-->
-
+            </a>
             <button class="menu" aria-controls="primary-navigation" :aria-expanded="isActive.toString()"
                 :class="isActive ? 'active' : ''" @click="toggleMenu($event)"><span class="sr-only">Mobile menu</span>
-                <svg fill="var(--button-color)" class="hamburger" viewBox="0 0 100 100" width="250">
+                <svg fill="currentColor" class="hamburger" viewBox="0 0 100 100" width="40">
                     <rect class="line top" width="80" height="10" x="10" y="25" rx="5">
                     </rect>
                     <rect class="line middle" width="80" height="10" x="10" y="45" rx="5">
@@ -24,15 +16,18 @@
                 </svg>
             </button>
             <Transition name="fade" mode="out-in">
+                
                 <ul class="nav-links " :key="$i18n.locale">
-                    <li><a href="#">{{ $t('navbar.home') }}</a></li>
-                    <li><a href="#about">{{ $t('navbar.about') }}</a></li>
-                    <li><a href="#skills">{{ $t('navbar.skills') }}</a></li>
-                    <li><a href="#projects">{{ $t('navbar.projects') }}</a></li>
-                    <li><a href="#contact">{{ $t('navbar.contact') }}</a></li>
+                    <li><a href="#" class="nav-link-item">{{ $t('navbar.home') }}</a></li>
+                    <li><a href="#about" class="nav-link-item">{{ $t('navbar.about') }}</a></li>
+                    <li><a href="#skills" class="nav-link-item">{{ $t('navbar.skills') }}</a></li>
+                    <li><a href="#projects" class="nav-link-item">{{ $t('navbar.projects') }}</a></li>
+                    <li><a href="#contact" class="nav-link-item">{{ $t('navbar.contact') }}</a></li>
                 </ul>
             </Transition>
+
         </div>
+        <div class="backdrop" v-if="isActive" @click="toggleMenu($event)"></div>
     </nav>
 </template>
 <script setup>
@@ -79,207 +74,126 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
 })
-
+function scrollTo(hash) {
+    if (hash === '#') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        return
+    }
+    const el = document.querySelector(hash)
+    if (!el) return
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 </script>
-<style lang="scss" scoped>
-/* Alapállapot: a hero tetején áll */
+<style scoped>
+@reference "@/assets/css/main.css";
 
-
-/* Alaphelyzet – absolute pozícióval (hero részen) */
 .navbar-absolute {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transform: translateY(0);
+    @apply absolute top-0 left-0 w-full opacity-100 translate-y-0;
 }
 
-/* Felfelé görgetéskor – fix + becsúszás */
 .navbar-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translateY(0);
-    opacity: 1;
+    @apply fixed top-0 left-0 w-full translate-y-0 opacity-100 border-b border-white/10;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    //border-t majd csak akkor adjuk hozzá ha felfele görgetünk
-    border-bottom: 1px solid rgba(255, 255, 255, 0.062);
+}
+
+.navbar-hidden {
+    @apply fixed top-0 left-0 w-full -translate-y-full opacity-0 invisible pointer-events-none;
 }
 
 .navbar-fixed,
 .navbar-absolute {
-    visibility: visible;
-    pointer-events: auto;
+    @apply visible pointer-events-auto;
 }
 
-/* Lefelé görgetéskor – eltűnik felfelé */
-.navbar-hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-    position: fixed;
-    visibility: hidden;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-}
+
+
+
+
+
 
 .navbar {
-    top: 0;
-    left: 0;
-    z-index: 10;
-
-    width: 100%;
-    margin: 0 auto;
-    left: 50%;
-    transform: translateX(-50%);
-    backdrop-filter: blur(10px);
-    padding-inline: 1rem;
-
-    transition: 0.3s all;
-
-    .wrapper {
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-
-        padding-inline: 20px;
-    }
-
-    ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        margin-inline-end: -20px;
-
-        & li {
+    @apply top-0 left-0 z-50 w-full backdrop-blur-md transition-all duration-300 ;
 
 
-            a {
-                background-color: var(--bg-color);
+    & .wrapper {
+        @apply flex justify-between items-center max-w-[1200px] mx-auto  py-2 flex-wrap overflow-hidden transition-all duration-300 relative
+        px-2 md:px-4 xl:px-0 ;
+        max-height: 60px;
 
-                color: var(---text-color-1);
-                padding: 10px 20px;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: 0.3s all;
-
-                & :active,
-                & :focus {
-                    border: 1px solid var(--bg-color-500);
-                }
-
-                &:hover {
-                    background-color: var(--bg-color-500);
-                    color: var(---text-color-1);
-                    box-shadow: 0 0 10px rgba(50, 130, 184, 0.5);
-                }
-            }
-
-
+        &::after {
+            @apply hidden;
         }
+
+        &.open {
+            @apply h-auto max-h-[500px];
+
+            .nav-links {
+                @apply opacity-100;
+            }
+        }
+
+
     }
 
 
+}
+
+
+
+.navbar .backdrop {
+    content: '';
+    @apply -mx-4 min-h-dvh w-dvw -z-10 opacity-0 pointer-events-none transition-opacity duration-300;
+    background: rgba(0, 0, 0, 0.267);
+    backdrop-filter: blur(4px);
+}
+
+.navbar:has(.wrapper.open) {
+
+
+    .backdrop {
+        @apply opacity-100 pointer-events-auto;
+    }
 }
 
 .logo {
-
-    padding-block: 0.5rem;
-
-    color: var(--accent-color-3);
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-wrap: nowrap;
-    cursor: default;
-
-
-    & img {
-        width: 100%;
-        height: 100%;
-        object-position: 10px -2px;
-
-    }
+    @apply md:py-2 text-accent-3 font-bold text-2xl md:whitespace-nowrap  col-start-1 col-end-2 row-start-1 row-end-2 cursor-pointer!;
 }
 
-@media screen and (max-width:800px) {
-
-    .navbar {
-        .wrapper {
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-template-rows: auto;
-            padding-inline: 0px;
-            max-height: 54px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-
-            &.open {
-                grid-template-rows: auto auto;
-                max-height: max-content;
-            }
-
-            .logo {
-                grid-column: 1/2;
-                grid-row: 1/2;
-
-            }
+.nav-links {
+    @apply list-none flex md:flex flex-col md:flex-row md:gap-3 gap-2 w-full md:w-auto
+    /* ← mobilon teljes szélesség */
+    px-0 mt-4 md:mt-0 py-2 md:py-0 md:px-0 text-xl overflow-hidden opacity-0 md:opacity-100 transition-all duration-300;
 
 
 
-            .menu {
-                grid-column: 2/3;
-                grid-row: 1/2;
-                display: block;
-                justify-self: end;
+}
 
-                &.active {
-                    &+ul {
-                        max-height: max-content;
-                        opacity: 1;
-                        transform: translateY(0);
-                        visibility: visible;
-                        max-width: 100%;
-                        left: 0;
-                    }
+.nav-link-item {
 
-                }
-            }
-
-            ul {
-                grid-column: 1/3;
-                grid-row: 2/3;
-                flex-direction: column;
-                padding: 2rem 1rem;
-                font-size: 1.5rem;
-                gap: 1.5rem;
-
-                display: flex;
-                max-height: 0;
-                opacity: 0;
-                visibility: hidden;
-                overflow: hidden;
-
-                transform: translateY(-10px);
-                transition: max-height .35s ease, opacity .25s ease, transform .25s ease;
-
-            }
-        }
-    }
-
-    .navbar .wrapper .menu.active+ul {
-        max-height: 500px;
-        /* elegendő érték a tartalomhoz */
-
-        opacity: 1;
-        transform: translateY(0);
-    }
+    @apply bg-transparent inline-block text-text-1 px-3 py-1.5 no-underline rounded-md transition-all duration-300 border border-transparent outline-0 text-body-2;
 
 
+}
 
+.nav-link-item:active,
+.nav-link-item:focus {
+    @apply border border-bg-500;
+}
+
+.nav-link-item:hover {
+
+    @apply bg-bg-500 rounded-md text-text-1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.navbar :deep(.nav-link-item:focus),
+.navbar :deep(.nav-link-item:active) {
+    @apply border border-bg-500 rounded-md;
+}
+
+.logo {
+    @apply text-accent-3 font-bold text-2xl whitespace-nowrap cursor-default;
 
 }
 
@@ -287,31 +201,22 @@ onUnmounted(() => {
     --button-color: var(--text-color-1);
     --delay: 0.1s;
     --duration: 0.1s;
-    border: 0;
-    outline: 0;
+    @apply border-0 outline-0 w-10 aspect-square cursor-pointer bg-transparent md:hidden z-50 relative  flex items-center justify-end;
 
-    width: 35px;
-    cursor: pointer;
 
-    background-color: transparent;
-    -webkit-tap-highlight-color: transparent;
-    /* iOS és Android Chrome */
-    tap-highlight-color: transparent;
-    /* egyes böngészők */
-    display: none;
+    /* grid osztályok TÖRÖLD */
 }
 
+
+
 .menu .line {
-    transition: y var(--duration) ease-in var(--delay),
-        rotate var(--duration) ease-in, opacity 0ms var(--delay);
-    transform-origin: center;
+    @apply transition-all duration-(--duration) ease-in origin-center;
+    transition-delay: var(--delay), 0ms, var(--delay);
 }
 
 .menu[aria-expanded="true"] .line {
-    transition:
-        y var(--duration) ease-in,
-        rotate var(--duration) ease-in var(--delay),
-        opacity 0ms var(--delay);
+    @apply transition-all duration-(--duration) ease-in;
+    transition-delay: 0ms, var(--delay), var(--delay);
 }
 
 .menu[aria-expanded="true"] :is(.top, .bottom) {
@@ -323,22 +228,12 @@ onUnmounted(() => {
 }
 
 .menu[aria-expanded="true"] .middle {
-    opacity: 0;
+    @apply opacity-0;
 }
 
 .menu[aria-expanded="true"] .bottom {
     rotate: -45deg;
 }
-
-
-
-
-
-
-
-
-
-
 
 @keyframes sideFromAbove {
     from {

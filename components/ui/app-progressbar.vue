@@ -28,7 +28,7 @@ const props = defineProps({
 </script>
 
 
-<style lang="scss" scoped>
+<style scoped>
 .progress-bar {
     width: 100%;
     height: 35px;
@@ -52,7 +52,7 @@ const props = defineProps({
 
 .progress-bar-fill {
     height: 100%;
-    background-color: var(--accent-color-1);
+    background-color: var(--accent-color-2);
 
     transition: width 0.3s ease;
     border-radius: inherit;

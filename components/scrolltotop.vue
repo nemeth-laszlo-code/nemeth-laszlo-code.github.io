@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="scrolltotop" :class="showScrollTop ? 'active' : ''">
+        <div class="scrolltotop" :class="showScrollTop ? 'active' : ''" v-on:click="scrollToTop">
             <a href="#">
                 <span class="sr-only">Scroll to Top</span>
                 <svg enable-background="new 0 0 32 32" height="32px" id="Layer_1" version="1.1" viewBox="0 0 32 32"
@@ -45,7 +45,7 @@ const scrollToTop = () => {
 }
 
 onMounted(() => {
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll)    
 })
 
 onUnmounted(() => {

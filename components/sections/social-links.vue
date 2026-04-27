@@ -45,38 +45,23 @@
 
 </template>
 
-<style lang="scss">
+<style scoped>
+@reference "@/assets/css/main.css";
+
 ul {
-    display: flex;
-    list-style-type: none;
-    gap: 1rem;
+    @apply flex list-none gap-4;
+}
 
+ul li a svg {
+    @apply w-[30px] h-[30px];
+}
 
-    li {
-        a {
-            svg {
-                width: 30px;
-                height: 30px;
+ul li a svg path {
+    @apply transition-all duration-300;
+    fill: var(--bg-color-100) !important;
+}
 
-                path {
-                    fill: var(--bg-color-100) !important;
-                    transition: 0.3s all;
-                    /*stroke: yellowgreen !important;
-                    stroke-width: 1 !important;
-                    */
-                }
-
-
-            }
-
-            &:hover {
-                svg {
-                    path {
-                        fill: var(--accent-color-2) !important;
-                    }
-                }
-            }
-        }
-    }
+ul li a:hover svg path {
+    fill: var(--accent-color-2) !important;
 }
 </style>

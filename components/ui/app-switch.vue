@@ -22,96 +22,74 @@ const props = defineProps({
 const emit = defineEmits(['update:checked']);
 
 function onChange(event) {
-    //console.log('changed', event.target.checked)
     emit('update:checked', event.target.checked);
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
+@reference "@/assets/css/main.css";
 .switch {
+    @apply flex items-center relative cursor-pointer
+           rounded-[30px] h-8 font-normal
+           bg-accent-2 text-text-2;
     padding: 0.2rem;
     width: calc(50px + 0.6rem);
-    height: 32px;
-    border-radius: 30px;
-    //background-color: limegreen; // #3382b8;
-    color: var(--text-color-1);
-    font-weight: 400;
-    display: block;
-    position: relative;
-    // border: 1px solid rgb(79, 175, 143);
-
-    cursor: pointer;
 
     div {
-        text-wrap: nowrap;
-
-        //background-color: blue;
-        //width: 100%;
-        border-radius: inherit;
-        display: flex;
-        justify-content: space-between;
-        padding-inline: 0.2rem;
-
-
+        @apply absolute inset-0 rounded-[inherit]
+               flex items-center justify-between
+               z-20 pointer-events-none;
+        padding-inline: 0.35rem;
 
         span {
-            transition: 0.3s all;
+            @apply flex items-center justify-center
+                   transition-all duration-300
+                   text-[0.7rem] leading-none;
+
+            :deep(svg) {
+                @apply w-4 h-4;
+            }
         }
     }
 
     .slider {
+        @apply absolute z-10 rounded-[30px]
+               bg-bg-900 transition-all duration-300;
         width: 24px;
-
         aspect-ratio: 1;
-
-
-        border-radius: 30px;
-        padding: 0.4rem;
-
-        position: absolute;
-
-        background-color: var(--bg-color-100);
-        z-index: 10;
-
-        transition: 0.3s all;
-        top: 0.2rem;
+        top: 50%;
         left: 0.2rem;
+        transform: translateY(-50%);
     }
 
     input {
-        display: none;
+        @apply hidden;
     }
 
     input[type="checkbox"]:not(:checked) {
-        &+div {
-            & span:first-child {
-                opacity: 0;
-            }
+        & + div span:first-child {
+            @apply opacity-0;
         }
     }
 
     input[type="checkbox"]:checked {
-        &~.slider {
-            right: 0.2rem;
-            transform: translateX(28px);
-            // background-color: lime;
+        & ~ .slider {
+            transform: translateY(-50%) translateX(28px);
         }
 
-        &+div {
-            & span:last-child {
-                opacity: 0;
-            }
+        & + div span:last-child {
+            @apply opacity-0;
         }
     }
 
-    input[disabled] {
-        &~.slider {
-            background-color: gray;
-        }
+    input[disabled] ~ .slider {
+        @apply bg-gray-400;
     }
 }
 
 .switch:has(input[disabled]) {
-    cursor: default;
-    color: lightgray;
+    @apply cursor-default opacity-60;
 }
+
+
+
 </style>

@@ -1,10 +1,26 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
+import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
   modules: ["@nuxt/image", "@nuxtjs/i18n"],
-  css: ["~/assets/scss/main.scss"],
+  postcss: {
+    plugins: {
+      "@tailwindcss/postcss": {},
+      autoprefixer: {},
+    },
+  },
+   router: {
+        options: {
+            scrollBehaviorType: 'smooth'
+        }
+    },
+  tailwindcss: {
+    exposeConfig: true,
+    viewer: true,
+    // v4 esetén a configPath már nem kötelező, de ha van tailwind.config.js-ed, hagyd meg
+  },
+  css: ["~/assets/css/main.css"],
   ssr: false,
   app: {
     baseURL: "/",
@@ -119,6 +135,7 @@ export default defineNuxtConfig({
         },
       },
     },
+    plugins: [tailwindcss()],
   },
   plugins: ["~/plugins/ga.client.ts", "~/plugins/zoom.ts"],
   components: [{ path: "~/components", pathPrefix: false }],

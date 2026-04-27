@@ -25,7 +25,7 @@ const props = defineProps({
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 button,
 a {
     padding: 10px 20px;
@@ -47,12 +47,12 @@ a {
 
     &:disabled,
     &[disabled="true"] {
-        background-color: var(--bg-color-200); // Vagy egy szürkébb árnyalat
+        background-color: var(--bg-color-200);
         border-bottom-color: gray;
-        cursor: not-allowed; // Ez mutatja a felhasználónak, hogy tilos a kattintás
+        cursor: not-allowed;
         opacity: 0.6;
-        scale: 1 !important; // Ne ugorjon össze kattintáskor, ha le van tiltva
-        pointer-events: none; // Biztosítja, hogy az 'a' tag se reagáljon semmire
+        scale: 1 !important;
+        pointer-events: none;
     }
 }
 

@@ -2,9 +2,9 @@
 
   <div class="cookie-consent" v-show="show">
     <span>{{ $t('cookies.message') }}</span>
-    <button-component @click="accept">
+    <app-button @click="accept">
       ✔ {{ $t('cookies.button') }}
-    </button-component>
+    </app-button>
 
 
   </div>
@@ -27,35 +27,18 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+@reference "@/assets/css/main.css";
+
 .cookie-consent {
-  position: fixed;
-  z-index: 9999;
-  bottom: 1rem;
-  right: 50%;
-  transform: translateX(50%);
+  @apply fixed z-[9999] bottom-4 right-1/2 translate-x-1/2
+         shadow-[0_2px_8px_rgba(0,0,0,0.2)] backdrop-blur-[60px]
+         p-4 rounded-lg
+         flex items-center text-center gap-4 w-max
+         flex-col sm:flex-row;
+
   background-color: var(--bg-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(60px);
   color: var(--text-color);
-  padding: 1rem;
-  border-radius: 0.5rem;
-
-  display: flex;
-
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  width: max-content;
-
-
-
 }
 
-@media screen and (max-width: 600px) {
-  .cookie-consent {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 </style>

@@ -1,11 +1,11 @@
 <template>
-    <div class="contact">
-        <app-panel>
+    
+        <app-panel class="contact">
             <Transition name="fade" mode="out-in">
                 <div v-if="!isSuccess" :key="$i18n.locale">
-                    <h2>{{ $t('contact.h2') }}</h2>
-                    <p>{{ $t('contact.p') }}</p>
-                    <form @submit.prevent="sendEmail">
+                    <h2 class="text-h2 uppercase">{{ $t('contact.h2') }}</h2>
+                    <p class=" mt-4 mb-10"> {{ $t('contact.p') }}</p>
+                    <form @submit.prevent="sendEmail" class="">
                         <app-input name="name" :label="$t('contact.inputs.name')" type="text" v-model="formData.name"
                             @blur="touch('name')" class="input" />
                         <span class="error-msg">{{ errors.name }}</span>
@@ -55,7 +55,7 @@
                 </div>
             </Transition>
         </app-panel>
-    </div>
+    
 </template>
 
 <script setup>
@@ -134,67 +134,44 @@ const sendEmail = async () => {
     }
 };
 </script>
-<style lang="scss" scoped>
+<style scoped>
+@reference "@/assets/css/main.css";
+
 p {
-    margin-bottom: 2rem;
-    margin-top: 1rem;
+    
 }
 
-
 .contact-info {
-    margin-top: 2rem;
-
-
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-
-    width: fit-content;
-    margin-inline: auto;
+    @apply mt-8 flex flex-col gap-4 w-fit mx-auto;
 
     a {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--text-color-1);
-        text-decoration: none;
+        @apply flex items-center gap-2 text-text-1 no-underline transition-colors duration-300;
 
-        img {
-            width: 20px;
-            height: 20px;
+        svg {
+            @apply w-5 h-5;
         }
 
         &:hover {
-            color: var(--accent-color-2);
+            @apply text-accent-2;
         }
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
     .sm-m-auto {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @apply flex items-center justify-center;
     }
 }
 
 .input {
-    margin-bottom: 2rem;
+    @apply mb-8;
 
     &:has(+span) {
-        //
-        margin-bottom: 0.5rem;
+        @apply mb-2;
     }
 
     &~span {
-        display: block;
-        margin-bottom: 2rem;
-        font-size: 0.8rem;
-        color: rgb(197, 20, 20)
+        @apply block mb-8 text-[0.8rem] text-red-600;
     }
 }
-
-.success-msg {}
 </style>

@@ -62,12 +62,13 @@ onMounted(() => {
 
 
 
-<style lang="scss" scoped>
+<style scoped>
 .form-group {
     position: relative;
     display: flex;
     flex-direction: column;
-
+    
+    margin-top: 32px;
 
 
     label {
@@ -110,7 +111,7 @@ onMounted(() => {
 
     &.active label {
         transform: translateY(-50px) scale(0.96);
-        //color: var(--accent-color-4);
+
     }
 }
 </style>

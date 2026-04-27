@@ -1,21 +1,22 @@
 <template>
     <app-panel>
         <header class="header">
-            <div class="header-text">
+            <div class="header-text self-end">
                 <Transition name="fade" mode="out-in">
-                    <div class="header-content" :key="$i18n.locale">
-                        <p>{{ $t('header.p') }}</p>
-                        <h1>{{ $t('header.h1') }}</h1>
-                        <h2>{{ $t('header.h3') }}</h2>
+                    <div class="header-content " :key="$i18n.locale">
+                        <p class="text-text-1/70  ">{{ $t('header.p') }}</p>
+                        <h1 class="text-h1 uppercase mt-4">{{ $t('header.h1') }}</h1>
+                        <h2 class="text-h2 uppercase mt-2">{{ $t('header.h3') }}</h2>
                     </div>
                 </Transition>
             </div>
-            <div class="header-social flex">
-                <social-links></social-links>
+            <div class="header-social">
+                <social-links class=""></social-links>
                 <app-button className="secondary" type="link" :href="cv_url" target="_blank">{{ $t('header.cv')
                 }}</app-button>
             </div>
             <div class="header-image">
+                <div class="image-glow"></div>
                 <div class="image">
 
                     <NuxtImg src="/images/profile.jpg" format="webp" width="300" height="300" loading="eager"
@@ -23,7 +24,12 @@
                 </div>
             </div>
         </header>
+
     </app-panel>
+
+
+
+
 </template>
 <script setup>
 const { locale } = useI18n();
@@ -36,219 +42,76 @@ const cv_url = computed(() =>
 );
 
 </script>
-<style lang="scss" scoped>
+
+<style scoped>
+@reference "@/assets/css/main.css";
 .header {
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, autofit));
-    grid-template-rows: 1fr 1fr;
+  --animation-duration: 30s;
+  --gradient-deg: 180deg;
+  --gradient-width: 10deg;
 
-    .header-content {
-        padding: 1rem;
-        grid-column: 1/2;
-        grid-row: 1/2;
+  display: grid;
+  gap: 2rem;
+  position: relative;
+  z-index: 10;
+  
+  
+  /* Alapértelmezett (Mobil): 1 oszlop, 3 sor */
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "content"
+    "image"
+    "social";
 
-        margin-block-end: -1rem;
-
-        >* {
-            transform: translateY(30px);
-        }
-
-
-    }
-
-    .header-social {
-        grid-column: 1/2;
-        grid-row: 2/3;
-        display: flex;
-        flex-wrap: wrap;
-        align-self: flex-end;
-        justify-self: flex-start;
-        padding-left: 1rem;
-        padding-bottom: 1.5rem;
-
-
-    }
-
-    .header-image {
-        width: 300px;
-        aspect-ratio: 1;
-        position: relative;
-        border-radius: 50%;
-        padding: 10px;
-        grid-column: 2/3;
-        grid-row: 1/3;
-        align-self: center;
-        justify-self: flex-end;
-
-        /* box-shadow: 5px 5px 10px rgba(172, 255, 47, 0.158); */
-        .image {
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: inherit;
-            z-index: 10;
-            overflow: hidden;
-            border: 5px solid var(--accent-color-1);
-            box-shadow: 0 0 0px 5px var(--bg-color-900);
-            background: var(--bg-color-900);
-
-
-
-            & img {
-
-
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: inherit;
-                filter: grayscale(0.5);
-
-            }
-        }
-
-        .image::before,
-        .image::after {
-            content: "";
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .image::before {
-            background: conic-gradient(from var(--gradient-deg) at 50% 50%,
-                    var(--accent-color-1) var(--gradient-width),
-                    transparent var(--gradient-width));
-            animation: rotateConicGradient 10s linear infinite;
-        }
-
-        .image::after {
-            background: conic-gradient(from var(--gradient-deg) at 50% 50%,
-                    var(--accent-color-1) var(--gradient-width),
-                    transparent var(--gradient-width));
-            animation: rotateConicGradient2 var(--animation-diration) linear infinite;
-        }
-    }
-
-
+  /* Desktop (768px felett) */
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "content image"
+      "social  image";
+    gap: 1rem;
+  }
 }
 
-
-
-
-
-
-
-
-
-
-@keyframes rotateConicGradient {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+.header-text { grid-area: content; }
+.header-social { 
+  grid-area: social;
+  @apply flex flex-wrap items-center  justify-evenly gap-4 md:justify-start md:gap-16;
 }
 
-@keyframes rotateConicGradient2 {
-    from {
-        transform: rotate(180deg);
+.header-image { 
+  grid-area: image;
+  @apply relative w-[280px] md:w-[300px] aspect-square rounded-full justify-self-center md:justify-self-end self-center;
+
+    .image-glow {
+
+    @apply absolute -inset-[8px] rounded-full;
+
+    &::before, &::after {
+      @apply absolute inset-0 rounded-full content-[''];
+      background: conic-gradient(
+        from var(--gradient-deg) at 50% 50%,
+        var(--accent-color-2) var(--gradient-width),
+        transparent var(--gradient-width)
+      );
     }
 
-    to {
-        transform: rotate(540deg);
+    &::before { animation: rotateConicGradient 10s linear infinite; }
+    &::after  { animation: rotateConicGradient2 var(--animation-duration) linear infinite; }
+  }
+  .image {
+    @apply relative z-10 aspect-square w-full rounded-full border-4 border-accent-2 bg-accent-2 overflow-hidden;
+    box-shadow: 0 0 0 5px var(--bg-color-900);
+
+    & img {
+      @apply h-full w-full rounded-full object-cover grayscale-50;
     }
+   
+  }
 }
-
-
-
-h1 {
-    font-size: 3rem;
-    letter-spacing: 1.25px;
-
-
-}
-
-
-
-
-
-
-
-.flex {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4rem;
-}
-
-
-@media screen and (max-width:730px) {
-
-    .flex {
-
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-}
-
-@media screen and (max-width:600px) {
-    .header {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-
-
-        .header-content {
-            grid-column: 1/2;
-            grid-row: 1/2;
-            margin-bottom: 0;
-
-
-            >* {
-                transform: translateY(0px);
-            }
-        }
-
-        .header-social {
-            grid-column: 1/2;
-            grid-row: 3/4;
-            padding-bottom: 0.5rem;
-            padding-top: 1.5rem;
-            padding-left: 0;
-            justify-self: center;
-
-
-        }
-
-        .header-image {
-            grid-column: 1/2;
-            grid-row: 2/3;
-            justify-self: center;
-            width: unset;
-            max-width: 300px;
-        }
-    }
-
-    .flex {
-        flex-wrap: nowrap;
-        flex-direction: row;
-
-
-    }
-
-}
+@keyframes rotateConicGradient { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes rotateConicGradient2 { from { transform: rotate(180deg); } to { transform: rotate(540deg); } }
 </style>
+
+

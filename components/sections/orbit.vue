@@ -6,8 +6,8 @@
             <div class="orbit">
                 <p style="width:150px">
                     <Transition name="fade" mode="out-in">
-                        <span :key="$i18n.locale">
-                            {{ $t('orbit.h2') }}</span>
+                        <h2 :key="$i18n.locale">
+                            {{ $t('orbit.h2') }}</h2>
                     </Transition>
                 </p>
 
@@ -60,7 +60,8 @@
             </div>
 
             <div class="info">
-                <h2>Tech stackem</h2>
+                 <h2 class="text-h3 uppercase mb-2">
+                            {{ $t('orbit.h2') }}</h2>
                 <div class="techstack">
 
                     <div class="tech-item">
@@ -101,196 +102,82 @@
 <script setup>
 const { locale } = useI18n();
 </script>
-<style lang="scss" scoped>
+<style scoped>
+@reference "@/assets/css/main.css";
+@utility paused {
+    animation-play-state: paused;
+}
+
+@utility running {
+    animation-play-state: running;
+}
 .info-box {
-    position: relative;
-    width: 350px;
-    height: 350px;
-
-
-    overflow: hidden;
-
-    padding: 0;
-    max-height: 350px !important;
-
-
+    @apply relative w-[350px] h-[350px] overflow-hidden p-0 max-h-[350px]  -m-4 md:-m-6;
 
     .orbit {
         --count: 12;
         --i: 0;
-        --orbit-item-size: 60px;
+        --orbit-item-size: 50px;
         --radius: 130px;
 
-        width: inherit;
-
-        aspect-ratio: 1;
-
-        position: relative;
-
-        border-radius: 50%;
-        display: grid;
-        place-content: center;
-        transition: 0.3s ease-in-out;
-        overflow: hidden;
-
-
-        padding: 1rem;
-
+        @apply w-[inherit] aspect-square relative rounded-full grid place-content-center transition-all duration-300 ease-in-out overflow-hidden p-4;
         animation: spin 100s linear infinite;
 
-
         p {
-
-            @include orbitBoxShadow;
-            padding: 1rem;
-            animation: spin 100s linear infinite reverse;
-
-            border-radius: 50%;
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-wrap: wrap;
-            font-weight: bold;
+            @apply p-4 rounded-full aspect-square flex items-center justify-center whitespace-normal font-bold uppercase;
             font-family: 'Space Grotesk', 'sans-serif';
-            text-transform: uppercase
+            box-shadow: -4px -4px 8px var(--orbit-box-shadow-color-1), 5px 5px 8px var(--orbit-box-shadow-color-2);
+            animation: spin 100s linear infinite reverse;
         }
 
-
-
         .orbit-container {
-            border-radius: inherit;
-            position: relative;
-            top: -105px;
-            left: 45px;
-            width: 100%;
-            height: 100%;
-
+            @apply rounded-[inherit] relative -top-[105px] left-[45px] w-full h-full;
 
             .orbit-item {
-                width: var(--orbit-item-size);
-
-                aspect-ratio: 1;
-                padding: 0.25rem;
-                border-radius: 50%;
-                background-color: rgb(252, 252, 252);
-                display: grid;
-                place-content: center;
-                position: absolute;
-                transition: 0.3s all ease-in-out;
-                overflow: hidden;
-                border: 10px solid var(--bg-color-800);
-                transform-origin: center center;
+                @apply w-[var(--orbit-item-size)] aspect-square p-2 rounded-full bg-transparent! grid place-content-center absolute transition-all duration-300 ease-in-out overflow-hidden border-[3px] border-bg-800 origin-center;
                 transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));
-
-                //orbitBoxShadow
-                @include orbitBoxShadow;
+                box-shadow: -4px -4px 8px var(--orbit-box-shadow-color-1), 5px 5px 8px var(--orbit-box-shadow-color-2);
                 animation: spinImages 100s linear infinite reverse;
-
-
             }
         }
     }
 
-
     .orbit:hover {
-        padding: 1rem;
-        animation-play-state: paused;
-        cursor: pointer;
-
-
+        @apply p-4 cursor-pointer ; 
 
         p {
-            animation-play-state: paused;
-
+            @apply paused;
         }
 
         .orbit-container {
-
             .orbit-item {
-                animation-play-state: paused;
-
-                scale: 1.08;
-                /*transform: rotate(calc(360deg / var(--count) * var(--i) + 0deg)) translateX(200px) rotate(calc(-360deg / var(--count) * var(--i) + 0deg));*/
-                cursor: pointer;
-
-
-
-                img {}
+                @apply paused scale-[1.08] cursor-pointer;
             }
         }
     }
 
     img {
-        width: 100%;
+        @apply w-full;
     }
 
     .info {
-        background-color: var(--bg-color-800);
-        position: absolute;
-        width: 100%;
-        aspect-ratio: 1;
-        z-index: 1000;
-        top: 0;
-        top: calc(100% + 50px);
-        height: fit-content;
-        overflow-y: scroll;
-        transition: top 0.3s ease-in-out;
-    }
-
-    .info::befosre {
-        content: '';
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.76);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
+        @apply bg-bg-800 absolute w-full aspect-square z-[1000] top-[calc(100%+50px)] h-fit overflow-y-auto transition-[top] duration-300 ease-in-out;
     }
 
     &:hover {
         .info {
-            top: 0;
-
+            @apply top-0;
         }
     }
 
     .techstack {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        padding-right: 0.5rem;
-
-
-
+        @apply flex flex-col gap-4 pr-2;
     }
-
 }
 
 .info-box.active {
-    overflow-x: hidden;
-    overflow-y: scroll;
+    @apply overflow-x-hidden overflow-y-auto;
 }
-
-
-
-
-
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 
 @keyframes spin {
     0% {
@@ -308,40 +195,31 @@ const { locale } = useI18n();
     }
 
     100% {
-        transform:
-            rotate(calc(360deg / var(--count) * var(--i))) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 360deg));
+        transform: rotate(calc(360deg / var(--count) * var(--i))) translateX(calc(var(--radius))) rotate(calc(-360deg / var(--count) * var(--i) + 360deg));
     }
-
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
     .info-box {
-        position: relative;
-
-        width: 290px;
-        height: 290px;
-
-        overflow: hidden;
-
-        padding: 0;
-
-        //max-height: 350px !important;
-
+        @apply w-[290px] h-[290px];
 
         .orbit {
-
-
             --orbit-item-size: 40px;
             --radius: 115px;
 
             p {
-                text-wrap: wrap;
-                padding: 0.75rem;
+                @apply whitespace-normal p-3;
             }
 
             .orbit-container {
-                top: -93px;
-                left: 55px;
+                @apply -top-[93px] left-[55px];
+            }
+            .orbit-item{
+
+                @apply bg-red-500! p-0.5!; 
+                img{
+                    
+                }
             }
         }
     }

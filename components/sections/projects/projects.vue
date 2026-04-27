@@ -1,13 +1,25 @@
 <template>
-    <div class="projects">
-        <card-component v-for="project in projects" :key="project.title" :data="project" @open="openProject" />
 
-        <div v-if="projects.length === 0">
-            Nincsenek elérhető projektek
-        </div>
+            <app-panel id="projects" >
+                <Transition name="fade" mode="out-in">
+                    <div :key="$i18n.locale">
+                        <h2 class="mb-4 text-h2 uppercase">{{ $t('projects.h2') }}</h2>
+                        <p>{{ $t('projects.p') }}</p>
+                    </div>
+                </Transition>
+                <div class="projects  gap-4 lg:gap-6">
+                    <card-component v-for="project in projects" :key="project.title" :data="project" @open="openProject" />
 
-        <project-modal :show="Boolean(selectedProject)" :project="selectedProject" @close="closeModal" />
-    </div>
+                    <div v-if="projects.length === 0">
+                        <h3 class="text-h3 uppercase text-center mt-4">  Nincsenek elérhető projektek</h3>
+                    </div>
+
+                    <project-modal :show="Boolean(selectedProject)" :project="selectedProject" @close="closeModal" />
+                </div>            
+            </app-panel>
+
+
+    
 </template>
 
 <script setup lang="ts">
@@ -44,11 +56,11 @@ const closeModal = () => {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    
     margin-top: 2rem;
 }
 </style>
