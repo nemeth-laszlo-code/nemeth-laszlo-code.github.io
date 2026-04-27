@@ -12,7 +12,7 @@
                 <div class="card-tags">                    
                     <app-badge v-for="tag in data.tags" :key="tag.id" variant="default" mode="outline">
                         
-                        <img :src="'/'+ICON_PATH+'/'+tag.icon" class="w-5 aspect-square block">
+                        <img :src="tag.icon" class="w-5 aspect-square block">
 
                         <span>
                             {{ tag.title }}
@@ -36,8 +36,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { PortfolioProject } from '~/types/project';
-const config = useRuntimeConfig();
-const ICON_PATH = config.public.ICON_PATH;
+
 
 
 const props = defineProps<{ data: PortfolioProject }>()
