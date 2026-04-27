@@ -1,105 +1,60 @@
 <template>
-    <Transition name="fade" mode="out-in">
-        <div :key="$i18n.locale">
+  <Transition name="fade" mode="out-in">
+    <div :key="$i18n.locale" class="inline-block">
+      <button 
+        v-if="type !== 'link'"
+        :disabled="disabled"
+        :class="buttonClasses"
+      >
+        <slot />
+      </button>
 
-            <button :class="[className, { 'disabled': disabled }]" :disabled="disabled" v-if="type !== 'link'">
-                <slot />
-            </button>
-            <a :class="[className, { 'disabled': disabled }]" :disabled="disabled" v-if="type === 'link'" :href="href"
-                :target="target">
-                <slot />
-            </a>
-
-        </div>
-    </Transition>
+      <a 
+        v-else
+        :href="disabled ? undefined : href"
+        :target="target"
+        :class="[buttonClasses, { 'pointer-events-none opacity-60': disabled }]"
+      >
+        <slot />
+      </a>
+    </div>
+  </Transition>
 </template>
+
 <script setup>
-import { Transition } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps({
-    className: String,
-    type: String,
-    target: String,
-    href: String,
-    disabled: Boolean
+  type: { type: String, default: 'button' },
+  variant: { type: String, default: 'primary' }, // primary, secondary, outline
+  size: { type: String, default: 'md' },       // sm, md
+  target: String,
+  href: String,
+  disabled: Boolean,
+  className: String // megmaradt extra osztályoknak, ha nagyon kell
 })
+
+const buttonClasses = computed(() => {
+  return [
+    // Alap stílusok (TW4)
+    'inline-flex items-center justify-center rounded-sm font-medium uppercase no-underline transition-all duration-300 select-none cursor-pointer text-nowrap active:scale-90 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-60',
+    
+    // Méretezés
+    props.size === 'sm' ? 'px-2.5 py-1 text-xs' : 'px-5 py-2.5 text-sm',
+
+    // Variánsok
+    props.variant === 'primary' && 'bg-bg-500 text-text-1 border-b border-accent-4 hover:brightness-110 disabled:bg-bg-200 disabled:border-gray-500',
+    
+    props.variant === 'secondary' && 'bg-accent-2 text-text-1 hover:bg-accent-2/80 disabled:bg-gray-600 hover:text-white border-2    border-accent-2',
+
+    props.variant === 'outline' && 'bg-transparent border-2 border-accent-2 text-text-1 hover:bg-accent-2 hover:text-white disabled:border-gray-500 disabled:text-gray-500',
+
+    // Egyedi osztályok átpasszolása
+    props.className
+  ];
+});
 </script>
 
 <style scoped>
-button,
-a {
-    padding: 10px 20px;
-    text-transform: uppercase;
-    background-color: var(--bg-color-500);
-    border: 0;
-    border-bottom: 1px solid var(--accent-color-4);
-    outline: none;
-    cursor: pointer;
-    color: var(--text-color-1);
-    border-radius: 5px;
-    transition: 0.3s all;
-    text-wrap: nowrap;
 
-
-    &:active {
-        scale: 0.9;
-    }
-
-    &:disabled,
-    &[disabled="true"] {
-        background-color: var(--bg-color-200);
-        border-bottom-color: gray;
-        cursor: not-allowed;
-        opacity: 0.6;
-        scale: 1 !important;
-        pointer-events: none;
-    }
-}
-
-a {
-    text-decoration: none;
-    display: inline-block;
-}
-
-
-
-button.secondary,
-a.secondary {
-
-    background-color: var(--accent-color-2);
-    background-color: transparent;
-
-
-    border: 0;
-    outline: 2px solid var(--accent-color-2);
-
-
-
-
-    &:hover {
-        background-color: var(--accent-color-2);
-    }
-
-    &.sm {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-    }
-
-    &:disabled,
-    &[disabled="true"] {
-        outline-color: gray;
-        color: gray;
-        background-color: transparent;
-    }
-
-}
-
-@media screen and (max-width:600px) {
-
-    button,
-    a {
-        padding: 8px 16px;
-    }
-
-}
 </style>
