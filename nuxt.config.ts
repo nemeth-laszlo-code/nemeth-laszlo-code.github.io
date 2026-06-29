@@ -4,6 +4,16 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-01',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
@@ -28,6 +38,7 @@ export default defineNuxtConfig({
       emailjsServiceId: '',
       emailjsTemplateId: '',
       emailjsPublicKey: '',
+      gaTrackingId: '',
     },
   },
 })
