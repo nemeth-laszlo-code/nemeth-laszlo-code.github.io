@@ -28,10 +28,10 @@ const highlights = computed(() => [
 ])
 
 const stats = computed(() => [
-  t('about.stats.challenges'),
-  t('about.stats.responsive'),
-  t('about.stats.frameworks'),
-  t('about.stats.learning'),
+  { value: t('about.stats.challenges.value'), label: t('about.stats.challenges.label') },
+  { value: t('about.stats.responsive.value'), label: t('about.stats.responsive.label') },
+  { value: t('about.stats.frameworks.value'), label: t('about.stats.frameworks.label') },
+  { value: t('about.stats.learning.value'), label: t('about.stats.learning.label') },
 ])
 </script>
 
@@ -50,10 +50,15 @@ const stats = computed(() => [
         ]"
       >
         <h2 class="mb-4 text-3xl sm:text-4xl">{{ t('about.title') }}</h2>
-        <p
+        <i18n-t
+          keypath="about.description"
+          tag="p"
           class="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed"
-          v-html="t('about.description')"
-        />
+        >
+          <template #framework>
+            <strong class="text-gray-800 dark:text-gray-200">{{ t('about.descriptionFramework') }}</strong>
+          </template>
+        </i18n-t>
       </div>
 
       <!-- Highlights grid -->

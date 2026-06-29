@@ -67,6 +67,12 @@ function getLocalizedText(field: Record<string, string> | string): string {
             </span>
           </div>
           <div :class="`bg-gradient-to-br ${featuredProject.image} h-64 sm:h-80 relative`">
+            <img
+              v-if="featuredProject.imageUrl"
+              :src="featuredProject.imageUrl"
+              :alt="getLocalizedText(featuredProject.title)"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
             <div class="absolute inset-0 bg-black/10" />
           </div>
         </div>
@@ -118,6 +124,8 @@ function getLocalizedText(field: Record<string, string> | string): string {
           <div class="flex flex-col sm:flex-row gap-3">
             <a
               :href="featuredProject.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
               class="flex-1 px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2 font-semibold"
             >
               <ExternalLink class="w-5 h-5" />
@@ -125,6 +133,8 @@ function getLocalizedText(field: Record<string, string> | string): string {
             </a>
             <a
               :href="featuredProject.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
               class="flex-1 px-6 py-3 border-2 border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-emerald-500 dark:hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-center gap-2 font-semibold"
             >
               <Github class="w-5 h-5" />
@@ -140,48 +150,71 @@ function getLocalizedText(field: Record<string, string> | string): string {
           v-for="(project, index) in otherProjects"
           :key="project.id"
           :class="[
-            'bg-slate-50 dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group',
+            'bg-slate-50 dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group flex flex-col',
             isVisible ? 'animate-fade-in-up' : 'opacity-0',
           ]"
           :style="{ animationDelay: `${(index + 2) * 100}ms` }"
         >
-          <div :class="`bg-gradient-to-br ${project.image} h-48 relative`">
+          <div :class="`bg-gradient-to-br ${project.image} h-48 relative shrink-0`">
+            <img
+              v-if="project.imageUrl"
+              :src="project.imageUrl"
+              :alt="getLocalizedText(project.title)"
+              class="absolute inset-0 w-full h-full object-cover"
+            />
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="mb-2 text-xl">{{ getLocalizedText(project.title) }}</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
-              {{ getLocalizedText(project.description) }}
-            </p>
-            <p
-              v-if="project.metrics && !Array.isArray(project.metrics)"
-              class="text-emerald-600 dark:text-emerald-400 font-semibold mb-4 text-sm"
-            >
-              📊 {{ getLocalizedText(project.metrics) }}
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                v-for="tag in project.tags"
-                :key="tag"
-                class="px-2 py-1 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded text-xs"
-              >
-                {{ tag }}
-              </span>
+            <!-- collapsible description -->
+            <div class="relative mb-3">
+              <!-- invisible spacer: fixes the card height to 2 lines -->
+              <p class="text-sm leading-[1.4rem] line-clamp-2 invisible" aria-hidden="true">
+                {{ getLocalizedText(project.description) }}
+              </p>
+              <!-- actual text: absolute, expands over card on hover without shifting layout -->
+              <div class="group/desc absolute inset-x-0 top-0 z-10 overflow-hidden bg-slate-50 dark:bg-slate-800 rounded-b max-h-[2.8rem] hover:max-h-48 hover:shadow-[0_6px_8px_-3px_rgba(0,0,0,0.10)] hover:pb-3 transition-[max-height,box-shadow,padding-bottom] duration-300 ease-in-out">
+                <p class="text-sm leading-[1.4rem] text-gray-600 dark:text-gray-400">
+                  {{ getLocalizedText(project.description) }}
+                </p>
+                <div class="absolute bottom-0 inset-x-0 h-5 bg-gradient-to-t from-slate-50 dark:from-slate-800 to-transparent pointer-events-none transition-opacity duration-300 group-hover/desc:opacity-0" />
+              </div>
             </div>
-            <div class="flex gap-3">
-              <a
-                :href="project.liveUrl"
-                class="flex-1 px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2 text-sm font-semibold"
+            <div class="mt-auto">
+              <p
+                v-if="project.metrics && !Array.isArray(project.metrics)"
+                class="text-emerald-600 dark:text-emerald-400 font-semibold mb-4 text-sm"
               >
-                <ExternalLink class="w-4 h-4" />
-                {{ t('projects.demo') }}
-              </a>
-              <a
-                :href="project.githubUrl"
-                class="px-4 py-2 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-center"
-              >
-                <Github class="w-4 h-4" />
-              </a>
+                📊 {{ getLocalizedText(project.metrics) }}
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  v-for="tag in project.tags"
+                  :key="tag"
+                  class="px-2 py-1 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded text-xs"
+                >
+                  {{ tag }}
+                </span>
+              </div>
+              <div class="flex gap-3">
+                <a
+                  :href="project.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-1 px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2 text-sm font-semibold"
+                >
+                  <ExternalLink class="w-4 h-4" />
+                  {{ t('projects.demo') }}
+                </a>
+                <a
+                  :href="project.githubUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-2 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-center"
+                >
+                  <Github class="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -3,18 +3,18 @@
     "id": 1,
     "featured": true,
     "title": {
-      "en": "Project Tracking App",
-      "hu": "Projektkövetés App"
+      "en": "Kanban Task Management App",
+      "hu": "Kanban Task Management Web App"
     },
     "description": {
-      "en": "Frontend Mentor challenge - A kanban-style project management board with drag-and-drop functionality.",
-      "hu": "Frontend Mentor kihívás - Kanban stílusú projektmenedzselő tábla drag-and-drop funkcióval."
+      "en": "Frontend Mentor challenge built with Angular. Kanban-style task manager with board and task management, responsive layout, and dark/light theme switching.",
+      "hu": "Kanban alapú feladatkezelő alkalmazás Angularral. Táblák és feladatok kezelése, reszponzív felület, téma váltás."
     },
     "fullDescription": {
-      "en": "Built a full-featured task board using Angular with drag-and-drop interface, local storage persistence, and dark/light mode toggle. Focused on responsive design, TypeScript best practices, and component architecture.",
-      "hu": "Teljes funkcionalitású feladattáblát építettem Angular segítségével, drag-and-drop interfésszel, helyi tárolással és sötét/világos mód váltással. Fókusz a reszponzív designra, TypeScript bevált gyakorlatokra és komponens architektúrára."
+      "en": "Built a full-featured kanban board using Angular with drag-and-drop task management across multiple boards, local storage persistence, and dark/light mode toggle. Focused on responsive design, TypeScript best practices, and scalable component architecture.",
+      "hu": "Teljes funkcionalitású kanban táblát építettem Angular segítségével, feladatok drag-and-drop kezelésével több táblán át, helyi tárolással és sötét/világos mód váltással. Fókusz a reszponzív designra, TypeScript bevált gyakorlatokra és skálázható komponens architektúrára."
     },
-    "tags": ["Angular", "TypeScript", "RxJS", "SCSS", "Drag & Drop"],
+    "tags": ["Angular", "TypeScript", "SCSS", "RxJS"],
     "metrics": [
       {
         "icon": "Star",
@@ -28,112 +28,118 @@
       },
       {
         "icon": "Users",
-        "label": { "en": "Clean Code", "hu": "Tiszta Kód" },
-        "value": "A+"
+        "label": { "en": "Dark Mode", "hu": "Sötét Mód" },
+        "value": "✓"
       }
     ],
     "image": "from-purple-500 to-pink-600",
-    "liveUrl": "#",
-    "githubUrl": "#"
+    "imageUrl": "/images/projects/kanban_task_management.jpg",
+    "liveUrl": "https://kanban-task-management-web-app-rosy.vercel.app/",
+    "githubUrl": "https://github.com/nemeth-laszlo-code/kanban-task-management-web-app"
   },
   {
     "id": 2,
     "featured": false,
     "title": {
-      "en": "E-Commerce Product Page",
-      "hu": "E-Kereskedelmi Termékoldal"
+      "en": "Product Feedback App",
+      "hu": "Product Feedback App"
     },
     "description": {
-      "en": "Frontend Mentor - Interactive product page with image gallery, cart functionality, and responsive design.",
-      "hu": "Frontend Mentor - Interaktív termékoldal képgalériával, kosár funkcióval és reszponzív dizájnnal."
+      "en": "Frontend Mentor challenge built with Angular. Product feedback UI with filtering, sorting, and nested comments.",
+      "hu": "Frontend Mentor kihívás Angularral. Termék visszajelző UI szűréssel, rendezéssel és kommentekkel."
     },
     "metrics": {
-      "en": "Pixel-perfect, Mobile-first approach",
-      "hu": "Pixel-tökéletes, Mobile-first megközelítés"
+      "en": "Filtering, Sorting, Nested comments",
+      "hu": "Szűrés, Rendezés, Beágyazott kommentek"
     },
-    "tags": ["Angular", "TypeScript", "SCSS", "Responsive"],
-    "image": "from-blue-500 to-cyan-600",
-    "liveUrl": "#",
-    "githubUrl": "#"
+    "tags": ["Angular", "TypeScript", "SCSS", "RxJS"],
+    "image": "from-violet-500 to-purple-600",
+    "imageUrl": "/images/projects/product_feedback_app.jpg",
+    "liveUrl": "https://product-feedback-app-lemon.vercel.app",
+    "githubUrl": "https://github.com/nemeth-laszlo-code/product-feedback-app/"
   },
   {
     "id": 3,
     "featured": false,
     "title": {
       "en": "Recipe App",
-      "hu": "Recept App"
+      "hu": "Recipe App"
     },
     "description": {
-      "en": "Frontend Mentor - Recipe discovery with search, filtering, and detailed view using external API.",
-      "hu": "Frontend Mentor - Receptkereső kereséssel, szűréssel és részletes nézettel külső API használatával."
+      "en": "Modern, responsive Angular app for browsing, filtering, and viewing recipes in detail. Feature-based architecture, signal-based stores, admin panel, and NestJS backend. Note: hosted on a free tier — first load may take longer due to cold start.",
+      "hu": "Modern, reszponzív Angular alkalmazás receptek böngészéséhez, szűréséhez és részletes megtekintéséhez. Feature-based architektúra, signal-alapú store-ok, admin felület és NestJS backend. Megjegyzés: ingyenes tárhelyen fut, az első betöltés tovább tarthat (cold start)."
     },
     "metrics": {
-      "en": "REST API integration, Dynamic routing",
-      "hu": "REST API integráció, Dinamikus útvonal"
+      "en": "Feature-based arch, Admin panel, Signals",
+      "hu": "Feature-based arch, Admin felület, Signals"
     },
-    "tags": ["Vue.js", "API Integration", "Tailwind", "Composition API"],
+    "tags": ["Angular", "TypeScript", "NestJS", "Signals"],
     "image": "from-orange-500 to-red-600",
-    "liveUrl": "#",
-    "githubUrl": "#"
+    "imageUrl": "/images/projects/recipe_app.webp",
+    "liveUrl": "https://recipe-app-frontend-three-black.vercel.app",
+    "githubUrl": "https://github.com/nemeth-laszlo-code/recipe-app-frontend"
   },
   {
     "id": 4,
     "featured": false,
     "title": {
-      "en": "Password Generator",
-      "hu": "Jelszógenerátor"
+      "en": "Survey App",
+      "hu": "Survey App"
     },
     "description": {
-      "en": "Frontend Mentor - Secure password generator with strength indicator and copy functionality.",
-      "hu": "Frontend Mentor - Biztonságos jelszógenerátor erősségjelzővel és másolás funkcióval."
+      "en": "A multi-step survey app where the entire form — fields, steps, and validation rules — is dynamically generated from a JSON config file. No hardcoded form structure; the JSON drives everything.",
+      "hu": "Többlépéses survey alkalmazás, ahol a teljes form — mezők, lépések és validálási szabályok — JSON konfigurációs fájlból generálódik dinamikusan. Nincs hardkódolt form struktúra, a JSON vezérel mindent."
     },
     "metrics": {
-      "en": "Complex form validation, Crypto logic",
-      "hu": "Összetett form validáció, Crypto logika"
+      "en": "JSON-driven forms, Dynamic validation",
+      "hu": "JSON-vezérelt formok, Dinamikus validálás"
     },
-    "tags": ["Angular", "Reactive Forms", "SCSS"],
-    "image": "from-green-500 to-emerald-600",
-    "liveUrl": "#",
-    "githubUrl": "#"
+    "tags": ["Angular", "TypeScript", "Reactive Forms", "Dynamic Forms"],
+    "image": "from-blue-500 to-indigo-600",
+    "imageUrl": "/images/projects/dynamic_forms.png",
+    "liveUrl": "https://dynamic-forms-w52s.vercel.app",
+    "githubUrl": "https://github.com/nemeth-laszlo-code/dynamic_forms"
   },
   {
     "id": 5,
     "featured": false,
     "title": {
-      "en": "Multi-Step Form",
-      "hu": "Többlépéses Form"
+      "en": "Frontend Quiz App",
+      "hu": "Frontend Quiz App – Angular"
     },
     "description": {
-      "en": "Frontend Mentor - Complex form with validation, step navigation, and data persistence.",
-      "hu": "Frontend Mentor - Összetett form validációval, lépésnavigációval és adatmegőrzéssel."
+      "en": "Frontend Mentor 'Frontend Quiz App' challenge built with Angular, refactored from the original VueJS version. Features smooth GSAP-powered animations throughout the quiz flow.",
+      "hu": "A Frontend Mentor 'Frontend Quiz App' kihívás Angular alapon, a VueJS verzióból refaktorálva. GSAP animációkkal gazdagított kvíz folyamat."
     },
     "metrics": {
-      "en": "State management, UX-focused",
-      "hu": "Állapotkezelés, UX-fókuszált"
+      "en": "GSAP animations, Vue → Angular refactor",
+      "hu": "GSAP animációk, Vue → Angular refaktor"
     },
-    "tags": ["Nuxt", "Form Validation", "Pinia", "Responsive"],
-    "image": "from-rose-500 to-pink-600",
-    "liveUrl": "#",
-    "githubUrl": "#"
+    "tags": ["Angular", "TypeScript", "GSAP"],
+    "image": "from-emerald-500 to-teal-600",
+    "imageUrl": "/images/projects/quiz_app.jpg",
+    "liveUrl": "https://frontend-quiz-app-angular.vercel.app",
+    "githubUrl": "https://github.com/nemeth-laszlo-code/frontend_quiz_app_angular"
   },
   {
     "id": 6,
     "featured": false,
     "title": {
-      "en": "REST Countries API",
-      "hu": "REST Országok API"
+      "en": "Hangman Game",
+      "hu": "Hangman Game"
     },
     "description": {
-      "en": "Frontend Mentor - Country explorer with search, filter, dark mode using REST API.",
-      "hu": "Frontend Mentor - Ország felfedező kereséssel, szűréssel, sötét móddal REST API használatával."
+      "en": "Frontend Mentor 'Hangman Game' challenge built with Angular. Classic hangman game with a modern, responsive interface.",
+      "hu": "A Frontend Mentor 'Hangman Game' kihívásának megoldása Angularban. A klasszikus akasztófa játék modern, reszponzív felülettel."
     },
     "metrics": {
-      "en": "API handling, Observables, Theme toggle",
-      "hu": "API kezelés, Observables, Témaváltó"
+      "en": "Game logic, Responsive UI",
+      "hu": "Játéklogika, Reszponzív UI"
     },
-    "tags": ["Angular", "HTTP Client", "RxJS", "Dark Mode"],
-    "image": "from-indigo-500 to-purple-600",
-    "liveUrl": "#",
-    "githubUrl": "#"
+    "tags": ["Angular", "TypeScript", "SCSS"],
+    "image": "from-rose-500 to-red-600",
+    "imageUrl": "/images/projects/hangman.jpg",
+    "liveUrl": "https://hangman-game-alpha-two.vercel.app",
+    "githubUrl": "https://github.com/nemeth-laszlo-code/hangman-game"
   }
 ]

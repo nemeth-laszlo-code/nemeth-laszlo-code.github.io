@@ -5,30 +5,15 @@ const { el, isVisible } = useScrollReveal()
 const skillCategories = computed(() => [
   {
     category: t('skills.categories.frontend'),
-    skills: [
-      { name: 'Angular', level: 80 },
-      { name: 'TypeScript', level: 75 },
-      { name: 'Vue.js/Nuxt', level: 65 },
-      { name: 'HTML/CSS/SCSS', level: 85 },
-    ],
+    skills: ['Angular', 'TypeScript', 'Vue.js/Nuxt', 'HTML/CSS/SCSS'],
   },
   {
     category: t('skills.categories.tools'),
-    skills: [
-      { name: 'Git/GitHub', level: 75 },
-      { name: 'Responsive Design', level: 80 },
-      { name: 'RxJS', level: 65 },
-      { name: 'NPM/Package Managers', level: 70 },
-    ],
+    skills: ['Git/GitHub', 'Responsive Design', 'RxJS', 'NPM/Package Managers'],
   },
   {
     category: t('skills.categories.backend'),
-    skills: [
-      { name: 'NestJS', level: 55 },
-      { name: 'PostgreSQL', level: 50 },
-      { name: 'REST APIs', level: 60 },
-      { name: 'Node.js', level: 55 },
-    ],
+    skills: ['NestJS', 'PostgreSQL', 'REST APIs', 'Node.js'],
   },
 ])
 </script>
@@ -68,17 +53,16 @@ const skillCategories = computed(() => [
             {{ category.category }}
           </h3>
           <div class="space-y-4">
-            <div v-for="(skill, skillIndex) in category.skills" :key="skill.name">
-              <div class="flex justify-between mb-2">
-                <span class="text-gray-700 dark:text-gray-300 font-medium">{{ skill.name }}</span>
-                <span class="text-gray-500 dark:text-gray-400 text-sm">{{ skill.level }}%</span>
+            <div v-for="(skill, skillIndex) in category.skills" :key="skill">
+              <div class="mb-2">
+                <span class="text-gray-700 dark:text-gray-300 font-medium">{{ skill }}</span>
               </div>
               <div class="h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
-                  class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full transition-all duration-1000 ease-out"
+                  class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full transition-all duration-700 ease-out"
                   :style="{
-                    width: isVisible ? `${skill.level}%` : '0%',
-                    transitionDelay: `${categoryIndex * 100 + skillIndex * 100}ms`,
+                    width: isVisible ? '100%' : '0%',
+                    transitionDelay: `${categoryIndex * 100 + skillIndex * 80}ms`,
                   }"
                 />
               </div>

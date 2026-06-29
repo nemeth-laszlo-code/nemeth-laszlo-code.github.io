@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { Menu, X, Moon, Sun } from 'lucide-vue-next'
 
-const { t, locale, locales, setLocale } = useI18n()
+const { t, locale, locales } = useI18n()
+const { switchLocale, fadeAndNavigate } = useLocaleTransition()
+
+async function handleNavClick(href: string) {
+  isMobileMenuOpen.value = false
+  await fadeAndNavigate(href)
+}
 const colorMode = useColorMode()
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -59,7 +65,8 @@ const otherLocale = computed(() =>
             v-for="link in navLinks"
             :key="link.href"
             :href="link.href"
-            class="text-gray-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+            @click.prevent="handleNavClick(link.href)"
+            class="text-gray-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors cursor-pointer"
           >
             {{ link.label }}
           </a>
@@ -67,7 +74,7 @@ const otherLocale = computed(() =>
           <!-- Language switcher -->
           <button
             v-if="otherLocale"
-            @click="setLocale(otherLocale.code as 'en' | 'hu')"
+            @click="switchLocale(otherLocale.code)"
             class="px-3 py-1 rounded-lg text-sm font-semibold border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors"
           >
             {{ otherLocale.name }}
@@ -88,7 +95,7 @@ const otherLocale = computed(() =>
         <div class="md:hidden flex items-center gap-3">
           <button
             v-if="otherLocale"
-            @click="setLocale(otherLocale.code as 'en' | 'hu')"
+            @click="switchLocale(otherLocale.code)"
             class="px-2 py-1 rounded text-xs font-semibold border border-emerald-500 text-emerald-600 dark:text-emerald-400"
           >
             {{ otherLocale.code.toUpperCase() }}
@@ -131,8 +138,8 @@ const otherLocale = computed(() =>
             v-for="link in navLinks"
             :key="link.href"
             :href="link.href"
-            @click="closeMobileMenu"
-            class="block text-gray-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors py-2"
+            @click.prevent="handleNavClick(link.href)"
+            class="block text-gray-700 dark:text-gray-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors py-2 cursor-pointer"
           >
             {{ link.label }}
           </a>
