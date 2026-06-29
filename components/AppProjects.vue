@@ -212,7 +212,8 @@ function getLocalizedText(field: Record<string, string> | string): string {
                   rel="noopener noreferrer"
                   class="px-4 py-2 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-center"
                 >
-                  <Github class="w-4 h-4" />
+                  <Github class="w-4 h-4" aria-hidden="true" />
+                  <span class="sr-only">{{ t('projects.viewCode') }} – {{ getLocalizedText(project.title) }}</span>
                 </a>
               </div>
             </div>
