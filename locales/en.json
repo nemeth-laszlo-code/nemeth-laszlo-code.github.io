@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "seeking": "Currently seeking: Junior Frontend Developer roles",
+    "greeting": "Hello, I'm",
+    "name": "Németh László",
+    "title": "Junior Frontend Developer",
+    "subtitle": "Building responsive web applications with modern frameworks",
+    "description": "Focused on Angular and Vue.js with hands-on experience in TypeScript, responsive design, and backend basics. I create pixel-perfect interfaces and continuously improve through Frontend Mentor challenges.",
+    "getInTouch": "Get in Touch",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a motivated junior frontend developer passionate about building modern web applications with <strong>Angular and Vue.js</strong>. Through Frontend Mentor challenges, I've honed my skills in creating pixel-perfect, responsive interfaces. I'm eager to learn, adapt quickly, and bring fresh ideas to a development team while continuously expanding my skillset.",
+    "highlights": {
+      "cleanCode": {
+        "title": "Clean Code",
+        "description": "Writing maintainable code following Angular and Vue.js best practices"
+      },
+      "fastLearner": {
+        "title": "Fast Learner",
+        "description": "Quickly adapting to new technologies and frameworks"
+      },
+      "responsiveDesign": {
+        "title": "Responsive Design",
+        "description": "Creating mobile-first, pixel-perfect user interfaces"
+      },
+      "problemSolver": {
+        "title": "Problem Solver",
+        "description": "Tackling Frontend Mentor challenges to sharpen skills daily"
+      }
+    },
+    "stats": {
+      "challenges": { "value": "10+", "label": "Challenges Completed" },
+      "responsive": { "value": "100%", "label": "Responsive Design" },
+      "frameworks": { "value": "2", "label": "Main Frameworks" },
+      "learning": { "value": "Daily", "label": "Learning & Growing" }
+    }
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "Technologies I'm proficient in and continuously improving",
+    "categories": {
+      "frontend": "Frontend",
+      "tools": "Tools & Workflow",
+      "backend": "Backend (Learning)"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Frontend Mentor challenges showcasing responsive design and modern framework expertise",
+    "featuredBadge": "Featured Project",
+    "viewDemo": "View Live Demo",
+    "viewCode": "View Code",
+    "demo": "Demo"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Looking for an entry-level developer? Let's connect and discuss opportunities to grow together",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Budapest, Hungary",
+    "quickResponse": "⚡ Quick Response",
+    "quickResponseDesc": "I typically respond within 24 hours during weekdays",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your.email@example.com",
+      "messagePlaceholder": "Tell me about your project...",
+      "send": "Send Message",
+      "success": "Thank you! I'll get back to you soon.",
+      "error": "Something went wrong. Please try again or email me directly."
+    }
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "using": "using Nuxt & Tailwind CSS",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

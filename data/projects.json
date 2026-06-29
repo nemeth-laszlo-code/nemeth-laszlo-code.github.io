@@ -1,0 +1,139 @@
+[
+  {
+    "id": 1,
+    "featured": true,
+    "title": {
+      "en": "Project Tracking App",
+      "hu": "Projektkövetés App"
+    },
+    "description": {
+      "en": "Frontend Mentor challenge - A kanban-style project management board with drag-and-drop functionality.",
+      "hu": "Frontend Mentor kihívás - Kanban stílusú projektmenedzselő tábla drag-and-drop funkcióval."
+    },
+    "fullDescription": {
+      "en": "Built a full-featured task board using Angular with drag-and-drop interface, local storage persistence, and dark/light mode toggle. Focused on responsive design, TypeScript best practices, and component architecture.",
+      "hu": "Teljes funkcionalitású feladattáblát építettem Angular segítségével, drag-and-drop interfésszel, helyi tárolással és sötét/világos mód váltással. Fókusz a reszponzív designra, TypeScript bevált gyakorlatokra és komponens architektúrára."
+    },
+    "tags": ["Angular", "TypeScript", "RxJS", "SCSS", "Drag & Drop"],
+    "metrics": [
+      {
+        "icon": "Star",
+        "label": { "en": "Frontend Mentor", "hu": "Frontend Mentor" },
+        "value": "100%"
+      },
+      {
+        "icon": "TrendingUp",
+        "label": { "en": "Fully Responsive", "hu": "Teljesen Reszponzív" },
+        "value": "✓"
+      },
+      {
+        "icon": "Users",
+        "label": { "en": "Clean Code", "hu": "Tiszta Kód" },
+        "value": "A+"
+      }
+    ],
+    "image": "from-purple-500 to-pink-600",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": 2,
+    "featured": false,
+    "title": {
+      "en": "E-Commerce Product Page",
+      "hu": "E-Kereskedelmi Termékoldal"
+    },
+    "description": {
+      "en": "Frontend Mentor - Interactive product page with image gallery, cart functionality, and responsive design.",
+      "hu": "Frontend Mentor - Interaktív termékoldal képgalériával, kosár funkcióval és reszponzív dizájnnal."
+    },
+    "metrics": {
+      "en": "Pixel-perfect, Mobile-first approach",
+      "hu": "Pixel-tökéletes, Mobile-first megközelítés"
+    },
+    "tags": ["Angular", "TypeScript", "SCSS", "Responsive"],
+    "image": "from-blue-500 to-cyan-600",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": 3,
+    "featured": false,
+    "title": {
+      "en": "Recipe App",
+      "hu": "Recept App"
+    },
+    "description": {
+      "en": "Frontend Mentor - Recipe discovery with search, filtering, and detailed view using external API.",
+      "hu": "Frontend Mentor - Receptkereső kereséssel, szűréssel és részletes nézettel külső API használatával."
+    },
+    "metrics": {
+      "en": "REST API integration, Dynamic routing",
+      "hu": "REST API integráció, Dinamikus útvonal"
+    },
+    "tags": ["Vue.js", "API Integration", "Tailwind", "Composition API"],
+    "image": "from-orange-500 to-red-600",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": 4,
+    "featured": false,
+    "title": {
+      "en": "Password Generator",
+      "hu": "Jelszógenerátor"
+    },
+    "description": {
+      "en": "Frontend Mentor - Secure password generator with strength indicator and copy functionality.",
+      "hu": "Frontend Mentor - Biztonságos jelszógenerátor erősségjelzővel és másolás funkcióval."
+    },
+    "metrics": {
+      "en": "Complex form validation, Crypto logic",
+      "hu": "Összetett form validáció, Crypto logika"
+    },
+    "tags": ["Angular", "Reactive Forms", "SCSS"],
+    "image": "from-green-500 to-emerald-600",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": 5,
+    "featured": false,
+    "title": {
+      "en": "Multi-Step Form",
+      "hu": "Többlépéses Form"
+    },
+    "description": {
+      "en": "Frontend Mentor - Complex form with validation, step navigation, and data persistence.",
+      "hu": "Frontend Mentor - Összetett form validációval, lépésnavigációval és adatmegőrzéssel."
+    },
+    "metrics": {
+      "en": "State management, UX-focused",
+      "hu": "Állapotkezelés, UX-fókuszált"
+    },
+    "tags": ["Nuxt", "Form Validation", "Pinia", "Responsive"],
+    "image": "from-rose-500 to-pink-600",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  },
+  {
+    "id": 6,
+    "featured": false,
+    "title": {
+      "en": "REST Countries API",
+      "hu": "REST Országok API"
+    },
+    "description": {
+      "en": "Frontend Mentor - Country explorer with search, filter, dark mode using REST API.",
+      "hu": "Frontend Mentor - Ország felfedező kereséssel, szűréssel, sötét móddal REST API használatával."
+    },
+    "metrics": {
+      "en": "API handling, Observables, Theme toggle",
+      "hu": "API kezelés, Observables, Témaváltó"
+    },
+    "tags": ["Angular", "HTTP Client", "RxJS", "Dark Mode"],
+    "image": "from-indigo-500 to-purple-600",
+    "liveUrl": "#",
+    "githubUrl": "#"
+  }
+]
