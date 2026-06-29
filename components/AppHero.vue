@@ -45,7 +45,8 @@ onMounted(() => {
               class="px-8 py-4 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-all shadow-lg hover:shadow-xl font-semibold text-center">
               {{ t('hero.getInTouch') }}
             </a>
-            <a :href="t('hero.cvUrl')" :download="t('hero.cvUrl') !== '#' ? t('hero.cvUrl').split('/').pop() : undefined"
+            <a :href="t('hero.cvUrl')"
+              :download="t('hero.cvUrl') !== '#' ? t('hero.cvUrl').split('/').pop() : undefined"
               :target="t('hero.cvUrl') !== '#' ? '_blank' : undefined"
               class="px-8 py-4 border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all font-semibold flex items-center justify-center gap-2"
               :class="{ 'opacity-50 cursor-not-allowed': t('hero.cvUrl') === '#' }">
@@ -56,12 +57,12 @@ onMounted(() => {
 
           <!-- Social links -->
           <div class="flex gap-4">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/nemeth-laszlo-code" target="_blank" rel="noopener noreferrer"
               class="p-3 rounded-full bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-500 transition-all"
               aria-label="GitHub">
               <Github class="w-5 h-5" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/nemethlaszlocode/" target="_blank" rel="noopener noreferrer"
               class="p-3 rounded-full bg-gray-200 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-500 transition-all"
               aria-label="LinkedIn">
               <Linkedin class="w-5 h-5" />
