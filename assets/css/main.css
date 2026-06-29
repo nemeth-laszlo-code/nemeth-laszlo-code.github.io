@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+button {
+  @apply cursor-pointer;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @utility animate-fade-in-up {

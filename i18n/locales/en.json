@@ -8,10 +8,10 @@
   "hero": {
     "seeking": "Currently seeking: Junior Frontend Developer roles",
     "greeting": "Hello, I'm",
-    "name": "Németh László",
+    "name": "Laszlo Nemeth",
     "title": "Junior Frontend Developer",
     "subtitle": "Building responsive web applications with modern frameworks",
-    "description": "Focused on Angular and Vue.js with hands-on experience in TypeScript, responsive design, and backend basics. I create pixel-perfect interfaces and continuously improve through Frontend Mentor challenges.",
+    "description": "Focused on Angular with hands-on experience in TypeScript, responsive design, and backend basics. I create pixel-perfect interfaces and continuously improve through Frontend Mentor challenges.",
     "getInTouch": "Get in Touch",
     "downloadCV": "Download CV",
     "cvUrl": "/CV/nemeth_laszlo_frontend_developer_cv.pdf"
@@ -39,7 +39,7 @@
       }
     },
     "stats": {
-      "challenges": { "value": "10+", "label": "Challenges Completed" },
+      "challenges": { "value": "30+", "label": "Challenges Completed" },
       "responsive": { "value": "100%", "label": "Responsive Design" },
       "frameworks": { "value": "2", "label": "Main Frameworks" },
       "learning": { "value": "Daily", "label": "Learning & Growing" }
@@ -68,7 +68,7 @@
     "email": "Email",
     "phone": "Phone",
     "location": "Location",
-    "locationValue": "Budapest, Hungary",
+    "locationValue": "Lajosmizse, Hungary",
     "quickResponse": "⚡ Quick Response",
     "quickResponseDesc": "I typically respond within 24 hours during weekdays",
     "form": {

@@ -7,11 +7,11 @@
   },
   "hero": {
     "seeking": "Jelenleg keresek: Junior Frontend Fejlesztő pozíciót",
-    "greeting": "Szia, én vagyok",
+    "greeting": "Szia, üdvözöllek az oldalamon",
     "name": "Németh László",
     "title": "Junior Frontend Fejlesztő",
     "subtitle": "Reszponzív webalkalmazások fejlesztése modern keretrendszerekkel",
-    "description": "Angular és Vue.js fókusszal, TypeScript, reszponzív design és backend alapok terén szerzett tapasztalattal. Pixel-tökéletes felületeket hozok létre és folyamatosan fejlődom Frontend Mentor kihívásokon keresztül.",
+    "description": "Angular fókusszal, TypeScript, reszponzív design és backend alapok terén szerzett tapasztalattal. Pixel-tökéletes felületeket hozok létre és folyamatosan fejlődom Frontend Mentor kihívásokon keresztül.",
     "getInTouch": "Vedd fel a kapcsolatot",
     "downloadCV": "CV letöltése",
     "cvUrl": "/CV/nemeth_laszlo_frontend_fejleszto_cv.pdf"
@@ -39,7 +39,7 @@
       }
     },
     "stats": {
-      "challenges": { "value": "10+", "label": "Teljesített Kihívás" },
+      "challenges": { "value": "30+", "label": "Teljesített Kihívás" },
       "responsive": { "value": "100%", "label": "Reszponzív Design" },
       "frameworks": { "value": "2", "label": "Fő Keretrendszer" },
       "learning": { "value": "Napi", "label": "Tanulás & Fejlődés" }
@@ -64,11 +64,11 @@
   },
   "contact": {
     "title": "Dolgozzunk Együtt",
-    "subtitle": "Junior fejlesztőt keresel? Vegyük fel a kapcsolatot és beszéljük meg a növekedési lehetőségeket",
+    "subtitle": "Junior fejlesztőt keresel? Vegyük fel a kapcsolatot és beszéljük meg a részleteket",
     "email": "Email",
     "phone": "Telefon",
     "location": "Helyszín",
-    "locationValue": "Budapest, Magyarország",
+    "locationValue": "Lajosmizse, Magyarország",
     "quickResponse": "⚡ Gyors Válasz",
     "quickResponseDesc": "Általában 24 órán belül válaszolok munkanapokon",
     "form": {
