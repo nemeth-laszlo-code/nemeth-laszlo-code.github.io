@@ -83,6 +83,11 @@
       "error": "Something went wrong. Please try again or email me directly."
     }
   },
+  "cookies": {
+    "message": "This site uses cookies for analytics to improve your experience.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
   "footer": {
     "madeWith": "Made with",
     "using": "using Nuxt & Tailwind CSS",

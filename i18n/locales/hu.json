@@ -83,6 +83,11 @@
       "error": "Valami hiba történt. Kérlek próbáld újra, vagy írj emailt közvetlenül."
     }
   },
+  "cookies": {
+    "message": "Ez az oldal analitikai sütiket használ a felhasználói élmény javítása érdekében.",
+    "accept": "Elfogadom",
+    "decline": "Elutasítom"
+  },
   "footer": {
     "madeWith": "Készítve",
     "using": "Nuxt & Tailwind CSS segítségével",
