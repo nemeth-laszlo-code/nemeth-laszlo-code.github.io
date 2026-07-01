@@ -85,8 +85,9 @@ onMounted(() => {
               class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-emerald-500 shadow-2xl">
               <div
                 class="w-full h-full bg-gradient-to-br from-slate-300 to-slate-400 dark:from-slate-700 dark:to-slate-800 flex items-center justify-center">
-                <img src="/images/profile.jpg" alt="Nemeth Laszlo profile picture"
-                  title="Nemeth laszlo profile picture">
+                <NuxtImg src="/images/profile.jpg" alt="Nemeth Laszlo profile picture"
+                  title="Nemeth laszlo profile picture" width="320" height="320" fit="cover" format="webp"
+                  sizes="(min-width: 640px) 320px, 256px" class="w-full h-full object-cover" preload />
                 <!--<span class="text-6xl sm:text-8xl font-bold text-white dark:text-slate-900">NL</span>-->
               </div>
             </div>

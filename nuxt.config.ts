@@ -17,9 +17,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/image'],
   colorMode: {
     classSuffix: '',
+  },
+  image: {
+    quality: 80,
   },
   i18n: {
     defaultLocale: 'en',
