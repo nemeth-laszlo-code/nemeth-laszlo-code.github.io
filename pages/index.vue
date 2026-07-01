@@ -38,7 +38,7 @@ useSeoMeta({
 <template>
   <div class="bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 transition-colors min-h-screen">
     <AppNavigation />
-    <div
+    <main
       :class="['transition-opacity duration-150', isTransitioning ? 'opacity-0' : 'opacity-100']"
     >
       <AppHero />
@@ -46,8 +46,8 @@ useSeoMeta({
       <AppSkills />
       <AppProjects />
       <AppContact />
-      <AppFooter />
-    </div>
+    </main>
+    <AppFooter />
     <MobileContactButton />
     <CookieBanner />
   </div>
