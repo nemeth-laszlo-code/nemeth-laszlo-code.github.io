@@ -6,6 +6,14 @@ button {
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
 @utility animate-fade-in-up {
   animation: fade-in-up 0.5s ease-out both;
 }

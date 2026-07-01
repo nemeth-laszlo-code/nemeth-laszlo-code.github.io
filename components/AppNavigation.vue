@@ -71,12 +71,17 @@ const otherLocale = computed(() =>
           </button>
 
           <!-- Dark mode toggle -->
-          <button @click="toggleTheme"
-            class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 hover:bg-gray-300 dark:hover:bg-slate-700 transition-colors"
-            :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
-            <Sun v-if="isDark" class="w-5 h-5 text-yellow-500" />
-            <Moon v-else class="w-5 h-5 text-slate-700" />
-          </button>
+          <ClientOnly>
+            <button @click="toggleTheme"
+              class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800 hover:bg-gray-300 dark:hover:bg-slate-700 transition-colors"
+              :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
+              <Sun v-if="isDark" class="w-5 h-5 text-yellow-500" />
+              <Moon v-else class="w-5 h-5 text-slate-700" />
+            </button>
+            <template #fallback>
+              <div class="w-9 h-9 rounded-lg bg-gray-200 dark:bg-slate-800" />
+            </template>
+          </ClientOnly>
         </div>
 
         <!-- Mobile controls -->
@@ -85,11 +90,16 @@ const otherLocale = computed(() =>
             class="px-2 py-1 rounded text-xs font-semibold border border-emerald-500 text-emerald-600 dark:text-emerald-400">
             {{ otherLocale.code.toUpperCase() }}
           </button>
-          <button @click="toggleTheme" class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800"
-            :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
-            <Sun v-if="isDark" class="w-5 h-5 text-yellow-500" />
-            <Moon v-else class="w-5 h-5 text-slate-700" />
-          </button>
+          <ClientOnly>
+            <button @click="toggleTheme" class="p-2 rounded-lg bg-gray-200 dark:bg-slate-800"
+              :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
+              <Sun v-if="isDark" class="w-5 h-5 text-yellow-500" />
+              <Moon v-else class="w-5 h-5 text-slate-700" />
+            </button>
+            <template #fallback>
+              <div class="w-9 h-9 rounded-lg bg-gray-200 dark:bg-slate-800" />
+            </template>
+          </ClientOnly>
           <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="p-2 text-gray-700 dark:text-gray-300"
             aria-label="Toggle menu">
             <X v-if="isMobileMenuOpen" class="w-6 h-6" />
