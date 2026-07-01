@@ -42,7 +42,7 @@ onMounted(() => {
           <!-- CTAs -->
           <div class="flex flex-col sm:flex-row gap-4 mb-8">
             <a href="#contact"
-              class="px-8 py-4 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-all shadow-lg hover:shadow-xl font-semibold text-center">
+              class="px-8 py-4 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-all shadow-lg hover:shadow-xl font-semibold text-center">
               {{ t('hero.getInTouch') }}
             </a>
             <a :href="t('hero.cvUrl')"

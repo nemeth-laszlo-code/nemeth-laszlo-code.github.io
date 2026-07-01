@@ -154,7 +154,7 @@ async function handleSubmit() {
             </Transition>
 
             <button type="submit" :disabled="isSubmitting"
-              class="w-full px-6 py-4 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-all shadow-lg hover:shadow-xl font-semibold flex items-center justify-center gap-2 text-lg disabled:opacity-60 disabled:cursor-not-allowed">
+              class="w-full px-6 py-4 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-all shadow-lg hover:shadow-xl font-semibold flex items-center justify-center gap-2 text-lg disabled:opacity-60 disabled:cursor-not-allowed">
               <Send class="w-5 h-5" />
               {{ isSubmitting ? '...' : t('contact.form.send') }}
             </button>

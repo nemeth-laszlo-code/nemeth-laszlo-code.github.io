@@ -68,7 +68,7 @@ function decline() {
           </button>
           <button
             @click="accept"
-            class="px-5 py-2 text-sm font-semibold text-white bg-emerald-500 rounded-lg hover:bg-emerald-600 transition-colors"
+            class="px-5 py-2 text-sm font-semibold text-white bg-emerald-700 rounded-lg hover:bg-emerald-800 transition-colors"
           >
             {{ t('cookies.accept') }}
           </button>

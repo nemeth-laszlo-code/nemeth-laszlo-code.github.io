@@ -21,7 +21,7 @@ onUnmounted(() => {
     enter-to-class="opacity-100 scale-100" leave-active-class="transition-all duration-200"
     leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-75">
     <a v-if="isVisible" href="#contact"
-      class="md:hidden fixed bottom-6 right-6 z-40 p-4 bg-emerald-500 text-white rounded-full shadow-2xl hover:bg-emerald-600 transition-all hover:scale-110 animate-bounce"
+      class="md:hidden fixed bottom-6 right-6 z-40 p-4 bg-emerald-700 text-white rounded-full shadow-2xl hover:bg-emerald-800 transition-all hover:scale-110 animate-bounce"
       aria-label="Contact me">
       <MessageCircle class="w-6 h-6" />
     </a>

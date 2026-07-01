@@ -60,7 +60,7 @@ function getLocalizedText(field: Record<string, string> | string): string {
         <div class="relative">
           <div class="absolute top-4 left-4 z-10">
             <span
-              class="px-4 py-2 bg-emerald-500 text-white rounded-full text-sm font-semibold flex items-center gap-2"
+              class="px-4 py-2 bg-emerald-700 text-white rounded-full text-sm font-semibold flex items-center gap-2"
             >
               <Star class="w-4 h-4" />
               {{ t('projects.featuredBadge') }}
@@ -126,7 +126,7 @@ function getLocalizedText(field: Record<string, string> | string): string {
               :href="featuredProject.liveUrl"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex-1 px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2 font-semibold"
+              class="flex-1 px-6 py-3 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors flex items-center justify-center gap-2 font-semibold"
             >
               <ExternalLink class="w-5 h-5" />
               {{ t('projects.viewDemo') }}
@@ -201,7 +201,7 @@ function getLocalizedText(field: Record<string, string> | string): string {
                   :href="project.liveUrl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex-1 px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center gap-2 text-sm font-semibold"
+                  class="flex-1 px-4 py-2 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors flex items-center justify-center gap-2 text-sm font-semibold"
                 >
                   <ExternalLink class="w-4 h-4" />
                   {{ t('projects.demo') }}
