@@ -93,5 +93,10 @@
     "using": "Nuxt & Tailwind CSS segítségével",
     "privacy": "Adatvédelem",
     "terms": "Feltételek"
+  },
+  "notFound": {
+    "title": "Az oldal nem található",
+    "description": "A keresett oldal nem létezik, vagy áthelyezésre került.",
+    "backHome": "Vissza a főoldalra"
   }
 }
